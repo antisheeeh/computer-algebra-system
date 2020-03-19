@@ -3,7 +3,7 @@
    Group: 9305
 */
 
-#include "..//number.h"
+#include "NZER_N_B.h"
 
 int isZero(longNumber a)
 {
