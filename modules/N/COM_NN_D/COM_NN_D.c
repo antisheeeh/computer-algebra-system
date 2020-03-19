@@ -1,3 +1,8 @@
+/*
+    author Kirill Konoplev
+    group 9305
+*/
+
 #include "..//number.h"
 
 int compare(longNumber a, longNumber b) {
@@ -7,8 +12,8 @@ int compare(longNumber a, longNumber b) {
         int i;
 
         for(i = 0; i < a.len; ++i) {
-            if(a[i] > b[i]) return GREATER;
-            else if(a[i] < b[i]) return LESS;
+            if(a.num[i] > b.num[i]) return GREATER;
+            else if(a.num[i] < b.num[i]) return LESS;
             else return EQUAL;
         }
     }
