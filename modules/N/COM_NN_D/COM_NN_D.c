@@ -3,7 +3,7 @@
     group 9305
 */
 
-#include "..//number.h"
+#include "COM_NN_D.h"
 
 int compare(longNumber a, longNumber b) {
     if(a.len > b.len) return GREATER;
