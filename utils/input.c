@@ -29,14 +29,14 @@ longNumber parseNumber(char* str) {
     return number;
 }
 
-void printNumber(longNumber num) {
+void printNum(longNumber num) {
     int i;
 
     printf("%d", num.num[num.len - 1]);
 
-    if(num.len <= 1) return; 
-
-    for(i = num.len - 1; i >= 0; --i) {
-        printf("%d", num.num[i]);
+    if(num.len > 1) {
+        for(i = num.len - 2; i >= 0; --i) {
+            printf("%09d", num.num[i]);
+        }
     }
 }
