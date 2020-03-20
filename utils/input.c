@@ -32,6 +32,10 @@ longNumber parseNumber(char* str) {
 void printNumber(longNumber num) {
     int i;
 
+    printf("%d", num.num[num.len - 1]);
+
+    if(num.len <= 1) return; 
+
     for(i = num.len - 1; i >= 0; --i) {
         printf("%d", num.num[i]);
     }

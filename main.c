@@ -5,6 +5,7 @@
 #include "modules/N/lib/number.h"
 #include "modules/N/lib/NZER_N_B/NZER_N_B.h"
 #include "modules/N/lib/COM_NN_D/COM_NN_D.h"
+#include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
 
 int main() {
     char str[MAXLEN];
