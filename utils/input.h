@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../modules/N/number.h"
+#include "../modules/N/lib/number.h"
+
+#define MAXLEN 256
 
 longNumber parseNumber(char* str);
-void printNum(longNumber num);
+void printNumber(longNumber num);

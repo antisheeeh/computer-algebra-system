@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
 #include "input.h"
 
 longNumber parseNumber(char* str) {
@@ -24,7 +29,7 @@ longNumber parseNumber(char* str) {
     return number;
 }
 
-void printNum(longNumber num) {
+void printNumber(longNumber num) {
     int i;
 
     for(i = num.len - 1; i >= 0; --i) {

@@ -1,3 +1,5 @@
+#pragma once
+
 /* Structure for long number
 first field - array of ninth of digits
 second field - amount of ninths in number
