@@ -4,7 +4,6 @@
 */
 
 #include "../lib/NZER_N_B/NZER_N_B.h"
-#include "../number.h"
 
 int isZero(longNumber a)
 {

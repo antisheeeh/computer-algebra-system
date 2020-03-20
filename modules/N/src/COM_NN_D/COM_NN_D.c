@@ -4,7 +4,6 @@
 */
 
 #include "../lib/COM_NN_D/COM_NN_D.h"
-#include "../number.h"
 
 int compare(longNumber a, longNumber b) {
     if(a.len > b.len) return GREATER;
