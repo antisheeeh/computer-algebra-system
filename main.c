@@ -6,6 +6,7 @@
 #include "modules/N/lib/NZER_N_B/NZER_N_B.h"
 #include "modules/N/lib/COM_NN_D/COM_NN_D.h"
 #include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
+#include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
 
 int main() {
     char str[MAXLEN];
@@ -17,7 +18,7 @@ int main() {
     str[strlen(str) - 1] = '\0';
     longNumber b = parseNumber(str);
 
-    printf("%d" , compare(a , b));
+    printNumber(sub(a, b));
     
     return 0;
 }
