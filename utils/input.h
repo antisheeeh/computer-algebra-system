@@ -6,3 +6,4 @@
 
 longNumber parseNumber(char* str);
 void printNumber(longNumber num);
+
