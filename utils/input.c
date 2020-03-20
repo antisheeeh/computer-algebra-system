@@ -29,7 +29,7 @@ longNumber parseNumber(char* str) {
     return number;
 }
 
-void printNum(longNumber num) {
+void printNumber(longNumber num) {
     int i;
 
     printf("%d", num.num[num.len - 1]);
