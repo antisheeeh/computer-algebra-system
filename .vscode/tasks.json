@@ -9,9 +9,12 @@
             "command": "C:\\MinGW\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-g",
-                "${fileDirname}\\*.c",
-                "${fileDirname}\\..\\*.c",
-                "${fileDirname}\\..\\..\\..\\*.c",
+                "${workspaceFolder}\\**.c",
+                "${workspaceFolder}\\utils\\**.c",
+                "${workspaceFolder}\\modules\\N\\src\\ADD_NN_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\COM_NN_D\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\NZER_N_B\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\SUB_NN_N\\*.c",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

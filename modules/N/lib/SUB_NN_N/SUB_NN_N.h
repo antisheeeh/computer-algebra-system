@@ -2,4 +2,4 @@
 
 #include "../number.h"
 
-longNumber sub(longNumber a, longNumber b);
+longNumber* sub(longNumber* a, longNumber* b);

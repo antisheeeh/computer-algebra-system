@@ -2,4 +2,4 @@
 
 #include "../number.h"
 
-int compare(longNumber a, longNumber b);
+int compare(longNumber* a, longNumber* b);

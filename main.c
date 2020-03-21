@@ -9,16 +9,14 @@
 #include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
 
 int main() {
-    char str[MAXLEN];
-    fgets(str, MAXLEN, stdin);
-    str[strlen(str) - 1] = '\0';
-
-    longNumber a = parseNumber(str);
-    fgets(str, MAXLEN, stdin);
-    str[strlen(str) - 1] = '\0';
-    longNumber b = parseNumber(str);
-
-    printNumber(sub(a, b));
     
+    char* str = getString();
+    longNumber* a = parseNumber(str);
+    //longNumber* b = parseNumber(getString());
+
+    printNumber(a);
+
+    //free(str);
+    //free(a->num);
     return 0;
 }

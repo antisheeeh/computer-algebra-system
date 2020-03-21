@@ -2,8 +2,9 @@
 
 #include "../modules/N/lib/number.h"
 
-#define MAXLEN 256
+#define BLOCK 128
 
-longNumber parseNumber(char* str);
-void printNumber(longNumber num);
+char* getString();
+longNumber* parseNumber(char* str);
+void printNumber(longNumber* num);
 

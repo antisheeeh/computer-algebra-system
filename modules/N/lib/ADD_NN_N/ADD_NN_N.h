@@ -5,4 +5,4 @@
 #include <stdio.h>
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 
-longNumber sum(longNumber a, longNumber b);
+longNumber* sum(longNumber* a, longNumber* b);
