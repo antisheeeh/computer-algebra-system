@@ -3,14 +3,16 @@
     group 9305
 */
 
+#include <stdlib.h>
+
 #include "../../lib/ADD_NN_N/ADD_NN_N.h"
 
 longNumber* sum(longNumber* a, longNumber* b) {
     int i;
-    longNumber* c;
+    longNumber* c = malloc(sizeof(longNumber));
 
-    c->len = max(a->len, b->len);
-    c->num = calloc(c->len + 1, sizeof(int));
+    c->len = max(a->len, b->len)+1;
+    c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) return NULL;
 
@@ -29,8 +31,9 @@ longNumber* sum(longNumber* a, longNumber* b) {
         }
     }
 
-    if(c->num[c->len] == 0) {
-        c->num = realloc(c->num, sizeof(int) * c->len);
+    if(c->num[c->len-1] == 0) {
+        c->num = realloc(c->num, sizeof(int) * --c->len);
+
     }
 
     return c;

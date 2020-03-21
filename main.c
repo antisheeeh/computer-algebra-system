@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "utils/input.h"
+#include "utils/memory.h"
 #include "modules/N/lib/number.h"
 #include "modules/N/lib/NZER_N_B/NZER_N_B.h"
 #include "modules/N/lib/COM_NN_D/COM_NN_D.h"
@@ -11,13 +12,14 @@
 int main() {
     
     char* str = getString();
+    char *str1 = getString();
     longNumber* a = parseNumber(str);
-    //longNumber* b = parseNumber(getString());
+    longNumber* b = parseNumber(str1);
 
-    printNumber(a);
-    //puts(str);
+    printNumber(sum(a,b));
 
-    //free(str);
-    //free(a->num);
+    clearString(str);
+    clearStruct(a);
+   
     return 0;
 }

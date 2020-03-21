@@ -16,7 +16,7 @@
                 "${workspaceFolder}\\modules\\N\\src\\NZER_N_B\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\SUB_NN_N\\*.c",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\main.exe"
             ],
             "options": {
                 "cwd": "C:\\MinGW\\mingw64\\bin"
