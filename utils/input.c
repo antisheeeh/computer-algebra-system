@@ -14,6 +14,8 @@ longNumber* parseNumber(char* str) {
     number->len = (len + BLOCK_SIZE - 1) / BLOCK_SIZE;
     number->num = malloc(sizeof(int) * number->len);
 
+    if(number->num == NULL) return NULL;
+
     for(i = len; i > 0; i -= BLOCK_SIZE) {
         if(i <= BLOCK_SIZE){
             strncpy(buf, ptr -= i, i);
@@ -39,7 +41,7 @@ char* getString() {
         }
 
         if(str == NULL) {
-            c = '\n';
+            return NULL;
         } else {
             str[len] = c;
         }

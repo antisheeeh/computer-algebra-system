@@ -12,6 +12,8 @@ longNumber* sum(longNumber* a, longNumber* b) {
     c->len = max(a->len, b->len);
     c->num = calloc(c->len + 1, sizeof(int));
 
+    if(c->num == NULL) return NULL;
+
     for(i = 0; i < c->len; ++i) {
         if(i >= a->len){
             c->num[i] += b->num[i];
