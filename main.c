@@ -11,10 +11,10 @@
 int main() {
     
     char* str = getString();
-    longNumber* a = parseNumber(str);
+    //longNumber* a = parseNumber(str);
     //longNumber* b = parseNumber(getString());
 
-    printNumber(a);
+    puts(str);
 
     //free(str);
     //free(a->num);

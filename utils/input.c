@@ -17,7 +17,7 @@ longNumber* parseNumber(char* str) {
     for(i = len; i > 0; i -= BLOCK_SIZE) {
         if(i <= BLOCK_SIZE){
             strncpy(buf, ptr -= i, i);
-            buf[i] = '\0'; 
+            buf[i] = '\0';
             number->num[number->len - 1] = atoi(buf);
         } else {
             strncpy(buf, ptr -= BLOCK_SIZE, BLOCK_SIZE);
@@ -37,8 +37,12 @@ char* getString() {
         if(len % BLOCK == 0) {
             str = realloc(str, sizeof(char) * (len + BLOCK));
         }
-        
-        str[len] = c;
+
+        if(str == NULL) {
+            c = '\n';
+        } else {
+            str[len] = c;
+        }
     }
 
     str = realloc(str, sizeof(char) * len);
