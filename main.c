@@ -12,11 +12,11 @@
 int main() {
     
     char* str = getString();
-    char *str1 = getString();
+    //char *str1 = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
+    //longNumber* b = parseNumber(str1);
 
-    printNumber(sum(a,b));
+    printNumber(a);
 
     clearString(str);
     clearStruct(a);

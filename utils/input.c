@@ -6,6 +6,9 @@
 #include "input.h"
 
 longNumber* parseNumber(char* str) {
+    while(*str == '0') ++str;
+    if(*str == '\0') *str-- = '0';
+
     longNumber* number = malloc(sizeof(longNumber));
 
     if(number == NULL) return NULL;
