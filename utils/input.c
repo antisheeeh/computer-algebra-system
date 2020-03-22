@@ -5,13 +5,23 @@
 
 #include "input.h"
 
-longNumber* parseNumber(char* str) {
-    while(*str == '0') ++str;
-    if(*str == '\0') *str-- = '0';
 
+void removeTrailingZeros(char* str) {
+    char* p = str;
+    while(*p == '0') ++p;
+    if(*p == '\0') p = "0\0";
+    if(p != str) {
+        str = realloc(str, sizeof(char) * (strlen(p) + 1));
+        strcpy(str, p); 
+    }
+}
+
+longNumber* parseNumber(char* str) {
     longNumber* number = malloc(sizeof(longNumber));
 
     if(number == NULL) return NULL;
+
+    removeTrailingZeros(str);
 
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1], *ptr = str + len;
