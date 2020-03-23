@@ -6,24 +6,20 @@
 longNumber* multiByDigit(longNumber* a, longNumber* b) {
     longNumber* c = malloc(sizeof(longNumber));
 
+    if(c == NULL) return NULL;
+
     c->len = a->len;
     c->num = calloc(c->len + 1, sizeof(int));
 
-    if(c == NULL) return NULL;
+    if(c->num == NULL) return NULL;
 
     int i;
     long long t;
 
-    t = a->num[0] * 1ll * b->num[0];
-
-    printf("\n%lld\n", t);
-
-    c->num[0] = (int) (t % BASE);
-    c->num[1] += (int) (t / BASE);
-
-    for(i = 1; i < c->len; ++i) {
-        c->num[i] %= BASE;
-        c->num[i + 1] = c->num[i] / BASE;
+    for(i = 0; i < c->len; ++i) {
+        t = c->num[i] + a->num[i] * 1ll * b->num[0];
+        c->num[i] = t % BASE;
+        c->num[i + 1] += t / BASE;
     }
 
     if(c->num[c->len] == 0) {
