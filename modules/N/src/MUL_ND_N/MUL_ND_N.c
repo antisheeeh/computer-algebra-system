@@ -1,28 +1,36 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "../../lib/MUL_ND_N/MUL_ND_N.h"
 
 longNumber* multiByDigit(longNumber* a, longNumber* b) {
-    a->num = realloc(a->num, sizeof(int) * (a->len + 1));
+    longNumber* c = malloc(sizeof(longNumber));
 
-    if(a == NULL) return NULL;
+    c->len = a->len;
+    c->num = calloc(c->len + 1, sizeof(int));
+
+    if(c == NULL) return NULL;
 
     int i;
     long long t;
 
-    t = a->num[0] * b->num[0];
+    t = a->num[0] * 1ll * b->num[0];
 
-    a->num[0] = (int) (t % BASE);
-    a->num[1] += (int) (t / BASE);
+    printf("\n%lld\n", t);
 
-    for(i = 1; i < a->len; ++i) {
-        a->num[i] %= BASE;
-        a->num[i + 1] = a->num[i] / BASE;
+    c->num[0] = (int) (t % BASE);
+    c->num[1] += (int) (t / BASE);
+
+    for(i = 1; i < c->len; ++i) {
+        c->num[i] %= BASE;
+        c->num[i + 1] = c->num[i] / BASE;
     }
 
-    if(a->num[a->len] == 0) {
-        a->num = realloc(a->num, sizeof(int) * a->len);
+    if(c->num[c->len] == 0) {
+        c->num = realloc(c->num, sizeof(int) * c->len);
+    } else {
+        c->len++;
     }
 
-    return a;
+    return c;
 }

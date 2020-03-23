@@ -33,6 +33,8 @@ longNumber* sum(longNumber* a, longNumber* b) {
 
     if(c->num[c->len] == 0) {
         c->num = realloc(c->num, sizeof(int) * c->len);
+    } else {
+        c->len++;
     }
 
     return c;
