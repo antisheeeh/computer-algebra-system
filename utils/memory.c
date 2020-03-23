@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include "memory.h"
 
-void clearString(char *str)
-{
+void clearString(char* str) {
     free(str);
 }
 

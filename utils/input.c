@@ -5,23 +5,16 @@
 
 #include "input.h"
 
-
-void removeTrailingZeros(char* str) {
-    char* p = str;
-    while(*p == '0') ++p;
-    if(*p == '\0') p = "0\0";
-    if(p != str) {
-        str = realloc(str, sizeof(char) * (strlen(p) + 1));
-        strcpy(str, p); 
-    }
+void removeTrailingZeros(longNumber* number) {
+    while(number->num[number->len - 1] == 0) number->len--;
+    if(number->len == 0) number->len = 1;
+    number->num = realloc(number->num, sizeof(int) * number->len);
 }
 
 longNumber* parseNumber(char* str) {
     longNumber* number = malloc(sizeof(longNumber));
 
     if(number == NULL) return NULL;
-
-    removeTrailingZeros(str);
 
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1], *ptr = str + len;
@@ -43,6 +36,9 @@ longNumber* parseNumber(char* str) {
             number->num[number->len - (i + BLOCK_SIZE - 1) / BLOCK_SIZE] = atoi(buf);
         }
     }
+
+    removeTrailingZeros(number);
+    
     return number;
 }
 

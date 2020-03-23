@@ -8,6 +8,7 @@
 #include "modules/N/lib/COM_NN_D/COM_NN_D.h"
 #include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
 #include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
+#include "modules/N/lib/MUL_ND_N/MUL_ND_N.h"
 
 int main() {
     
@@ -17,7 +18,7 @@ int main() {
     longNumber* a = parseNumber(str);
     longNumber* b = parseNumber(str1);
 
-    printNumber(sum(a, b));
+    printNumber(a);
 
     clearString(str);
     clearString(str1);
