@@ -11,11 +11,12 @@
 char *multiplyBy10k(char *a ,int k)
 {
     int i;
+    int len = strlen(a);
     char *res = NULL;
-
-    if((res = malloc((strlen(a) + k + 1)*sizeof(char)))!=NULL){
-        strncpy(res , a, strlen(a));
-        for(i = strlen(a); i < strlen(a) + k; i++){
+    if(k == 0) return a; // if k = 1
+    if((res = malloc((len + k + 1)*sizeof(char)))!=NULL){
+        strncpy(res , a, len);
+        for(i = len; i < len + k; i++){
             res[i] = '0';
         }
         res[i] = '\0';

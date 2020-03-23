@@ -77,13 +77,16 @@ void printNumber(longNumber* num) {
 
 char *toString(longNumber *a)
 {
-    int i,j=0;
+    int i,j=0,k;
     char *res = NULL;
-    char buf[BLOCK_SIZE];
+    char buf[BLOCK_SIZE+1];
 
     res = malloc((a->len * BLOCK_SIZE)*sizeof(char));
     for(i = a->len - 1; i >= 0; i--){
         sprintf(buf,"%d" ,a->num[i]);
+        if(buf[0] == '0'){
+            strcpy(buf,"000000000");
+        }
         strncpy(res,buf,BLOCK_SIZE);
         res= res + strlen(buf);
         j+=strlen(buf);
