@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "input.h"
 
@@ -74,4 +73,23 @@ void printNumber(longNumber* num) {
             printf("%09d", num->num[i]);
         }
     }
+}
+
+char *toString(longNumber *a)
+{
+    int i,j=0;
+    char *res = NULL;
+    char buf[BLOCK_SIZE];
+
+    res = malloc((a->len * BLOCK_SIZE)*sizeof(char));
+    for(i = a->len - 1; i >= 0; i--){
+        sprintf(buf,"%d" ,a->num[i]);
+        strncpy(res,buf,BLOCK_SIZE);
+        res= res + strlen(buf);
+        j+=strlen(buf);
+    }
+    res-=j;
+    res = realloc(res , (j+1)*sizeof(char));
+    res[j] = '\0';
+    return res;
 }

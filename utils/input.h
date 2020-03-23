@@ -8,3 +8,4 @@ void removeTrailingZeros(longNumber* number);
 char* getString();
 longNumber* parseNumber(char* str);
 void printNumber(longNumber* num);
+char *toString(longNumber *num);
