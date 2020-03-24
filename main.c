@@ -9,6 +9,8 @@
 #include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
 #include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
 #include "modules/N/lib/MUL_ND_N/MUL_ND_N.h"
+#include "modules/N/lib/MUL_NK_N/MUL_NK_N.h"
+#include "modules/N/lib/MUL_NN_N/MUL_NN_N.h"
 
 int main() {
     

@@ -16,6 +16,8 @@
                 "${workspaceFolder}\\modules\\N\\src\\NZER_N_B\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\SUB_NN_N\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\MUL_ND_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\MUL_NK_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\MUL_NN_N\\*.c",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],
