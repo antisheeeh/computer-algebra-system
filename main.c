@@ -20,7 +20,7 @@ int main() {
     longNumber* a = parseNumber(str);
     longNumber* b = parseNumber(str1);
 
-    printNumber(multiByDigit(a, b));
+    printNumber(multi(a, b));
 
     clearString(str);
     clearString(str1);

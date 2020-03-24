@@ -22,7 +22,7 @@ longNumber* multi(longNumber* a, longNumber* b) {
 
         for(i = 0; i < a->len; ++i) {
             for(j = 0; j < b->len; ++j) {
-                t = c->num[i + j] + a->num[i + j] * 1ll * b->num[i + j];
+                t = c->num[i + j] + a->num[i] * 1ll * b->num[j];
                 c->num[i + j] = t % BASE;
                 c->num[i + j + 1] += t / BASE;
             }
