@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "utils/menu.h"
 #include "utils/input.h"
 #include "utils/memory.h"
 #include "modules/N/lib/number.h"
@@ -12,20 +13,9 @@
 #include "modules/N/lib/MUL_NK_N/MUL_NK_N.h"
 #include "modules/N/lib/MUL_NN_N/MUL_NN_N.h"
 
+#include "N_FUNC_LIST.h"
+
 int main() {
-    
-    char* str = getString();
-    char *str1 = getString();
-
-    longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
-
-    printNumber(multi(a, b));
-
-    clearString(str);
-    clearString(str1);
-    clearStruct(a);
-    clearStruct(b);
-   
+    show_menu();    
     return 0;
 }

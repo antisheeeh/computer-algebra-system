@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "nzer_n_b.h": "c",
+        "n_func_list.h": "c",
+        "mul_nn_n.h": "c",
+        "add_nn_n.h": "c",
+        "stdio.h": "c",
+        "mul_nd_n.h": "c",
+        "test.h": "c",
+        "mul_nk_n.h": "c",
+        "sub_nn_n.h": "c"
+    }
+}
