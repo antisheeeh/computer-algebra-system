@@ -6,7 +6,7 @@ void menu_COM_NN();
 
 void menu_NZER_N_B();
 
-void menu_ADD_NN_D();
+void menu_ADD_1N_N();
 
 void menu_ADD_NN_N();
 

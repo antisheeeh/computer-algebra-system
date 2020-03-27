@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "..\N_FUNC_LIST.h"
+#include "../N_FUNC_LIST.h"
 #include "menu.h"
 
 #define NUMBER_OF_BLOCS 4
@@ -67,7 +67,7 @@ void Natural_menu() {
 	if (kind == NULL) return;
 	kind[0] = menu_COM_NN;
 	kind[1] = menu_NZER_N_B;
-	//kind[2] = menu_ADD_NN_D;
+	kind[2] = menu_ADD_1N_N;
 	kind[3] = menu_ADD_NN_N;
 	kind[4] = menu_SUB_NN_N;
 	kind[5] = menu_MUL_ND_N;

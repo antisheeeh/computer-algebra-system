@@ -13,7 +13,7 @@
 #include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
 #include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
 #include "modules/N/lib/MUL_ND_N/MUL_ND_N.h"
-#include "modules/N/lib/MUL_Nk_N/MUL_Nk_N.h"
+#include "modules/N/lib/MUL_NK_N/MUL_NK_N.h"
 #include "modules/N/lib/MUL_NN_N/MUL_NN_N.h"
 #include "modules/N/lib/SUB_NDN_N/SUB_NDN_N.h"
 #include "modules/N/lib/DIV_NN_Dk/DIV_NN_Dk.h"
@@ -74,13 +74,20 @@ void menu_NZER_N_B(){
 
     show_help();
 }
-/*
+
 //Addition 1 to number
 
-void menu_ADD_NN_D{
+void menu_ADD_1N_N(){
+    printf("Please enter a number");
+    char *str = getString();
 
+    longNumber* a = parseNumber(str);
+
+    printf("Answer: ");
+    printNumber(add_1n(a));
+    show_help();
 }
-*/
+
 
 //Addition 2 numbers
 
