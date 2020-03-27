@@ -73,8 +73,8 @@ void Natural_menu() {
 	kind[5] = menu_MUL_ND_N;
 	kind[6] = menu_MUL_NK_N;
 	kind[7] = menu_MUL_NN_N;
-	//kind[8] = menu_SUB_NDN_N;
-	//kind[9] = menu_DIV_NN_DK;
+	kind[8] = menu_SUB_NDN_N;
+	kind[9] = menu_DIV_NN_DK;
 	//kind[10] = menu_DIV_NN_N;
 	//kind[11] = menu_MOD_NN_N;
 	//kind[12] = menu_GCF_NN_N;

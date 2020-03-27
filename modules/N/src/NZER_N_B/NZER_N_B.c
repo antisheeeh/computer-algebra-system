@@ -6,11 +6,5 @@
 #include "../../lib/NZER_N_B/NZER_N_B.h"
 
 int isZero(longNumber* a) {
-    int i;
-    
-    for(i = 0; i < a->len; i++) {
-        if(a->num[i] != 0) return NO;
-    }
-
-    return YES;
+    return a->num[a->len - 1] ? NO : YES;
 }

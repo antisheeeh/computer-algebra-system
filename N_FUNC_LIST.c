@@ -162,12 +162,14 @@ void menu_MUL_NK_N(){
     int k;
     printf("Please enter number: ");
     char* a = getString();
+    longNumber* num = parseNumber(a);
     printf("Please enter 'k': ");
     scanf("%d", &k);
     printf("Answer: ");
-    printf("%s", multiplyBy10k(a, k));
+    puts(toString(multiplyBy10k(num, k)));
 
-    clearString(multiplyBy10k(a, k));
+    clearStruct(num);
+    clearString(a);
 
     show_help();
 }
@@ -195,18 +197,52 @@ void menu_MUL_NN_N(){
     show_help();
 }
 
-/*
-//Subtraction from number other number, multiplied by a di
+void menu_DIV_NN_DK(){
+    printf("Please enter first number: ");
+    char* str = getString();
+    printf("Please enter second number: ");
+    char *str1 = getString();
+    printf("Please enter the power of ten: ");
+    int k;
+    scanf("%d", &k);
+
+    longNumber* a = parseNumber(str);
+    longNumber* b = parseNumber(str1);
+
+    printf("Answer: %d", div_nn_dk(a, b, k));
+
+    clearString(str);
+    clearString(str1);
+    clearStruct(a);
+    clearStruct(b);
+
+    show_help();
+}
 
 void menu_SUB_NDN_N(){
+    printf("Please enter first number: ");
+    char* str = getString();
+    printf("Please enter second number: ");
+    char *str1 = getString();
+    printf("Please enter the digit: ");
+    int d;
+    scanf("%d", &d);
 
+    longNumber* a = parseNumber(str);
+    longNumber* b = parseNumber(str1);
+
+    printf("Answer: %d", sub_ndn(a, b, d));
+
+    clearString(str);
+    clearString(str1);
+    clearStruct(a);
+    clearStruct(b);
+
+    show_help();
 }
 
-//Calculate the first digit of the division, multiplied by
-
-void menu_DIV_NN_DK(){
-
-}
+/*
+//Subtraction from number other number, multiplied by a di
 
 //Division of 2 numbers
 
