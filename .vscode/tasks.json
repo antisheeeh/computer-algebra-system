@@ -16,8 +16,11 @@
                 "${workspaceFolder}\\modules\\N\\src\\NZER_N_B\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\SUB_NN_N\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\MUL_ND_N\\*.c",
-                "${workspaceFolder}\\modules\\N\\src\\MUL_NK_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\MUL_Nk_N\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\MUL_NN_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\SUB_NDN_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\ADD_1N_N\\*.c",
+                "${workspaceFolder}\\modules\\N\\src\\DIV_NN_Dk\\*.c",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],

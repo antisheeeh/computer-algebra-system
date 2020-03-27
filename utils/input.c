@@ -75,7 +75,7 @@ void printNumber(longNumber* num) {
     }
 }
 
-char *toString(longNumber *a)
+/*char *toString(longNumber *a)
 {
     int i,j=0,k;
     char *res = NULL;
@@ -95,4 +95,30 @@ char *toString(longNumber *a)
     res = realloc(res , (j+1)*sizeof(char));
     res[j] = '\0';
     return res;
+}*/
+
+char* toString(longNumber* number) {
+    char* str = malloc(sizeof(char) * (number->len * BLOCK_SIZE + 1));
+
+    if(str == NULL) return NULL;
+
+    int i, num, pow, len = 0;
+
+    for(i = number->len - 1; i >= 0; --i) {
+        num = number->num[i];
+
+        if(i == number->len - 1)  {
+            for(pow = 1; num /= 10; pow *= 10);
+        } else {
+            pow = BASE / 10;
+        }
+        
+        do str[len++] = number->num[i] / pow % 10 + '0'; while(pow /= 10);
+    }
+
+    str[len] = '\0';
+
+    if(len != number->len * BLOCK_SIZE) str = realloc(str, sizeof(char) * (len + 1));
+
+    return str;
 }

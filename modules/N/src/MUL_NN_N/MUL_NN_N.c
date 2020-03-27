@@ -1,14 +1,17 @@
 #include <stdlib.h>
 
-#include "../../lib/MUL_NN_N/MUL_NN_N.h"
 #include "../../lib/MUL_ND_N/MUL_ND_N.h"
+#include "../../lib/MUL_NK_N/MUL_NK_N.h"
+#include "../../lib/ADD_NN_N/ADD_NN_N.h"
+#include "../../lib/MUL_NN_N/MUL_NN_N.h"
+
 #include "../../../../utils/input.h"
 
 longNumber* multi(longNumber* a, longNumber* b) {
     if(a->len == 1) {
-        return multiByDigit(b, a);
+        return multiByDigit(b, a->num[0]);
     } else if(b->len == 1) {
-        return multiByDigit(a, b);
+        return multiByDigit(a, b->num[0]);
     } else {
         longNumber* c = malloc(sizeof(longNumber));
 

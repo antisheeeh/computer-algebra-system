@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 #include "utils/input.h"
 #include "utils/memory.h"
+#include "utils/menu.h"
+
 #include "modules/N/lib/number.h"
-#include "modules/N/lib/MUL_NK_N/MUL_NK_N.h"
-#include "modules/N/lib/MUL_NN_N/MUL_NN_N.h"
-#include "modules/N/lib/MUL_ND_N/MUL_ND_N.h"
-#include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
+
 #include "modules/N/lib/COM_NN_D/COM_NN_D.h"
 #include "modules/N/lib/NZER_N_B/NZER_N_B.h"
+#include "modules/N/lib/ADD_1N_N/ADD_1N_N.h"
+#include "modules/N/lib/ADD_NN_N/ADD_NN_N.h"
 #include "modules/N/lib/SUB_NN_N/SUB_NN_N.h"
+#include "modules/N/lib/MUL_ND_N/MUL_ND_N.h"
+#include "modules/N/lib/MUL_Nk_N/MUL_Nk_N.h"
+#include "modules/N/lib/MUL_NN_N/MUL_NN_N.h"
+#include "modules/N/lib/SUB_NDN_N/SUB_NDN_N.h"
+#include "modules/N/lib/DIV_NN_Dk/DIV_NN_Dk.h"
 
-#include "utils/menu.h"
 #include "N_FUNC_LIST.h"
 
 void show_help(){
@@ -42,7 +46,10 @@ void menu_COM_NN(){
     longNumber* a = parseNumber(str);
     longNumber* b = parseNumber(str1);
 
-    printf("Answer: %d",compare(a, b));
+    int answer = compare(a, b);
+    if(answer == GREATER) puts("The first number is greater than the second");
+    else if(answer == LESS) puts("The first number is less than the second");
+    else if(answer == EQUAL) puts("The first number is equal to the second");
 
     clearString(str);
     clearString(str1);
@@ -60,8 +67,10 @@ void menu_NZER_N_B(){
 
     longNumber* a = parseNumber(str);
 
-    if (isZero(a) == 1) printf("Yes");
-    else printf("No");
+    int res = isZero(a);
+
+    if(res == YES) printf("Yes");
+    else if(res == NO) printf("No");
 
     show_help();
 }
@@ -130,7 +139,7 @@ void menu_MUL_ND_N(){
     longNumber* b = parseNumber(str1);
 
     printf("Answer: ");
-    printNumber(multiByDigit(a, b));
+    printNumber(multiByDigit(a, b->num[0]));
 
     clearString(str);
     clearString(str1);

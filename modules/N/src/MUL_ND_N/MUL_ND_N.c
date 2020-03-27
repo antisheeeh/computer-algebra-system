@@ -4,7 +4,7 @@
 #include "../../lib/MUL_ND_N/MUL_ND_N.h"
 #include "../../../../utils/input.h"
 
-longNumber* multiByDigit(longNumber* a, longNumber* b) {
+longNumber* multiByDigit(longNumber* a, int d) {
     longNumber* c = malloc(sizeof(longNumber));
 
     if(c == NULL) return NULL;
@@ -18,7 +18,7 @@ longNumber* multiByDigit(longNumber* a, longNumber* b) {
     long long t;
 
     for(i = 0; i < c->len - 1; ++i) {
-        t = c->num[i] + a->num[i] * 1ll * b->num[0];
+        t = c->num[i] + a->num[i] * 1ll * d;
         c->num[i] = t % BASE;
         c->num[i + 1] += t / BASE;
     }

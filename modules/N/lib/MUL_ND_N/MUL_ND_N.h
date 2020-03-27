@@ -2,4 +2,4 @@
 
 #include "../number.h"
 
-longNumber* multiByDigit(longNumber* a, longNumber* b);
+longNumber* multiByDigit(longNumber* a, int d);

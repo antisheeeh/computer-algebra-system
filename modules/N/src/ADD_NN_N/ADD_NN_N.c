@@ -6,11 +6,10 @@
 #include <stdlib.h>
 
 #include "../../lib/ADD_NN_N/ADD_NN_N.h"
+#include "../../lib/COM_NN_D/COM_NN_D.h"
 #include "../../../../utils/input.h"
 
 longNumber* sum(longNumber* a, longNumber* b) {
-    int i;
-
     longNumber* c = malloc(sizeof(longNumber));
 
     if(c == NULL) return NULL;
@@ -19,6 +18,8 @@ longNumber* sum(longNumber* a, longNumber* b) {
     c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) return NULL;
+
+    int i;
 
     for(i = 0; i < c->len - 1; ++i) {
         if(i >= a->len){

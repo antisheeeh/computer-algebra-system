@@ -14,8 +14,8 @@ int compare(longNumber* a, longNumber* b) {
         for(i = 0; i < a->len; ++i) {
             if(a->num[i] > b->num[i]) return GREATER;
             else if(a->num[i] < b->num[i]) return LESS;
-            
-            else return EQUAL;
         }
+
+        return EQUAL;
     }
 }
