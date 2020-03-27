@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../lib/MUL_Nk_N/MUL_Nk_N.h"
+#include "../../lib/MUL_NK_N/MUL_NK_N.h"
 
 char *multiplyBy10k(char *a ,int k)
 {
