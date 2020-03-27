@@ -14,6 +14,7 @@ void show_menu(){
     if (kind == NULL) return;
     
     //Array of function pointers
+	
     
     kind[0] = Natural_menu;
     kind[1] = Whole_menu;
@@ -66,14 +67,14 @@ void Natural_menu() {
 	if (kind == NULL) return;
 	kind[0] = menu_COM_NN;
 	kind[1] = menu_NZER_N_B;
-	kind[2] = menu_ADD_NN_D;
+	//kind[2] = menu_ADD_NN_D;
 	kind[3] = menu_ADD_NN_N;
 	kind[4] = menu_SUB_NN_N;
 	kind[5] = menu_MUL_ND_N;
 	kind[6] = menu_MUL_NK_N;
 	kind[7] = menu_MUL_NN_N;
-	kind[8] = menu_SUB_NDN_N;
-	kind[9] = menu_DIV_NN_DK;
+	//kind[8] = menu_SUB_NDN_N;
+	//kind[9] = menu_DIV_NN_DK;
 	//kind[10] = menu_DIV_NN_N;
 	//kind[11] = menu_MOD_NN_N;
 	//kind[12] = menu_GCF_NN_N;
