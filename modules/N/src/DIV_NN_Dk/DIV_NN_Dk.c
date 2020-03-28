@@ -14,13 +14,17 @@ int div_nn_dk(longNumber* a, longNumber* b, int k) {
     } else if(res == GREATER) {
         int l = 0, r = c->num[0];
 
-        int answer = 0;
-
-        while(compare(a, c) == GREATER) {
+        res = 0;
+        
+        while((compare(a, c) == GREATER) || (compare(a, c) == EQUAL)) {
             a = sub(a, c);
             res++;
         }
-
+        
+        while (res > 9){            
+            res = res/10;
+        }
+        
         return res;
     }
 }

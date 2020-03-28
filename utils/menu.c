@@ -25,7 +25,7 @@ void show_menu(){
     
     do {
         printf("Please choose type of number\n");
-		printf("1 - Natural+\n2 - Whole number\n3 - Rational\n4 - Polynomial\nPress '5' to exit from program\n");
+		printf("1 - Natural\n2 - Whole number\n3 - Rational\n4 - Polynomial\nPress '5' to exit from program\n");
         scanf("%d", &user_choice);
         system("cls");
     } while ((user_choice < 1) || (user_choice > 5));
@@ -42,14 +42,14 @@ void Natural_menu() {
     void (**kind)() = NULL;
     do{
     printf("The natural number menu:\n");
-    printf("A+ - Compare 2 numbers\n");
-	printf("B+ - Check number for zero\n");
+    printf("A - Compare 2 numbers\n");
+	printf("B - Check number for zero\n");
 	printf("C - Addition 1 to number\n");
-	printf("D+ - Addition 2 numbers\n");
-	printf("E+ - Subtraction 2 numbers\n");
-	printf("F+ - Multiplying number by digit\n");
-	printf("G+ - Multiplying number by 10^k\n");
-	printf("H+ - Multiplication 2 numbers\n");
+	printf("D - Addition 2 numbers\n");
+	printf("E - Subtraction 2 numbers\n");
+	printf("F - Multiplying number by digit\n");
+	printf("G - Multiplying number by 10^k\n");
+	printf("H - Multiplication 2 numbers\n");
 	printf("I - Subtraction from number other number, multiplied by a digit\n");
 	printf("J - Calculate the first digit of the division, multiplied by 10^k\n");
 	printf("K - Division of 2 numbers\n");

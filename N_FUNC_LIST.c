@@ -85,6 +85,7 @@ void menu_ADD_1N_N(){
 
     printf("Answer: ");
     printNumber(add_1n(a));
+    
     show_help();
 }
 
