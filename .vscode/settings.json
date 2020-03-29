@@ -8,6 +8,7 @@
         "mul_nd_n.h": "c",
         "test.h": "c",
         "mul_nk_n.h": "c",
-        "sub_nn_n.h": "c"
+        "sub_nn_n.h": "c",
+        "div_nn_dk.h": "c"
     }
 }
