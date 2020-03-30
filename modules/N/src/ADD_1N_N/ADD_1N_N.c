@@ -17,10 +17,12 @@ longNumber* add_1n(longNumber* number) {
 
     c->num[0]++;
 
-    for(i = 1; i < number->len - 1; ++i) {
-        if(number->num[i] >= BASE) {
-            number->num[i] -= BASE;
-            number->num[i+1]++;
+    for(i = 0; i < c->len - 1; ++i) {
+        c->num[i] += number->num[i];
+
+        if(c->num[i] >= BASE) {
+            c->num[i] -= BASE;
+            c->num[i + 1]++;
         }
     }
 
