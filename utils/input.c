@@ -63,40 +63,6 @@ char* getString() {
     return str;
 }
 
-void printNumber(longNumber* num) {
-    int i;
-
-    printf("%d", num->num[num->len - 1]);
-
-    if(num->len > 1) {
-        for(i = num->len - 2; i >= 0; --i) {
-            printf("%09d", num->num[i]);
-        }
-    }
-}
-
-/*char *toString(longNumber *a)
-{
-    int i,j=0,k;
-    char *res = NULL;
-    char buf[BLOCK_SIZE+1];
-
-    res = malloc((a->len * BLOCK_SIZE)*sizeof(char));
-    for(i = a->len - 1; i >= 0; i--){
-        sprintf(buf,"%d" ,a->num[i]);
-        if(buf[0] == '0'){
-            strcpy(buf,"000000000");
-        }
-        strncpy(res,buf,BLOCK_SIZE);
-        res= res + strlen(buf);
-        j+=strlen(buf);
-    }
-    res-=j;
-    res = realloc(res , (j+1)*sizeof(char));
-    res[j] = '\0';
-    return res;
-}*/
-
 char* toString(longNumber* number) {
     char* str = malloc(sizeof(char) * (number->len * BLOCK_SIZE + 1));
 

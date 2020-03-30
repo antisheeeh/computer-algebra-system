@@ -9,6 +9,15 @@
         "test.h": "c",
         "mul_nk_n.h": "c",
         "sub_nn_n.h": "c",
-        "div_nn_dk.h": "c"
-    }
+        "div_nn_dk.h": "c",
+        "number.h": "c",
+        "input.h": "c",
+        "abs_z_n.h": "c",
+        "com_nn_d.h": "c",
+        "add_1n_n.h": "c",
+        "menu.h": "c",
+        "memory.h": "c",
+        "z_func_list.h": "c"
+    },
+    "git.suggestSmartCommit": false
 }

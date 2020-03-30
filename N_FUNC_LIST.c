@@ -45,12 +45,12 @@ void menu_COM_NN(){
 
     longNumber* a = parseNumber(str);
     longNumber* b = parseNumber(str1);
-
+    
     int answer = compare(a, b);
     if(answer == GREATER) puts("The first number is greater than the second");
     else if(answer == LESS) puts("The first number is less than the second");
     else if(answer == EQUAL) puts("The first number is equal to the second");
-
+    
     clearString(str);
     clearString(str1);
     clearStruct(a);
@@ -78,13 +78,13 @@ void menu_NZER_N_B(){
 //Addition 1 to number
 
 void menu_ADD_1N_N(){
-    printf("Please enter a number");
+    printf("Please enter a number: ");
     char *str = getString();
 
     longNumber* a = parseNumber(str);
 
     printf("Answer: ");
-    printNumber(add_1n(a));
+    printf("%s",toString(add_1n(a)));
     
     show_help();
 }
@@ -102,7 +102,7 @@ void menu_ADD_NN_N(){
     longNumber* b = parseNumber(str1);
 
     printf("Answer: ");
-    printNumber(sum(a, b));
+    printf("%s",toString(sum(a, b)));
 
     clearString(str);
     clearString(str1);
@@ -125,7 +125,7 @@ void menu_SUB_NN_N(){
     longNumber* b = parseNumber(str1);
 
     printf("Answer: ");
-    printNumber(sub(a, b));
+    printf("%s",toString(sub(a, b)));
 
     clearString(str);
     clearString(str1);
@@ -147,7 +147,7 @@ void menu_MUL_ND_N(){
     longNumber* b = parseNumber(str1);
 
     printf("Answer: ");
-    printNumber(multiByDigit(a, b->num[0]));
+    printf("%s",toString(multiByDigit(a, b->num[0])));
 
     clearString(str);
     clearString(str1);
@@ -167,7 +167,7 @@ void menu_MUL_NK_N(){
     printf("Please enter 'k': ");
     scanf("%d", &k);
     printf("Answer: ");
-    puts(toString(multiplyBy10k(num, k)));
+    printf("%s",toString(multiplyBy10k(num, k)));
 
     clearStruct(num);
     clearString(a);
@@ -188,8 +188,7 @@ void menu_MUL_NN_N(){
     longNumber* b = parseNumber(str1);
 
     printf("Answer: ");
-    printNumber(multi(a, b));
-
+    printf("%s",toString(multi(a,b)));
     clearString(str);
     clearString(str1);
     clearStruct(a);

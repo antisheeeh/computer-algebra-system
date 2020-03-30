@@ -21,6 +21,8 @@
                 "${workspaceFolder}\\modules\\N\\src\\SUB_NDN_N\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\ADD_1N_N\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\DIV_NN_Dk\\*.c",
+                "${workspaceFolder}\\modules\\Z\\src\\ABS_Z_N\\*.c",
+                "${workspaceFolder}\\modules\\Z\\src\\POZ_Z_D\\*.c",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],
