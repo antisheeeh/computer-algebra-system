@@ -2,4 +2,4 @@
 
 #include "../../../N/lib/number.h"
 
-longNumber* absolute(longNumber* a);
+int check_sign(longNumber* a);

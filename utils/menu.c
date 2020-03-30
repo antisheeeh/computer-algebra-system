@@ -110,7 +110,7 @@ void Whole_menu() {
 	kind = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
 	if (kind == NULL) return;
 	kind[0] = menu_ABS_Z_N;
-	//kind[1] = menu_POZ_Z_D;
+	kind[1] = menu_POZ_Z_D;
 	//kind[2] = menu_MUL_ZM_Z;
 	//kind[3] = menu_TRANS_N_Z;
 	//kind[4] = menu_TRANS_Z_N;

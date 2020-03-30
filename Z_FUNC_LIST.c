@@ -9,8 +9,9 @@
 //#include "test.h"
 
 #include "modules\Z\lib\ABS_Z_N\ABS_Z_N.h"
-/*
+
 #include "modules/Z/lib/POZ_Z_D/POZ_Z_D.h"
+/*
 #include "modules/Z/lib/MUL_ZM_Z/MUL_ZM_Z.h"
 #include "modules/Z/lib/TRANS_N_Z/TRANS_N_Z.h"
 #include "modules/Z/lib/TRANS_Z_N/TRANS_Z_N.h"
@@ -22,44 +23,29 @@
 */
 #include "Z_FUNC_LIST.h"
 
-/*
-void show_help(){
-    int user_choice;
-    fflush(stdin);
-	printf("\nPress any key to continue...");
-	getchar();
-	system("cls");
-	do{
-	printf("Do you want back to start menu?\n1 - Yes\n2 - No\n");	
-	scanf("%d", &user_choice);
-	system("cls");
-	} while ((user_choice < 1) || (user_choice > 2));
-	if (user_choice == 1) show_menu();
-    else printf("Bye...");
-}
-
 //Absolute number
 
 
-*/
 void menu_ABS_Z_N(){
- 
-    int i;
-    printf("Please enter first number: ");
+    printf("Please enter a number: ");
     char* str = getString();
-    longNumber* a = parseNumber(str);   
-    printf("%d", absolute(a));
+    longNumber* a = parseNumber(str);
+    printf("Answer: ");
+    printf("%s", toString(absolute(a)));    
     show_help();
   
 }
-/*
+
 //Sign of number
 
 void menu_POZ_Z_D(){
-    
+    printf("Please enter a number: ");
+    char* str = getString();
+    longNumber* a = parseNumber(str);
+    printf("%d", check_sign(a));
     show_help();
 }
-
+/*
 //Change sign of number
 
 void menu_MUL_ZM_Z(){
