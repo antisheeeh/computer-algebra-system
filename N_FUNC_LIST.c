@@ -20,39 +20,51 @@
 
 #include "N_FUNC_LIST.h"
 
+#ifdef linux
+#define CLS system("clear")
+#else
+#define CLS system("cls")
+#endif
+
 void show_help(){
-    int user_choice;
-    fflush(stdin);
-	printf("\nPress any key to continue...");
+    int choice;
+
+	puts("\nPress any key to continue...");
 	getchar();
-	system("cls");
+	CLS;
+
 	do{
-	printf("Do you want back to start menu?\n1 - Yes\n2 - No\n");	
-	scanf("%d", &user_choice);
-	system("cls");
-	} while ((user_choice < 1) || (user_choice > 2));
-	if (user_choice == 1) show_menu();
-    else printf("Bye...");
+	    puts("Do you want back to start menu?\n1 - Yes\n2 - No");	
+	    scanf("%d", &choice);
+	    CLS;
+	} while (choice < 1 || choice > 2);
+
+	if (choice == 1) show_menu();
+    else puts("Bye...");
 }
 
 //Compare 2 numbers
 
 void menu_COM_NN(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
+    char* str;
 
+    puts("Please enter a first number");
+    str = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
+
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
     
-    int answer = compare(a, b);
-    if(answer == GREATER) puts("The first number is greater than the second");
-    else if(answer == LESS) puts("The first number is less than the second");
-    else if(answer == EQUAL) puts("The first number is equal to the second");
+    int res = compare(a, b);
+
+    puts("");
+    
+    if(res == GREATER) puts("The first number is greater than the second");
+    else if(res == LESS) puts("The first number is less than the second");
+    else if(res == EQUAL) puts("The first number is equal to the second");
     
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -62,15 +74,16 @@ void menu_COM_NN(){
 //Check number for zero
 
 void menu_NZER_N_B(){
-    printf("Please enter number: ");
+    puts("Please enter a number");
     char* str = getString();
-
     longNumber* a = parseNumber(str);
 
     int res = isZero(a);
 
-    if(res == YES) printf("Yes");
-    else if(res == NO) printf("No");
+    puts("");
+
+    if(res == YES) puts("The number is zero");
+    else if(res == NO) puts("The number is not zero");
 
     show_help();
 }
@@ -78,13 +91,14 @@ void menu_NZER_N_B(){
 //Addition 1 to number
 
 void menu_ADD_1N_N(){
-    printf("Please enter a number: ");
+    puts("Please enter a number");
     char *str = getString();
-
     longNumber* a = parseNumber(str);
 
-    printf("Answer: ");
-    printf("%s",toString(add_1n(a)));
+    puts("");
+
+    puts("Result");
+    puts(toString(add_1n(a)));
     
     show_help();
 }
@@ -93,19 +107,22 @@ void menu_ADD_1N_N(){
 //Addition 2 numbers
 
 void menu_ADD_NN_N(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
+    char* str;
 
+    puts("Please enter a first number");
+    str = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
 
-    printf("Answer: ");
-    printf("%s",toString(sum(a, b)));
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("");
+
+    puts("Result");
+    puts(toString(sum(a, b)));
 
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -116,19 +133,22 @@ void menu_ADD_NN_N(){
 //Subtraction 2 numbers
 
 void menu_SUB_NN_N(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
+    char* str;
 
+    puts("Please enter a first number");
+    str = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
 
-    printf("Answer: ");
-    printf("%s",toString(sub(a, b)));
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("");
+
+    puts("Result");
+    puts(toString(sub(a, b)));
 
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -138,19 +158,22 @@ void menu_SUB_NN_N(){
 //Multiplying number by digit
 
 void menu_MUL_ND_N(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
+    char* str;
 
+    puts("Please enter a first number");
+    str = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
 
-    printf("Answer: ");
-    printf("%s",toString(multiByDigit(a, b->num[0])));
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("");
+
+    puts("Result");
+    puts(toString(multiByDigit(a, b->num[0])));
 
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -161,13 +184,18 @@ void menu_MUL_ND_N(){
 
 void menu_MUL_NK_N(){
     int k;
-    printf("Please enter number: ");
+
+    puts("Please enter a number");
     char* a = getString();
     longNumber* num = parseNumber(a);
-    printf("Please enter 'k': ");
+
+    puts("Please enter a power of ten");
     scanf("%d", &k);
-    printf("Answer: ");
-    printf("%s",toString(multiplyBy10k(num, k)));
+
+    puts("");
+
+    puts("Result");
+    puts(toString(multiplyBy10k(num, k)));
 
     clearStruct(num);
     clearString(a);
@@ -179,18 +207,22 @@ void menu_MUL_NK_N(){
 //Multiplication 2 numbers
 
 void menu_MUL_NN_N(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
+    char* str;
 
+    puts("Please enter a first number");
+    str = getString();
     longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
 
-    printf("Answer: ");
-    printf("%s",toString(multi(a,b)));
+    printf("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("");
+
+    puts("Result");
+    puts(toString(multi(a, b)));
+
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -198,21 +230,26 @@ void menu_MUL_NN_N(){
 }
 
 void menu_DIV_NN_DK(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
-    printf("Please enter the power of ten: ");
+    char* str;
+
+    puts("Please enter a first number");
+    str = getString();
+    longNumber* a = parseNumber(str);
+
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("");
+
+    puts("Please enter a power of ten");
     int k;
     scanf("%d", &k);
 
-    longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
-
-    printf("Answer: %d", div_nn_dk(a, b, k));
+    puts("Result");
+    printf("%d", div_nn_dk(a, b, k));
 
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
@@ -220,21 +257,26 @@ void menu_DIV_NN_DK(){
 }
 
 void menu_SUB_NDN_N(){
-    printf("Please enter first number: ");
-    char* str = getString();
-    printf("Please enter second number: ");
-    char *str1 = getString();
-    printf("Please enter the digit: ");
+    char* str;
+
+    puts("Please enter a first number");
+    str = getString();
+    longNumber* a = parseNumber(str);
+
+    puts("Please enter a second number");
+    str = getString();
+    longNumber* b = parseNumber(str);
+
+    puts("Please enter a digit");
     int d;
     scanf("%d", &d);
 
-    longNumber* a = parseNumber(str);
-    longNumber* b = parseNumber(str1);
+    puts("");
 
-    printf("Answer: %d", sub_ndn(a, b, d));
+    puts("Answer");
+    printf("%d", sub_ndn(a, b, d));
 
     clearString(str);
-    clearString(str1);
     clearStruct(a);
     clearStruct(b);
 
