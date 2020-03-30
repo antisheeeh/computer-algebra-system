@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "../N_FUNC_LIST.h"
+#include "../Z_FUNC_LIST.h"
 #include "menu.h"
 
 #define NUMBER_OF_BLOCS 4
@@ -87,6 +88,9 @@ void Natural_menu() {
 }
 
 void Whole_menu() {
+	int c;
+    void (**kind)() = NULL;
+    do{
     printf("A - Absolute number\n");
 	printf("B - Sign of number\n");
 	printf("C - Change sign of number\n");
@@ -97,8 +101,29 @@ void Whole_menu() {
 	printf("H - Multiplication 2 numbers\n");
 	printf("I - Division 2 numbers\n");
 	printf("J - Calculate the remainder of division\n");
-	printf("Y - Back to start menu");
+	printf("K - Back to start menu\n");
 	printf("Enter your choose: ");
+	fflush(stdin);
+	c = getchar();
+	system("cls");
+	}while((c < 'A') || (c > 'K'));
+	kind = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
+	if (kind == NULL) return;
+	kind[0] = menu_ABS_Z_N;
+	//kind[1] = menu_POZ_Z_D;
+	//kind[2] = menu_MUL_ZM_Z;
+	//kind[3] = menu_TRANS_N_Z;
+	//kind[4] = menu_TRANS_Z_N;
+	//kind[5] = menu_ADD_ZZ_Z;
+	//kind[6] = menu_SUB_ZZ_Z;
+	//kind[7] = menu_MUL_ZZ_Z;
+	//kind[8] = menu_DIV_ZZ_Z;
+	//kind[9] = menu_MOD_ZZ_Z;
+	kind[10] = show_menu;
+	fflush(stdin);
+	kind[c-65]();
+	free(kind);
+	kind = NULL;
 }
 
 void Rational_menu() {
@@ -110,7 +135,7 @@ void Rational_menu() {
 	printf("F - Subtraction 2 numbers\n");
 	printf("G - Multiplication 2 numbers\n");
 	printf("H - Division 2 numbers\n");
-	printf("Y - Back to start menu\n");
+	printf("I - Back to start menu\n");
 	printf("Enter your choose: ");
 }
 
