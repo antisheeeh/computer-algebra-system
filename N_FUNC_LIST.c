@@ -20,12 +20,6 @@
 
 #include "N_FUNC_LIST.h"
 
-#ifdef linux
-#define CLS system("clear")
-#else
-#define CLS system("cls")
-#endif
-
 void show_help(){
     int choice;
 
@@ -39,8 +33,11 @@ void show_help(){
 	    CLS;
 	} while (choice < 1 || choice > 2);
 
-	if (choice == 1) show_menu();
-    else puts("Bye...");
+	if (choice == 1) {
+        show_menu();
+    } else {
+        puts("Bye...");
+    }
 }
 
 //Compare 2 numbers
