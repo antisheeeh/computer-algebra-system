@@ -17,7 +17,8 @@
         "add_1n_n.h": "c",
         "menu.h": "c",
         "memory.h": "c",
-        "z_func_list.h": "c"
+        "z_func_list.h": "c",
+        "stdlib.h": "c"
     },
     "git.suggestSmartCommit": false
 }

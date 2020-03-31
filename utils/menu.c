@@ -23,11 +23,11 @@ void show_menu(){
     //User choice
     
     do {
-        puts("Please choose type of number");
+    	puts("Please choose type of number");
 		puts("1 - Natural\n2 - Whole number\n3 - Rational\n4 - Polynomial\nPress '5' to exit from program");
 
-        scanf("%d", &choice);
-        CLS;
+    	scanf("%d", &choice);
+    	CLS;
     } while (choice < 1 || choice > 5);
 
 	if (choice == 5){
@@ -62,7 +62,7 @@ void Natural_menu() {
 		puts("O - Back to start menu");
 
 		puts("Enter your choose");
-		fflush(stdin);
+		
 		c = getchar();
 		CLS;
 	} while(c < 'A' || c > 'O');
@@ -107,8 +107,7 @@ void Whole_menu() {
 		puts("I - Division 2 numbers");
 		puts("J - Calculate the remainder of division");
 		puts("K - Back to start menu");
-		puts("Enter your choose: ");
-		fflush(stdin);
+		puts("Enter your choose: ");		
 
 		c = getchar();
 		CLS;

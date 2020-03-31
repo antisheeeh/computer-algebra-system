@@ -23,7 +23,6 @@
 void show_help(){
     int choice;
 
-    //fflush(stdin);
 	puts("\nPress any key to continue...");
 	getchar();
 	CLS;
@@ -213,6 +212,7 @@ void menu_MUL_NK_N(){
 
     puts("Please enter a power of ten");
     scanf("%d", &k);
+    getchar();
 
     puts("");
 
@@ -221,9 +221,10 @@ void menu_MUL_NK_N(){
     char* res = toString(c);
     puts(res);
 
-    clearStruct(num);
     clearString(a);
     clearString(res);
+
+    clearStruct(num);
     clearStruct(c);
 
     show_help();
@@ -276,6 +277,7 @@ void menu_DIV_NN_DK(){
     puts("Please enter a power of ten");
     int k;
     scanf("%d", &k);
+    getchar();
 
     puts("Result");
     int res = div_nn_dk(a, b, k);
@@ -289,8 +291,8 @@ void menu_DIV_NN_DK(){
     show_help();
 }
 
-void menu_SUB_NDN_N(){
-    char *str1, *str2;
+void menu_SUB_NDN_N() {
+    char *str1, *str2, *res = NULL;
 
     puts("Please enter a first number");
     str1 = getString();
@@ -303,17 +305,23 @@ void menu_SUB_NDN_N(){
     puts("Please enter a digit");
     int d;
     scanf("%d", &d);
+    getchar();
 
     puts("");
 
     puts("Answer");
-    longNumber* c = sub_ndn(a, b, d);
-    char* res = toString(c);
-    puts(res);
 
+    longNumber* c = sub_ndn(a, b, d);
+    if(c == NULL) puts("The result is negative");
+    else {
+         res = toString(c);
+        puts(res);
+    } 
+    
     clearString(str1);
     clearString(str2);
     clearString(res);
+    
     clearStruct(a);
     clearStruct(b);
     clearStruct(c);
