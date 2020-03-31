@@ -23,6 +23,7 @@
 void show_help(){
     int choice;
 
+    //fflush(stdin);
 	puts("\nPress any key to continue...");
 	getchar();
 	CLS;
