@@ -22,7 +22,7 @@ int div_nn_dk(longNumber* a, longNumber* b, int k) {
         }
         
         while (res > 9){            
-            res = res/10;
+            res /= 10;
         }
         
         return res;
