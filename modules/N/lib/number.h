@@ -12,4 +12,4 @@ second field - amount of ninths in number
 typedef struct {
     int* num;
     int len;
-} longNumber;
+} longNumberN;

@@ -8,8 +8,8 @@
 #include "../../../utils/lib/input.h"
 #include "../../../utils/lib/memory.h"
 
-longNumber* sub_ndn(longNumber* a, longNumber* b, int d) {
-    longNumber* temp = multiByDigit(b, d);
+longNumberN* sub_ndn(longNumberN* a, longNumberN* b, int d) {
+    longNumberN* temp = multiByDigit(b, d);
 
     if(compare(a, temp) == LESS) {
         clearStruct(temp);

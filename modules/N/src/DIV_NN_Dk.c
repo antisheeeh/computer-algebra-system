@@ -10,8 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-int div_nn_dk(longNumber* a, longNumber* b, int k) {
-    longNumber* c = multiplyBy10k(b, k);
+int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
+    longNumberN* c = multiplyBy10k(b, k);
     int res = compare(a, c);
 
     if(res == LESS) {
@@ -35,7 +35,7 @@ int div_nn_dk(longNumber* a, longNumber* b, int k) {
 
     strA[lenC] = '\0';
 
-    longNumber* t = parseNumber(strA);
+    longNumberN* t = parseNumber(strA);
 
     if(compare(t, c) == LESS) {
         strA[lenC] = temp;

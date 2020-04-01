@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "../../ui/lib/N_FUNC_LIST.h"
-#include "../../ui/lib/Z_FUNC_LIST.h"
+//#include "../../ui/lib/Z_FUNC_LIST.h"
 
 #include "../lib/menu.h"
 
@@ -32,7 +32,7 @@ void show_menu(){
     //Array of function pointers
     
     kind[0] = Natural_menu;
-    kind[1] = Whole_menu;
+    //kind[1] = Whole_menu;
     kind[2] = Rational_menu;
     kind[3] = Polynomial_menu;
     
@@ -109,7 +109,7 @@ void Natural_menu() {
 	free(kind);
 }
 
-void Whole_menu() {
+/*void Whole_menu() {
 	int c;
 
     do {
@@ -144,12 +144,12 @@ void Whole_menu() {
 	//kind[8] = menu_DIV_ZZ_Z;
 	//kind[9] = menu_MOD_ZZ_Z;
 	kind[10] = show_menu;
-	fflush(stdin);
+	getchar();
 
 	kind[c - 'A']();
 
 	free(kind);
-}
+}*/
 
 void Rational_menu() {
     puts("A - Reduction of fraction");

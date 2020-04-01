@@ -1,15 +1,16 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 #include "../../utils/lib/input.h"
 #include "../../utils/lib/memory.h"
 #include "../../utils/lib/menu.h"
-#include "../../modules/N/lib/number.h"
+#include "../../modules/Z/lib/number.h"
+*/
 
 //#include "test.h"
 
-#include "../../modules/Z/lib/ABS_Z_N.h"
-#include "../../modules/Z/lib/POZ_Z_D.h"
+/*#include "../../modules/Z/lib/ABS_Z_N.h"
+#include "../../modules/Z/lib/POZ_Z_D.h"*/
 /*
 #include "modules/Z/lib/MUL_ZM_Z/MUL_ZM_Z.h"
 #include "modules/Z/lib/TRANS_N_Z/TRANS_N_Z.h"
@@ -20,15 +21,15 @@
 #include "modules/Z/lib/DIV_ZZ_Z/DIV_ZZ_Z.h"
 #include "modules/Z/lib/MOD_ZZ_Z/MOD_ZZ_Z.h"
 */
-#include "../lib/Z_FUNC_LIST.h"
+//#include "../lib/Z_FUNC_LIST.h"
 
 //Absolute number
 
-
+/*
 void menu_ABS_Z_N(){
     printf("Please enter a number: ");
     char* str = getString();
-    longNumber* a = parseNumber(str);
+    longNumberZ* a = parseNumber(str);
     printf("Answer: ");
     printf("%s", toString(absolute(a)));    
     show_help();
@@ -40,8 +41,8 @@ void menu_ABS_Z_N(){
 void menu_POZ_Z_D(){
     printf("Please enter a number: ");
     char* str = getString();
-    longNumber* a = parseNumber(str);
-    printf("%d", check_sign(a));
+    longNumberZ* a = parseNumber(str);
+    printf("%d", getSign(a));
     show_help();
 }
 /*

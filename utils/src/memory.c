@@ -6,7 +6,7 @@ void clearString(char* str) {
     free(str);
 }
 
-void clearStruct(longNumber *number) {    
+void clearStruct(longNumberN *number) {    
     if (number != NULL){
         free(number->num);        
     }

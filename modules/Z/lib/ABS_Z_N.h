@@ -1,5 +1,5 @@
 #pragma once
 
-#include "../../N/lib/number.h"
+#include "number.h"
 
-longNumber* absolute(longNumber* a);
+longNumberZ* absolute(longNumberZ* number);

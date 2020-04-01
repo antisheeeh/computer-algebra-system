@@ -5,7 +5,7 @@
 
 #include "../lib/COM_NN_D.h"
 
-int compare(longNumber* a, longNumber* b) {
+int compare(longNumberN* a, longNumberN* b) {
     if(a->len > b->len) return GREATER;
     if(a->len < b->len) return LESS;
 

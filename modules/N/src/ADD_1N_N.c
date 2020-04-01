@@ -9,8 +9,8 @@
 #include "../../../utils/lib/input.h"
 #include "../../../utils/lib/memory.h"
 
-longNumber* inc(longNumber* number) {
-    longNumber* res = malloc(sizeof(longNumber));
+longNumberN* inc(longNumberN* number) {
+    longNumberN* res = malloc(sizeof(longNumberN));
 
     if(res == NULL) return NULL;
 

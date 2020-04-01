@@ -1,5 +1,9 @@
 #pragma once
 
-#include "../../N/lib/number.h"
+#include "number.h"
 
-int check_sign(longNumber* a);
+#define POSITIVE 2
+#define NEGATIVE 1
+#define ZERO 0
+
+int getSign(longNumberZ* number);

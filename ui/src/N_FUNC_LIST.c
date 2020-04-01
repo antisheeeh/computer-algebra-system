@@ -27,11 +27,11 @@ void menu_COM_NN(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
     
     int res = compare(a, b);
 
@@ -54,7 +54,7 @@ void menu_COM_NN(){
 void menu_NZER_N_B(){
     puts("Please enter a number");
     char* str = getString();
-    longNumber* a = parseNumber(str);
+    longNumberN* a = parseNumber(str);
 
     int res = isZero(a);
 
@@ -74,13 +74,13 @@ void menu_NZER_N_B(){
 void menu_ADD_1N_N(){
     puts("Please enter a number");
     char *str = getString();
-    longNumber* a = parseNumber(str);
+    longNumberN* a = parseNumber(str);
 
     puts("");
 
     puts("Result");
 
-    longNumber* c = inc(a);
+    longNumberN* c = inc(a);
     char* res = toString(c);
     puts(res);
 
@@ -100,16 +100,16 @@ void menu_ADD_NN_N(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("");
 
     puts("Result");
-    longNumber* c = sum(a, b);
+    longNumberN* c = sum(a, b);
     char* res = toString(c);
     puts(res);
 
@@ -131,16 +131,16 @@ void menu_SUB_NN_N(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("");
 
     puts("Result");
-    longNumber* c = sub(a, b);
+    longNumberN* c = sub(a, b);
     char* res = toString(c);
     puts(res);
 
@@ -161,16 +161,16 @@ void menu_MUL_ND_N(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("");
 
     puts("Result");
-    longNumber* c = multiByDigit(a, b->num[0]);
+    longNumberN* c = multiByDigit(a, b->num[0]);
     char* res = toString(c);
     puts(res);
 
@@ -191,7 +191,7 @@ void menu_MUL_NK_N(){
 
     puts("Please enter a number");
     char* a = getString();
-    longNumber* num = parseNumber(a);
+    longNumberN* num = parseNumber(a);
 
     puts("Please enter a power of ten");
     scanf("%d", &k);
@@ -200,7 +200,7 @@ void menu_MUL_NK_N(){
     puts("");
 
     puts("Result");
-    longNumber* c = multiplyBy10k(num, k);
+    longNumberN* c = multiplyBy10k(num, k);
     char* res = toString(c);
     puts(res);
 
@@ -221,16 +221,16 @@ void menu_MUL_NN_N(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("");
 
     puts("Result");
-    longNumber* c = multi(a, b);
+    longNumberN* c = multi(a, b);
     char* res = toString(c);
     puts(res);
 
@@ -249,11 +249,11 @@ void menu_DIV_NN_DK(){
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("");
 
@@ -279,11 +279,11 @@ void menu_SUB_NDN_N() {
 
     puts("Please enter a first number");
     str1 = getString();
-    longNumber* a = parseNumber(str1);
+    longNumberN* a = parseNumber(str1);
 
     puts("Please enter a second number");
     str2 = getString();
-    longNumber* b = parseNumber(str2);
+    longNumberN* b = parseNumber(str2);
 
     puts("Please enter a digit");
     int d;
@@ -294,7 +294,7 @@ void menu_SUB_NDN_N() {
 
     puts("Answer");
 
-    longNumber* c = sub_ndn(a, b, d);
+    longNumberN* c = sub_ndn(a, b, d);
     if(c == NULL) puts("The result is negative");
     else {
          res = toString(c);

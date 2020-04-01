@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-longNumber* sub_ndn(longNumber* a, longNumber* b, int d);
+longNumberN* sub_ndn(longNumberN* a, longNumberN* b, int d);

@@ -5,4 +5,4 @@
 #define YES 0
 #define NO 1
 
-int isZero(longNumber* a);
+int isZero(longNumberN* a);

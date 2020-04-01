@@ -3,4 +3,4 @@
 #include "../../modules/N/lib/number.h"
 
 void clearString(char* str);
-void clearStruct(longNumber *number);
+void clearStruct(longNumberN *number);

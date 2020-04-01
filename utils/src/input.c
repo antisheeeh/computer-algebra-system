@@ -4,14 +4,14 @@
 
 #include "../lib/input.h"
 
-void removeTrailingZeros(longNumber* number) {
+void removeTrailingZeros(longNumberN* number) {
     while(number->num[number->len - 1] == 0) number->len--;
     if(number->len == 0) number->len = 1;
     number->num = realloc(number->num, sizeof(int) * number->len);
 }
 
-longNumber* parseNumber(char* str) {
-    longNumber* number = malloc(sizeof(longNumber));
+longNumberN* parseNumber(char* str) {
+    longNumberN* number = malloc(sizeof(longNumberN));
 
     if(number == NULL) return NULL;
 
@@ -63,7 +63,7 @@ char* getString() {
     return str;
 }
 
-char* toString(longNumber* number) {
+char* toString(longNumberN* number) {
     char* str = malloc(sizeof(char) * (number->len * BLOCK_SIZE + 1));
 
     if(str == NULL) return NULL;

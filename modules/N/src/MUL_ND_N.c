@@ -5,8 +5,8 @@
 #include "../../../utils/lib/input.h"
 #include "../../../utils/lib/memory.h"
 
-longNumber* multiByDigit(longNumber* number, int digit) {
-    longNumber* c = malloc(sizeof(longNumber));
+longNumberN* multiByDigit(longNumberN* number, int digit) {
+    longNumberN* c = malloc(sizeof(longNumberN));
 
     if(c == NULL) return NULL;
 

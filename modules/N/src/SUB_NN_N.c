@@ -10,10 +10,10 @@
 #include "../../../utils/lib/input.h"
 #include "../../../utils/lib/memory.h"
 
-longNumber* sub(longNumber* a, longNumber* b) {
+longNumberN* sub(longNumberN* a, longNumberN* b) {
     if(compare(a, b) == LESS) return NULL;
 
-    longNumber* c = malloc(sizeof(longNumber));
+    longNumberN* c = malloc(sizeof(longNumberN));
 
     if(c == NULL) return NULL;
 

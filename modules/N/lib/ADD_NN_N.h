@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-longNumber* sum(longNumber* a, longNumber* b);
+longNumberN* sum(longNumberN* a, longNumberN* b);

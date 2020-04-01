@@ -9,8 +9,8 @@
 #include "../../../utils/lib/input.h"
 #include "../../../utils/lib/memory.h"
 
-longNumber* sum(longNumber* a, longNumber* b) {
-    longNumber* c = malloc(sizeof(longNumber));
+longNumberN* sum(longNumberN* a, longNumberN* b) {
+    longNumberN* c = malloc(sizeof(longNumberN));
 
     if(c == NULL) return NULL;
 

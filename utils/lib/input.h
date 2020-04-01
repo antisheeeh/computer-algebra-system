@@ -4,8 +4,8 @@
 
 #define BLOCK 128
 
-void removeTrailingZeros(longNumber* number);
+void removeTrailingZeros(longNumberN* number);
 char* getString();
-longNumber* parseNumber(char* str);
-void printNumber(longNumber* num);
-char *toString(longNumber *num);
+longNumberN* parseNumber(char* str);
+void printNumber(longNumberN* num);
+char *toString(longNumberN *num);
