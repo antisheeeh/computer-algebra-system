@@ -7,7 +7,8 @@
 
 #include "../../lib/SUB_NN_N/SUB_NN_N.h"
 #include "../../lib/COM_NN_D/COM_NN_D.h"
-#include "../../../../utils/input.h"
+#include "../../../../utils/lib/input.h"
+#include "../../../../utils/lib/memory.h"
 
 longNumber* sub(longNumber* a, longNumber* b) {
     if(compare(a, b) == LESS) return NULL;
@@ -19,11 +20,14 @@ longNumber* sub(longNumber* a, longNumber* b) {
     c->len = a->len;
     c->num = calloc(c->len, sizeof(int));
 
-    if(c->num == NULL) return NULL;
+    if(c->num == NULL) {
+        clearStruct(c);
+        return NULL;
+    }
 
-    int i;
+    for(int i = 0; i < c->len; ++i) {
+        c->num[i] += a->num[i];
 
-    for(i = 0; i < a->len; ++i) {
         if(i < b->len) {
             c->num[i] = a->num[i] - b->num[i];
         }

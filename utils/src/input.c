@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "input.h"
+#include "../lib/input.h"
 
 void removeTrailingZeros(longNumber* number) {
     while(number->num[number->len - 1] == 0) number->len--;

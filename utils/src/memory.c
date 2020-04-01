@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include "memory.h"
+
+#include "../lib/memory.h"
 
 void clearString(char* str) {
     free(str);

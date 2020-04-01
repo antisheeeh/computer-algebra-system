@@ -1,12 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../N_FUNC_LIST.h"
-#include "../Z_FUNC_LIST.h"
-#include "menu.h"
+#include "../../ui/lib/N_FUNC_LIST.h"
+#include "../../ui/lib/Z_FUNC_LIST.h"
 
-#define NUMBER_OF_BLOCS 4
-#define NUMBER_OF_NFUNC 15
+#include "../lib/menu.h"
+
+void show_help(){
+    int choice;
+
+	puts("\nPress any key to continue...");
+	getchar();
+	CLS;
+
+	do {
+	    puts("Do you want back to start menu?\n1 - Yes\n2 - No");	
+	    scanf("%d", &choice);
+	    CLS;
+	} while (choice < 1 || choice > 2);
+
+	if (choice == 1) {
+        show_menu();
+    }
+}
 
 void show_menu(){
 	int choice;	
@@ -85,7 +101,8 @@ void Natural_menu() {
 	//kind[12] = menu_GCF_NN_N;
 	//kind[13] = menu_LCM_NN_N;
 	kind[14] = show_menu;
-	fflush(stdin);
+	//fflush(stdin);
+	getchar();
 
 	kind[c - 'A']();
 

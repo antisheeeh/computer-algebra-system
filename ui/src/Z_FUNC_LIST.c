@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "utils/input.h"
-#include "utils/memory.h"
-#include "utils/menu.h"
-#include "modules/N/lib/number.h"
+#include "../../utils/lib/input.h"
+#include "../../utils/lib/memory.h"
+#include "../../utils/lib/menu.h"
+#include "../../modules/N/lib/number.h"
 
 //#include "test.h"
 
-#include "modules\Z\lib\ABS_Z_N\ABS_Z_N.h"
-
-#include "modules/Z/lib/POZ_Z_D/POZ_Z_D.h"
+#include "../../modules/Z/lib/ABS_Z_N/ABS_Z_N.h"
+#include "../../modules/Z/lib/POZ_Z_D/POZ_Z_D.h"
 /*
 #include "modules/Z/lib/MUL_ZM_Z/MUL_ZM_Z.h"
 #include "modules/Z/lib/TRANS_N_Z/TRANS_N_Z.h"
@@ -21,7 +20,7 @@
 #include "modules/Z/lib/DIV_ZZ_Z/DIV_ZZ_Z.h"
 #include "modules/Z/lib/MOD_ZZ_Z/MOD_ZZ_Z.h"
 */
-#include "Z_FUNC_LIST.h"
+#include "../lib/Z_FUNC_LIST.h"
 
 //Absolute number
 
