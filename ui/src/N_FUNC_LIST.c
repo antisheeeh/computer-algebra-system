@@ -7,16 +7,16 @@
 
 #include "../../modules/N/lib/number.h"
 
-#include "../../modules/N/lib/COM_NN_D/COM_NN_D.h"
-#include "../../modules/N/lib/NZER_N_B/NZER_N_B.h"
-#include "../../modules/N/lib/ADD_1N_N/ADD_1N_N.h"
-#include "../../modules/N/lib/ADD_NN_N/ADD_NN_N.h"
-#include "../../modules/N/lib/SUB_NN_N/SUB_NN_N.h"
-#include "../../modules/N/lib/MUL_ND_N/MUL_ND_N.h"
-#include "../../modules/N/lib/MUL_NK_N/MUL_NK_N.h"
-#include "../../modules/N/lib/MUL_NN_N/MUL_NN_N.h"
-#include "../../modules/N/lib/SUB_NDN_N/SUB_NDN_N.h"
-#include "../../modules/N/lib/DIV_NN_Dk/DIV_NN_Dk.h"
+#include "../../modules/N/lib/COM_NN_D.h"
+#include "../../modules/N/lib/NZER_N_B.h"
+#include "../../modules/N/lib/ADD_1N_N.h"
+#include "../../modules/N/lib/ADD_NN_N.h"
+#include "../../modules/N/lib/SUB_NN_N.h"
+#include "../../modules/N/lib/MUL_ND_N.h"
+#include "../../modules/N/lib/MUL_NK_N.h"
+#include "../../modules/N/lib/MUL_NN_N.h"
+#include "../../modules/N/lib/SUB_NDN_N.h"
+#include "../../modules/N/lib/DIV_NN_Dk.h"
 
 #include "../lib/N_FUNC_LIST.h"
 

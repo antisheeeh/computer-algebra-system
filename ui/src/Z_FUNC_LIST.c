@@ -8,8 +8,8 @@
 
 //#include "test.h"
 
-#include "../../modules/Z/lib/ABS_Z_N/ABS_Z_N.h"
-#include "../../modules/Z/lib/POZ_Z_D/POZ_Z_D.h"
+#include "../../modules/Z/lib/ABS_Z_N.h"
+#include "../../modules/Z/lib/POZ_Z_D.h"
 /*
 #include "modules/Z/lib/MUL_ZM_Z/MUL_ZM_Z.h"
 #include "modules/Z/lib/TRANS_N_Z/TRANS_N_Z.h"
