@@ -7,7 +7,7 @@
 
 #include "../lib/POZ_Z_D.h"
 
-longNumber* changeSign(longNumberZ* number) {
+longNumberZ* changeSign(longNumberZ* number) {
     number->num[number->len-1] *= -1;    
     return number;
 }

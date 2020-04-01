@@ -2,4 +2,4 @@
 
 #include "../../N/lib/number.h"
 
-longNumber* changeSign(longNumber* a);
+longNumberZ* changeSign(longNumberZ* a);

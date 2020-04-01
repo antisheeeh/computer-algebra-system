@@ -1,55 +1,64 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-#include "../../utils/lib/input.h"
-#include "../../utils/lib/memory.h"
-#include "../../utils/lib/menu.h"
+#include "../../modules/Z/utils/lib/input.h"
+#include "../../modules/N/utils/lib/memory.h"
+#include "../lib/menu.h"
 #include "../../modules/Z/lib/number.h"
-*/
 
-//#include "test.h"
+#include "../../modules/Z/lib/ABS_Z_N.h"
+#include "../../modules/Z/lib/POZ_Z_D.h"
+#include "../../modules/Z/lib/MUL_ZM_Z.h"
 
-/*#include "../../modules/Z/lib/ABS_Z_N.h"
-#include "../../modules/Z/lib/POZ_Z_D.h"*/
 /*
-#include "modules/Z/lib/MUL_ZM_Z/MUL_ZM_Z.h"
-#include "modules/Z/lib/TRANS_N_Z/TRANS_N_Z.h"
-#include "modules/Z/lib/TRANS_Z_N/TRANS_Z_N.h"
-#include "modules/Z/lib/ADD_ZZ_Z/ADD_ZZ_Z.h"
-#include "modules/Z/lib/SUB_ZZ_Z/SUB_ZZ_Z.h"
-#include "modules/Z/lib/MUL_ZZ_Z/MUL_ZZ_Z.h"
-#include "modules/Z/lib/DIV_ZZ_Z/DIV_ZZ_Z.h"
-#include "modules/Z/lib/MOD_ZZ_Z/MOD_ZZ_Z.h"
+#include "../../modules/Z/lib/TRANS_N_Z.h"
+#include "../../modules/Z/lib/TRANS_Z_N.h"
 */
-//#include "../lib/Z_FUNC_LIST.h"
+#include "../../modules/Z/lib/ADD_ZZ_Z.h"
+/*
+#include "modules/Z/lib/SUB_ZZ_Z.h"
+#include "../../modules/Z/lib/MUL_ZZ_Z.h"
+#include "../../modules/Z/lib/DIV_ZZ_Z.h"
+#include "../../modules/Z/lib/MOD_ZZ_Z.h"
+*/
+
+#include "../lib/Z_FUNC_LIST.h"
 
 //Absolute number
 
-/*
 void menu_ABS_Z_N() {
     printf("Please enter a number: ");
-    char* str = getString();
-    longNumberZ* a = parseNumber(str);
+    char* str = getStringZ();
+    longNumberZ* a = parseNumberZ(str);
     printf("Answer: ");
-    printf("%s", toString(absolute(a)));    
+    printf("%s", toStringZ(absolute(a)));    
     show_help();
   
 }
 
 //Sign of number
-
+/*
 void menu_POZ_Z_D() {
     printf("Please enter a number: ");
-    char* str = getString();
-    longNumberZ* a = parseNumber(str);
+    char* str = getStringZ();
+    longNumberZ* a = parseNumberZ(str);
     printf("%d", getSign(a));
     show_help();
 }
+
 /*
 //Change sign of number
 
 void menu_MUL_ZM_Z() {
+    puts("Please enter a number: ");
+    char* str = getString();
+    longNumber* a = parseNumber(str);
     
+    changeSign(a);
+    
+    //puts(toString(a));
+    int i;
+    for(i = a->len - 1; i >= 0; --i) printf("%d", a->num[i]);
     show_help();
 }
 

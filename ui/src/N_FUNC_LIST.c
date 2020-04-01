@@ -4,7 +4,6 @@
 #include "../../modules/N/utils/lib/input.h"
 #include "../../modules/N/utils/lib/memory.h"
 #include "../lib/menu.h"
-
 #include "../../modules/N/lib/number.h"
 
 #include "../../modules/N/lib/COM_NN_D.h"

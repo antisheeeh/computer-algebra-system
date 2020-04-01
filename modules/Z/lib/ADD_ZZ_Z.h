@@ -10,4 +10,4 @@
 #include "../../N/lib/ADD_NN_N.h"
 #include "../../N/lib/SUB_NN_N.h"
 
-longNumber* sumZ(longNumber* a, longNumber* b);
+longNumberZ* sumZ(longNumberZ* a, longNumberZ* b);
