@@ -7,8 +7,8 @@
 
 #include "../lib/SUB_NN_N.h"
 #include "../lib/COM_NN_D.h"
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* sub(longNumberN* a, longNumberN* b) {
     if(compare(a, b) == LESS) return NULL;

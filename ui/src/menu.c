@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../ui/lib/N_FUNC_LIST.h"
+#include "../lib/N_FUNC_LIST.h"
 //#include "../../ui/lib/Z_FUNC_LIST.h"
 
 #include "../lib/menu.h"

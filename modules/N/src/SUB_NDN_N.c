@@ -5,8 +5,8 @@
 #include "../lib/MUL_ND_N.h"
 #include "../lib/COM_NN_D.h"
 
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* sub_ndn(longNumberN* a, longNumberN* b, int d) {
     longNumberN* temp = multiByDigit(b, d);

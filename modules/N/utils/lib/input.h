@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../modules/N/lib/number.h"
+#include "../../lib/number.h"
 
 #define BLOCK 128
 

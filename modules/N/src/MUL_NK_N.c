@@ -4,8 +4,8 @@
 */
 
 #include "../lib/MUL_NK_N.h"
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 #include <stdlib.h>
 #include <string.h>

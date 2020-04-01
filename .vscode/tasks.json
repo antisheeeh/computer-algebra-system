@@ -10,10 +10,11 @@
             "args": [
                 "-g",
                 "${workspaceFolder}\\main.c",
-                "${workspaceFolder}\\utils\\src\\*.c",
-                "${workspaceFolder}\\ui\\src\\*.c",
                 "${workspaceFolder}\\modules\\N\\src\\*.c",
+                "${workspaceFolder}\\modules\\N\\utils\\src\\*.c",
                 "${workspaceFolder}\\modules\\Z\\src\\*.c",
+                "${workspaceFolder}\\modules\\Z\\utils\\src\\*.c",
+                "${workspaceFolder}\\ui\\src\\*.c",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],

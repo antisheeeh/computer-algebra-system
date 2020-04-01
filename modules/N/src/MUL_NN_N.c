@@ -5,8 +5,8 @@
 #include "../lib/ADD_NN_N.h"
 #include "../lib/MUL_NN_N.h"
 
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* multi(longNumberN* a, longNumberN* b) {
     if(a->len == 1) return multiByDigit(b, a->num[0]);

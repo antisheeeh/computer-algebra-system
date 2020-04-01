@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../utils/lib/input.h"
-#include "../../utils/lib/memory.h"
-#include "../../utils/lib/menu.h"
+#include "../../modules/N/utils/lib/input.h"
+#include "../../modules/N/utils/lib/memory.h"
+#include "../lib/menu.h"
 
 #include "../../modules/N/lib/number.h"
 

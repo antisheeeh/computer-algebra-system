@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 #include "../lib/MUL_ND_N.h"
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* multiByDigit(longNumberN* number, int digit) {
     longNumberN* c = malloc(sizeof(longNumberN));

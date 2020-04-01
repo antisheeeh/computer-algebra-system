@@ -6,8 +6,8 @@
 #include <stdlib.h>
 
 #include "../lib/ADD_NN_N.h"
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* sum(longNumberN* a, longNumberN* b) {
     longNumberN* c = malloc(sizeof(longNumberN));

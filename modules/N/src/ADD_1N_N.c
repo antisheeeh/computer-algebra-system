@@ -6,8 +6,8 @@
 #include <stdlib.h>
 
 #include "../lib/ADD_1N_N.h"
-#include "../../../utils/lib/input.h"
-#include "../../../utils/lib/memory.h"
+#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 longNumberN* inc(longNumberN* number) {
     longNumberN* res = malloc(sizeof(longNumberN));
