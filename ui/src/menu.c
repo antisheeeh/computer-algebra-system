@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../lib/N_FUNC_LIST.h"
-//#include "../../ui/lib/Z_FUNC_LIST.h"
+#include "../../ui/lib/N_FUNC_LIST.h"
+#include "../../ui/lib/Z_FUNC_LIST.h"
 
 #include "../lib/menu.h"
 
-void show_help(){
+void show_help() {
     int choice;
 
 	puts("\nPress any key to continue...");
@@ -24,7 +24,7 @@ void show_help(){
     }
 }
 
-void show_menu(){
+void show_menu() {
 	int choice;	
     void (**kind)() = malloc(NUMBER_OF_BLOCS * sizeof(void (*)()));
     if (kind == NULL) return;
@@ -32,7 +32,7 @@ void show_menu(){
     //Array of function pointers
     
     kind[0] = Natural_menu;
-    //kind[1] = Whole_menu;
+    kind[1] = Whole_menu;
     kind[2] = Rational_menu;
     kind[3] = Polynomial_menu;
     
@@ -109,7 +109,7 @@ void Natural_menu() {
 	free(kind);
 }
 
-/*void Whole_menu() {
+void Whole_menu() {
 	int c;
 
     do {
@@ -133,8 +133,8 @@ void Natural_menu() {
 	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
 	if (kind == NULL) return;
 
-	kind[0] = menu_ABS_Z_N;
-	kind[1] = menu_POZ_Z_D;
+	//kind[0] = menu_ABS_Z_N;
+	//kind[1] = menu_POZ_Z_D;
 	//kind[2] = menu_MUL_ZM_Z;
 	//kind[3] = menu_TRANS_N_Z;
 	//kind[4] = menu_TRANS_Z_N;
@@ -144,12 +144,12 @@ void Natural_menu() {
 	//kind[8] = menu_DIV_ZZ_Z;
 	//kind[9] = menu_MOD_ZZ_Z;
 	kind[10] = show_menu;
-	getchar();
+	fflush(stdin);
 
 	kind[c - 'A']();
 
 	free(kind);
-}*/
+}
 
 void Rational_menu() {
     puts("A - Reduction of fraction");

@@ -26,7 +26,7 @@
 //Absolute number
 
 /*
-void menu_ABS_Z_N(){
+void menu_ABS_Z_N() {
     printf("Please enter a number: ");
     char* str = getString();
     longNumberZ* a = parseNumber(str);
@@ -38,7 +38,7 @@ void menu_ABS_Z_N(){
 
 //Sign of number
 
-void menu_POZ_Z_D(){
+void menu_POZ_Z_D() {
     printf("Please enter a number: ");
     char* str = getString();
     longNumberZ* a = parseNumber(str);
@@ -48,56 +48,56 @@ void menu_POZ_Z_D(){
 /*
 //Change sign of number
 
-void menu_MUL_ZM_Z(){
+void menu_MUL_ZM_Z() {
     
     show_help();
 }
 
 //Translate natural to integer
 
-void menu_TRANS_N_Z(){
+void menu_TRANS_N_Z() {
     
     show_help();
 }
 
 //Translate integer to natural
 
-void menu_TRANS_Z_N(){
+void menu_TRANS_Z_N() {
     
     show_help();
 }
 
 //Addition 2 numbers
 
-void menu_ADD_ZZ_Z(){
+void menu_ADD_ZZ_Z() {
     
     show_help();
 }
 
 //Subtraction 2 numbers
 
-void menu_SUB_ZZ_Z(){
+void menu_SUB_ZZ_Z() {
     
     show_help();
 }
 
 //Multiplication 2 numbers
 
-void menu_MUL_ZZ_Z(){
+void menu_MUL_ZZ_Z() {
     
     show_help();
 }
 
 //Division 2 numbers
 
-void menu_DIV_ZZ_Z(){
+void menu_DIV_ZZ_Z() {
     
     show_help();
 }
 
 //Calculate the remainder of division
 
-void menu_MOD_ZZ_Z(){
+void menu_MOD_ZZ_Z() {
     
     show_help();
 }

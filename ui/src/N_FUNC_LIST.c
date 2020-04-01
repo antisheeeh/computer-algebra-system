@@ -22,7 +22,7 @@
 
 //Compare 2 numbers
 
-void menu_COM_NN(){
+void menu_COM_NN() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -51,7 +51,7 @@ void menu_COM_NN(){
 
 //Check number for zero
 
-void menu_NZER_N_B(){
+void menu_NZER_N_B() {
     puts("Please enter a number");
     char* str = getString();
     longNumberN* a = parseNumber(str);
@@ -71,7 +71,7 @@ void menu_NZER_N_B(){
 
 //Addition 1 to number
 
-void menu_ADD_1N_N(){
+void menu_ADD_1N_N() {
     puts("Please enter a number");
     char *str = getString();
     longNumberN* a = parseNumber(str);
@@ -95,7 +95,7 @@ void menu_ADD_1N_N(){
 
 //Addition 2 numbers
 
-void menu_ADD_NN_N(){
+void menu_ADD_NN_N() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -126,7 +126,7 @@ void menu_ADD_NN_N(){
 
 //Subtraction 2 numbers
 
-void menu_SUB_NN_N(){
+void menu_SUB_NN_N() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -156,7 +156,7 @@ void menu_SUB_NN_N(){
 
 //Multiplying number by digit
 
-void menu_MUL_ND_N(){
+void menu_MUL_ND_N() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -186,7 +186,7 @@ void menu_MUL_ND_N(){
 
 //Multiplying number by 10^k
 
-void menu_MUL_NK_N(){
+void menu_MUL_NK_N() {
     int k;
 
     puts("Please enter a number");
@@ -216,7 +216,7 @@ void menu_MUL_NK_N(){
 
 //Multiplication 2 numbers
 
-void menu_MUL_NN_N(){
+void menu_MUL_NN_N() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -244,7 +244,7 @@ void menu_MUL_NN_N(){
     show_help();
 }
 
-void menu_DIV_NN_DK(){
+void menu_DIV_NN_DK() {
     char *str1, *str2;
 
     puts("Please enter a first number");
@@ -317,25 +317,25 @@ void menu_SUB_NDN_N() {
 
 //Division of 2 numbers
 
-void menu_DIV_NN_N(){
+void menu_DIV_NN_N() {
 
 }
 
 //Calculate the remainder of division
 
-void menu_MOD_NN_N(){
+void menu_MOD_NN_N() {
 
 }
 
 //GCF of 2 numbers
 
-void menu_GCF_NN_N(){
+void menu_GCF_NN_N() {
 
 }
 
 //LCM of 2 numbers
 
-void menu_LCM_NN_N(){
+void menu_LCM_NN_N() {
 
 }
 
