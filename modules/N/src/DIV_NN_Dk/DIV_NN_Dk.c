@@ -17,7 +17,7 @@ int div_nn_dk(longNumber* a, longNumber* b, int k) {
     } else if(res == EQUAL) {
         return 1;
     } else if(res == GREATER) {
-        int l = 2, r = 9, m, lenC;
+        int d = 2, lenC;
 
         char* strA = toString(a);
         char* strC = toString(c);
@@ -31,27 +31,14 @@ int div_nn_dk(longNumber* a, longNumber* b, int k) {
         longNumber* t = parseNumber(strA);
 
         if(compare(t, c) == LESS) {
-            strA = realloc(strA, (lenC + 2) * sizeof(char));
             strA[lenC] = temp;
             strA[lenC + 1] = '\0';
+
+            t = parseNumber(strA);
         }
 
-        t = parseNumber(strA);
+        while(compare(t, multiByDigit(c, d)) != LESS) ++d;
 
-        while(l <= r) {
-            m = (l + r) / 2;
-
-            res = compare(t, multiByDigit(c, m));
-
-            if(res == LESS) {
-                r = m - 1;
-            } else if(res == GREATER) {
-                l = m + 1;
-            } else if(res == EQUAL) {
-                break;
-            }
-        }
-
-        return m;
+        return d - 1;
     }
 }

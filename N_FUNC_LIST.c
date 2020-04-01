@@ -97,14 +97,14 @@ void menu_ADD_1N_N(){
     puts("");
 
     puts("Result");
-    longNumber* c = add_1n(a);
-    char* res = toString(c);
+
+    inc(a);
+    char* res = toString(a);
     puts(res);
 
     clearString(str);
     clearString(res);
     clearStruct(a);
-    clearStruct(c);
     
     show_help();
 }

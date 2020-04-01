@@ -3,30 +3,23 @@
 #include "../../lib/ADD_1N_N/ADD_1N_N.h"
 #include "../../../../utils/input.h"
 
-longNumber* add_1n(longNumber* number) {
-    longNumber* c = malloc(sizeof(longNumber));
+longNumber* inc(longNumber* number) {
+    number->len++;
+    number->num = realloc(number->num, number->len * sizeof(int));
 
-    if(c == NULL) return NULL;
+    if(number->num == NULL) return NULL;
 
-    c->len = number->len + 1;
-    c->num = calloc(c->len, sizeof(int));
+    number->num[number->len - 1] = 0;
+    number->num[0]++;
 
-    if(c->num == NULL) return NULL;
-
-    int i;
-
-    c->num[0]++;
-
-    for(i = 0; i < c->len - 1; ++i) {
-        c->num[i] += number->num[i];
-
-        if(c->num[i] >= BASE) {
-            c->num[i] -= BASE;
-            c->num[i + 1]++;
+    for(int i = 0; i < number->len - 1; ++i) {
+        if(number->num[i] >= BASE) {
+            number->num[i] -= BASE;
+            number->num[i + 1]++;
         }
     }
 
-    removeTrailingZeros(c);
+    removeTrailingZeros(number);
 
-    return c;
+    return number;
 }

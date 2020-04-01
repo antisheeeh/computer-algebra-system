@@ -7,15 +7,12 @@
 
 int compare(longNumber* a, longNumber* b) {
     if(a->len > b->len) return GREATER;
-    else if(a->len < b->len) return LESS;
-    else {
-        int i;
+    if(a->len < b->len) return LESS;
 
-        for(i = 0; i < a->len; ++i) {
-            if(a->num[i] > b->num[i]) return GREATER;
-            else if(a->num[i] < b->num[i]) return LESS;
-        }
-
-        return EQUAL;
+    for(int i = a->len - 1; i >= 0; --i) {
+        if(a->num[i] > b->num[i]) return GREATER;
+        if(a->num[i] < b->num[i]) return LESS;
     }
+
+    return EQUAL;
 }
