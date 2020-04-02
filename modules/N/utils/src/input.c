@@ -18,9 +18,8 @@ longNumberN* parseNumber(char* str) {
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1], *ptr = str + len;
 
-
     number->len = (len + BLOCK_SIZE - 1) / BLOCK_SIZE;
-    number->num = malloc(sizeof(int) * number->len);
+    number->num = calloc(number->len, sizeof(int));
 
     if(number->num == NULL) return NULL;
 

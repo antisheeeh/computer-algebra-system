@@ -133,18 +133,18 @@ void Whole_menu() {
 	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
 	if (kind == NULL) return;
 
-	//kind[0] = menu_ABS_Z_N;
-	//kind[1] = menu_POZ_Z_D;
-	//kind[2] = menu_MUL_ZM_Z;
-	//kind[3] = menu_TRANS_N_Z;
-	//kind[4] = menu_TRANS_Z_N;
-	//kind[5] = menu_ADD_ZZ_Z;
-	//kind[6] = menu_SUB_ZZ_Z;
-	//kind[7] = menu_MUL_ZZ_Z;
+	kind[0] = menu_ABS_Z_N;
+	kind[1] = menu_POZ_Z_D;
+	kind[2] = menu_MUL_ZM_Z;
+	kind[3] = menu_TRANS_N_Z;
+	kind[4] = menu_TRANS_Z_N;
+	kind[5] = menu_ADD_ZZ_Z;
+	kind[6] = menu_SUB_ZZ_Z;
+	kind[7] = menu_MUL_ZZ_Z;
 	//kind[8] = menu_DIV_ZZ_Z;
 	//kind[9] = menu_MOD_ZZ_Z;
 	kind[10] = show_menu;
-	fflush(stdin);
+	getchar();
 
 	kind[c - 'A']();
 

@@ -1,5 +1,5 @@
 #pragma once
 
-#include "../../N/lib/number.h"
+#include "number.h"
 
 longNumberZ* changeSign(longNumberZ* a);

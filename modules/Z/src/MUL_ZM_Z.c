@@ -2,13 +2,17 @@
     author Valentin Pronin
     group 9305
 */
-/*
+
 #include <stdio.h>
 
-#include "../lib/POZ_Z_D.h"
+#include "../lib/MUL_ZM_Z.h"
 
 longNumberZ* changeSign(longNumberZ* number) {
-    number->num[number->len-1] *= -1;    
+    if(number->sign == PLUS) {
+        number->sign = MINUS;
+    } else if(number->sign == MINUS) {
+        number->sign = PLUS;
+    }
+    
     return number;
 }
-*/
