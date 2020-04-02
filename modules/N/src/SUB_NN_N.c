@@ -5,12 +5,12 @@
 
 #include <stdlib.h>
 
-#include "../lib/SUB_NN_N.h"
-#include "../lib/COM_NN_D.h"
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
-longNumberN* sub(longNumberN* a, longNumberN* b) {
+#include "../lib/SUB_NN_N.h"
+
+longNumberN* subN(longNumberN* a, longNumberN* b) {
     if(compare(a, b) == LESS) return NULL;
 
     longNumberN* c = malloc(sizeof(longNumberN));
@@ -21,7 +21,7 @@ longNumberN* sub(longNumberN* a, longNumberN* b) {
     c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) {
-        clearStruct(c);
+        clearStructN(c);
         return NULL;
     }
 
@@ -38,7 +38,7 @@ longNumberN* sub(longNumberN* a, longNumberN* b) {
         }
     }
 
-    removeTrailingZeros(c);
+    removeTrailingZerosN(c);
 
     return c;
 }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "../../lib/number.h"
+#include "../../lib/TRANS_Z_N.h"
+#include "../../../N/lib/NZER_N_B.h"
 
 #define BLOCK 128
 

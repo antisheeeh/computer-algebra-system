@@ -1,23 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-#include "../../modules/Z/utils/lib/input.h"
-#include "../../modules/N/utils/lib/input.h"
-
-#include "../../modules/Z/lib/number.h"
-#include "../../modules/N/lib/number.h"
 
 #include "../lib/menu.h"
+
+#include "../../modules/Z/utils/lib/input.h"
+#include "../../modules/Z/lib/number.h"
+
+#include "../../modules/Z/utils/lib/memory.h"
+#include "../../modules/N/utils/lib/memory.h"
+
+#include "../../modules/N/utils/lib/input.h"
+#include "../../modules/N/lib/number.h"
 
 #include "../../modules/Z/lib/ABS_Z_N.h"
 #include "../../modules/Z/lib/POZ_Z_D.h"
 #include "../../modules/Z/lib/MUL_ZM_Z.h"
 #include "../../modules/Z/lib/TRANS_N_Z.h"
 #include "../../modules/Z/lib/TRANS_Z_N.h"
-
 #include "../../modules/Z/lib/ADD_ZZ_Z.h"
 #include "../../modules/Z/lib/SUB_ZZ_Z.h"
-
 #include "../../modules/Z/lib/MUL_ZZ_Z.h"
 
 /*
@@ -36,7 +36,12 @@ void menu_ABS_Z_N() {
     longNumberZ* a = parseNumberZ(str);
     
     puts("Result");
-    puts(toStringZ(absolute(a)));
+    char* res = toStringZ(absolute(a));
+    puts(res);
+
+    clearStringZ(str);
+    clearStringZ(res);
+    clearStructZ(a);
 
     show_help();
 }
@@ -49,13 +54,16 @@ void menu_POZ_Z_D() {
 
     int res = getSign(a);
     
-    if(res == NEGATIVE) {
+    if(res == MINUS) {
         puts("The number is negative");
-    } else if(res == POSITIVE) {
+    } else if(res == PLUS) {
         puts("The number is positive");
-    } else if(res == ZERO) {
+    } else if(res == NEUTRAL) {
         puts("The number is zero");
     }
+
+    clearStringZ(str);
+    clearStructZ(a);
 
     show_help();
 }
@@ -71,7 +79,12 @@ void menu_MUL_ZM_Z() {
     changeSign(a);
     
     puts("Result");
-    puts(toStringZ(a));
+    char* res = toStringZ(a);
+    puts(res);
+
+    clearStringZ(str);
+    clearStringZ(res);
+    clearStructZ(a);
 
     show_help();
 }
@@ -81,13 +94,18 @@ void menu_MUL_ZM_Z() {
 void menu_TRANS_N_Z() {
     puts("Please enter a number");
 
-    char* str = getString();
-    longNumberN* a = parseNumber(str);
-    
-    longNumberZ* res = transNtoZ(a);
+    char* str = getStringN();
+    longNumberN* a = parseNumberN(str);
+    longNumberZ* b = transNtoZ(a);
     
     puts("Result");
-    puts(toStringZ(res));
+    char* res = toStringZ(b);
+    puts(res);
+
+    clearStringZ(str);
+    clearStringZ(res);
+    clearStructN(a);
+    clearStructZ(b);
 
     show_help();
 }
@@ -98,13 +116,19 @@ void menu_TRANS_N_Z() {
 void menu_TRANS_Z_N() {
     puts("Please enter a number");
 
-    char* str = getString();
+    char* str = getStringZ();
+
     longNumberZ* a = parseNumberZ(str);
-    
-    longNumberN* res = transZtoN(a);
+    longNumberN* b = transZtoN(a);
     
     puts("Result");
-    puts(toString(res));
+    char* res = toStringN(b);
+    puts(res);
+
+    clearStringZ(str);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructN(b);
 
     show_help();
 }
@@ -126,7 +150,16 @@ void menu_ADD_ZZ_Z() {
     puts("Result");
 
     longNumberZ* c = sumZ(a, b);
-    puts(toStringZ(c));
+    char* res = toStringZ(c);
+    puts(res);
+
+    clearStringZ(str1);
+    clearStringZ(str2);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructZ(b);
+    clearStructZ(c);
+
 
     show_help();
 }
@@ -148,7 +181,15 @@ void menu_SUB_ZZ_Z() {
     puts("Result");
 
     longNumberZ* c = subZ(a, b);
-    puts(toStringZ(c));
+    char* res = toStringZ(c);
+    puts(res);
+
+    clearStringZ(str1);
+    clearStringZ(str2);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructZ(b);
+    clearStructZ(c);
 
     show_help();
 }
@@ -170,7 +211,15 @@ void menu_MUL_ZZ_Z() {
     puts("Result");
 
     longNumberZ* c = multyZ(a, b);
-    puts(toStringZ(c));
+    char* res = toStringZ(c);
+    puts(res);
+
+    clearStringZ(str1);
+    clearStringZ(str2);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructZ(b);
+    clearStructZ(c);
 
     show_help();
 }

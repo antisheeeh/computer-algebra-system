@@ -43,6 +43,10 @@ longNumberZ* parseNumberZ(char* str) {
     }
 
     removeTrailingZerosZ(number);
+
+    if(isZero(transZtoN(number)) == YES) {
+        number->sign = NEUTRAL;
+    }
     
     return number;
 }

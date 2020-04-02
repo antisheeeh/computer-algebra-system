@@ -5,9 +5,10 @@
 
 #include <stdlib.h>
 
-#include "../lib/ADD_1N_N.h"
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
+
+#include "../lib/ADD_1N_N.h"
 
 longNumberN* inc(longNumberN* number) {
     longNumberN* res = malloc(sizeof(longNumberN));
@@ -18,7 +19,7 @@ longNumberN* inc(longNumberN* number) {
     res->num = calloc(res->len, sizeof(int));
 
     if(res->num == NULL) {
-        clearStruct(res);
+        clearStructN(res);
         return NULL;
     }
 
@@ -33,7 +34,7 @@ longNumberN* inc(longNumberN* number) {
         }
     }
 
-    removeTrailingZeros(res);
+    removeTrailingZerosN(res);
 
     return res;
 }

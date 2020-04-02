@@ -1,5 +1,6 @@
 #pragma once
 
 #include "number.h"
+#include "COM_NN_D.h"
 
-longNumberN* sub(longNumberN* a, longNumberN* b);
+longNumberN* subN(longNumberN* a, longNumberN* b);

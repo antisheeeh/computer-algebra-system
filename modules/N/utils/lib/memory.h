@@ -2,5 +2,5 @@
 
 #include "../../lib/number.h"
 
-void clearString(char* str);
-void clearStruct(longNumberN *number);
+void clearStringN(char* str);
+void clearStructN(longNumberN *number);

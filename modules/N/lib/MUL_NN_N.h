@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-longNumberN* multi(longNumberN* a, longNumberN* b);
+longNumberN* multiN(longNumberN* a, longNumberN* b);

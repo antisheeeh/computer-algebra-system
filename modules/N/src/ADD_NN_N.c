@@ -5,11 +5,12 @@
 
 #include <stdlib.h>
 
-#include "../lib/ADD_NN_N.h"
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
-longNumberN* sum(longNumberN* a, longNumberN* b) {
+#include "../lib/ADD_NN_N.h"
+
+longNumberN* sumN(longNumberN* a, longNumberN* b) {
     longNumberN* c = malloc(sizeof(longNumberN));
 
     if(c == NULL) return NULL;
@@ -20,7 +21,7 @@ longNumberN* sum(longNumberN* a, longNumberN* b) {
     c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) {
-        clearStruct(c);
+        clearStructN(c);
         return NULL;
     }
 
@@ -39,7 +40,7 @@ longNumberN* sum(longNumberN* a, longNumberN* b) {
         }
     }
 
-    removeTrailingZeros(c);
+    removeTrailingZerosN(c);
     
     return c;
 }

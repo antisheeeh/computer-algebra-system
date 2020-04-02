@@ -6,9 +6,12 @@ longNumberZ* multyZ(longNumberZ* a, longNumberZ* b) {
     longNumberN* aN = transZtoN(a);
     longNumberN* bN = transZtoN(b);
 
+    if(a->sign == NEUTRAL) return transNtoZ(aN);
+    if(b->sign == NEUTRAL) return transNtoZ(bN);
+
     if(a->sign != b->sign) {
-        return changeSign(transNtoZ(multi(aN, bN)));
+        return changeSign(transNtoZ(multiN(aN, bN)));
     } else {
-        return transNtoZ(multi(aN, bN));
+        return transNtoZ(multiN(aN, bN));
     }
 }

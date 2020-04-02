@@ -8,7 +8,7 @@
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
-longNumberN* multi(longNumberN* a, longNumberN* b) {
+longNumberN* multiN(longNumberN* a, longNumberN* b) {
     if(a->len == 1) return multiByDigit(b, a->num[0]);
     if(b->len == 1) return multiByDigit(a, b->num[0]);
         
@@ -20,7 +20,7 @@ longNumberN* multi(longNumberN* a, longNumberN* b) {
     c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) {
-        clearStruct(c);
+        clearStructN(c);
         return NULL;
     }
 
@@ -35,7 +35,7 @@ longNumberN* multi(longNumberN* a, longNumberN* b) {
         }
     }
 
-    removeTrailingZeros(c);
+    removeTrailingZerosN(c);
 
     return c;
 }

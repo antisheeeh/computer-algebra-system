@@ -5,6 +5,7 @@
 #define BASE 1000000000
 #define PLUS 0
 #define MINUS 1
+#define NEUTRAL 2
 
 typedef struct {
     int* num;

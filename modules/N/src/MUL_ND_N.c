@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "../lib/MUL_ND_N.h"
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
+
+#include "../lib/MUL_ND_N.h"
 
 longNumberN* multiByDigit(longNumberN* number, int digit) {
     longNumberN* c = malloc(sizeof(longNumberN));
@@ -14,7 +15,7 @@ longNumberN* multiByDigit(longNumberN* number, int digit) {
     c->num = calloc(c->len, sizeof(int));
 
     if(c->num == NULL) {
-        clearStruct(c);
+        clearStructN(c);
         return NULL;
     }
 
@@ -26,7 +27,7 @@ longNumberN* multiByDigit(longNumberN* number, int digit) {
         c->num[i + 1] += temp / BASE;
     }
 
-    removeTrailingZeros(c);
+    removeTrailingZerosN(c);
 
     return c;
 }

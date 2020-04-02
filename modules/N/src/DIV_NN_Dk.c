@@ -1,33 +1,34 @@
-#include "../lib/DIV_NN_Dk.h"
-#include "../lib/MUL_NK_N.h"
-#include "../lib/COM_NN_D.h"
-#include "../lib/MUL_ND_N.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../lib/MUL_NK_N.h"
+#include "../lib/COM_NN_D.h"
+#include "../lib/MUL_ND_N.h"
+
+#include "../lib/DIV_NN_Dk.h"
 
 int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
     longNumberN* c = multiplyBy10k(b, k);
     int res = compare(a, c);
 
     if(res == LESS) {
-        clearStruct(c);
+        clearStructN(c);
         return 0;
     }
 
     if(res == EQUAL) {
-        clearStruct(c);
+        clearStructN(c);
         return 1;
     }
 
     int d = 2, lenC;
 
-    char* strA = toString(a);
-    char* strC = toString(c);
+    char* strA = toStringN(a);
+    char* strC = toStringN(c);
     char temp;
 
     lenC = strlen(strC);
@@ -35,21 +36,21 @@ int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
 
     strA[lenC] = '\0';
 
-    longNumberN* t = parseNumber(strA);
+    longNumberN* t = parseNumberN(strA);
 
     if(compare(t, c) == LESS) {
         strA[lenC] = temp;
         strA[lenC + 1] = '\0';
 
-        t = parseNumber(strA);
+        t = parseNumberN(strA);
     }
 
     while(compare(t, multiByDigit(c, d)) != LESS) ++d;
 
-    clearStruct(c);
-    clearStruct(t);
-    clearString(strA);
-    clearString(strC);
+    clearStructN(c);
+    clearStructN(t);
+    clearStringN(strA);
+    clearStringN(strC);
 
     return d - 1;
 }

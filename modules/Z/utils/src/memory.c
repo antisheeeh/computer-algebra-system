@@ -2,11 +2,11 @@
 
 #include "../lib/memory.h"
 
-void clearStringN(char* str) {
+void clearStringZ(char* str) {
     free(str);
 }
 
-void clearStructN(longNumberN *number) {    
+void clearStructZ(longNumberZ* number) {
     if (number != NULL){
         free(number->num);        
     }
