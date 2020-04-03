@@ -3,7 +3,6 @@
     Group: 9305
 */
 
-#include <stdlib.h>
 #include <string.h>
 
 #include "../utils/lib/input.h"

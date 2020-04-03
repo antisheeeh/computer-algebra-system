@@ -4,7 +4,7 @@
 
 #define BLOCK 128
 
-void removeTrailingZerosN(longNumberN* number);
+void removeLeadingZerosN(longNumberN* number);
 char* getStringN();
 longNumberN* parseNumberN(char* str);
-char *toStringN(longNumberN *num);
+char* toStringN(longNumberN *num);

@@ -3,8 +3,6 @@
     group 9305
 */
 
-#include <stdlib.h>
-
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
@@ -12,7 +10,6 @@
 
 longNumberN* inc(longNumberN* number) {
     longNumberN* res = malloc(sizeof(longNumberN));
-
     if(res == NULL) return NULL;
 
     res->len = number->len + 1;
@@ -23,9 +20,11 @@ longNumberN* inc(longNumberN* number) {
         return NULL;
     }
 
+    int i;
+
     res->num[0]++;
 
-    for(int i = 0; i < res->len - 1; ++i) {
+    for(i = 0; i < res->len - 1; ++i) {
         res->num[i] += number->num[i];
 
         if(res->num[i] >= BASE) {
@@ -34,7 +33,7 @@ longNumberN* inc(longNumberN* number) {
         }
     }
 
-    removeTrailingZerosN(res);
+    removeLeadingZerosN(res);
 
     return res;
 }

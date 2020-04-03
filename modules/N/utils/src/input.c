@@ -4,19 +4,17 @@
 
 #include "../lib/input.h"
 
-void removeTrailingZerosN(longNumberN* number) {
-    while(number->num[number->len - 1] == 0) number->len--;
-    if(number->len == 0) number->len = 1;
-    number->num = realloc(number->num, sizeof(int) * number->len);
+void removeLeadingZerosN(longNumberN* number) {
+    while(number->len > 1 && number->num[number->len - 1] == 0) number->len--;
+    number->num = realloc(number->num, number->len * sizeof(int));
 }
 
 longNumberN* parseNumberN(char* str) {
     longNumberN* number = malloc(sizeof(longNumberN));
-
     if(number == NULL) return NULL;
 
     int i, len = strlen(str);
-    char buf[BLOCK_SIZE + 1], *ptr = str + len;
+    char buf[BLOCK_SIZE + 1];
 
     number->len = (len + BLOCK_SIZE - 1) / BLOCK_SIZE;
     number->num = calloc(number->len, sizeof(int));
@@ -24,66 +22,50 @@ longNumberN* parseNumberN(char* str) {
     if(number->num == NULL) return NULL;
 
     for(i = len; i > 0; i -= BLOCK_SIZE) {
-        if(i < BLOCK_SIZE){
-            strncpy(buf, ptr -= i , i);
-            buf[i] = '\0';
-            number->num[number->len-1] = atoi(buf);
-        } else {
-            strncpy(buf, ptr -= BLOCK_SIZE, BLOCK_SIZE);
-            buf[BLOCK_SIZE] = '\0'; 
-            number->num[number->len - (i + BLOCK_SIZE - 1) / BLOCK_SIZE] = atoi(buf);
-        }
+        str[i] = 0;
+        number->num[number->len - (i + BLOCK_SIZE - 1) / BLOCK_SIZE] = atoi(i < 9 ? str : str + i - BLOCK_SIZE);
     }
 
-    removeTrailingZerosN(number);
-    
+    removeLeadingZerosN(number);
+
     return number;
 }
 
 char* getStringN() {
-    int c, len;
+    int symb, len = 0;
     char* str = NULL;
 
-    for(len = 0; (c = getchar()) != '\n'; ++len) {
-        if(len % BLOCK == 0) {
-            str = realloc(str, sizeof(char) * (len + BLOCK));
+    str = malloc(BLOCK * sizeof(char));
+    if(str == NULL) return NULL;
+
+    for(len = 0; (symb = getchar()) != '\n'; ++len) {
+        if(len > 0 && len % BLOCK == 0) {
+            str = realloc(str, (len + BLOCK) * sizeof(char));
+            if(str == NULL) return NULL;
         }
 
-        if(str == NULL) {
-            return NULL;
-        } else {
-            str[len] = c;
-        }
+        str[len] = symb;
     }
 
-    str = realloc(str, sizeof(char) * (len + 1));
+    str = realloc(str, (len + 1) * sizeof(char));
     str[len] = '\0';
 
     return str;
 }
 
 char* toStringN(longNumberN* number) {
-    char* str = malloc(sizeof(char) * (number->len * BLOCK_SIZE + 1));
-
+    char* str = malloc((number->len * BLOCK_SIZE + 1) * sizeof(char));
     if(str == NULL) return NULL;
 
-    int i, num, pow, len = 0;
+    int i, len = 0;
 
-    for(i = number->len - 1; i >= 0; --i) {
-        num = number->num[i];
+    len += sprintf(str, "%d", number->num[number->len - 1]);
 
-        if(i == number->len - 1)  {
-            for(pow = 1; num /= 10; pow *= 10);
-        } else {
-            pow = BASE / 10;
-        }
-        
-        do str[len++] = number->num[i] / pow % 10 + '0'; while(pow /= 10);
+    for(i = number->len - 2; i >= 0; --i) {
+        len += sprintf(str + len, "%09d", number->num[i]);
     }
 
-    str[len] = '\0';
-
-    if(len != number->len * BLOCK_SIZE) str = realloc(str, sizeof(char) * (len + 1));
+    if(len != number->len * BLOCK_SIZE) str = realloc(str, (len + 1) * sizeof(char));
 
     return str;
 }

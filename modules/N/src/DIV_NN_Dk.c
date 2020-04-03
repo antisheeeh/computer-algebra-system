@@ -1,13 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
-
-#include "../lib/MUL_NK_N.h"
-#include "../lib/COM_NN_D.h"
-#include "../lib/MUL_ND_N.h"
 
 #include "../lib/DIV_NN_Dk.h"
 

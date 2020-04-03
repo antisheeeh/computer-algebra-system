@@ -3,8 +3,6 @@
     group 9305
 */
 
-#include <stdlib.h>
-
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
@@ -14,7 +12,6 @@ longNumberN* subN(longNumberN* a, longNumberN* b) {
     if(compare(a, b) == LESS) return NULL;
 
     longNumberN* c = malloc(sizeof(longNumberN));
-
     if(c == NULL) return NULL;
 
     c->len = a->len;
@@ -25,7 +22,9 @@ longNumberN* subN(longNumberN* a, longNumberN* b) {
         return NULL;
     }
 
-    for(int i = 0; i < c->len; ++i) {
+    int i;
+
+    for(i = 0; i < c->len; ++i) {
         c->num[i] += a->num[i];
 
         if(i < b->len) {
@@ -38,7 +37,7 @@ longNumberN* subN(longNumberN* a, longNumberN* b) {
         }
     }
 
-    removeTrailingZerosN(c);
+    removeLeadingZerosN(c);
 
     return c;
 }

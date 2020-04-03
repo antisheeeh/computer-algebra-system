@@ -294,11 +294,8 @@ void menu_SUB_NDN_N() {
     puts("Answer");
 
     longNumberN* c = sub_ndn(a, b, d);
-    if(c == NULL) puts("The result is negative");
-    else {
-         res = toStringN(c);
-        puts(res);
-    } 
+    res = toStringN(c);
+    puts(res);
     
     clearStringN(str1);
     clearStringN(str2);

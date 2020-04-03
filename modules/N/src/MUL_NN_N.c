@@ -1,12 +1,7 @@
-#include <stdlib.h>
-
-#include "../lib/MUL_ND_N.h"
-#include "../lib/MUL_NK_N.h"
-#include "../lib/ADD_NN_N.h"
-#include "../lib/MUL_NN_N.h"
-
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
+
+#include "../lib/MUL_NN_N.h"
 
 longNumberN* multiN(longNumberN* a, longNumberN* b) {
     if(a->len == 1) return multiByDigit(b, a->num[0]);
@@ -35,7 +30,7 @@ longNumberN* multiN(longNumberN* a, longNumberN* b) {
         }
     }
 
-    removeTrailingZerosN(c);
+    removeLeadingZerosN(c);
 
     return c;
 }
