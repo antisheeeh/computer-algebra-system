@@ -16,6 +16,7 @@
 #include "../../modules/N/lib/MUL_NN_N.h"
 #include "../../modules/N/lib/SUB_NDN_N.h"
 #include "../../modules/N/lib/DIV_NN_Dk.h"
+#include "../../modules/N/lib/DIV_NN_N.h"
 
 #include "../lib/N_FUNC_LIST.h"
 
@@ -308,15 +309,41 @@ void menu_SUB_NDN_N() {
     show_help();
 }
 
-/*
 //Subtraction from number other number, multiplied by a di
 
 //Division of 2 numbers
 
 void menu_DIV_NN_N() {
+    char *str1, *str2, *res = NULL;
 
+    puts("Please enter a first number");
+    str1 = getStringN();
+    longNumberN* a = parseNumberN(str1);
+
+    puts("Please enter a second number");
+    str2 = getStringN();
+    longNumberN* b = parseNumberN(str2);
+
+    puts("");
+    puts("Result");
+
+    longNumberN* c = divN(a, b);
+    res = toStringN(c);
+    puts(res);
+    
+    clearStringN(str1);
+    clearStringN(str2);
+    clearStringN(res);
+    
+    clearStructN(a);
+    clearStructN(b);
+    clearStructN(c);
+
+    show_help();
 }
 
+
+/*
 //Calculate the remainder of division
 
 void menu_MOD_NN_N() {
