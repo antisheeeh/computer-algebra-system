@@ -14,6 +14,5 @@ int isInt(longNumberQ *a)
     if((strcmp(toStringZ(a->numerator),toStringN(a->denominator))) == 0) return WHOLE;
     else return NONWHOLE;
     
-
     return 1;
 }

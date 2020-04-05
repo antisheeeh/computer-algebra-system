@@ -10,12 +10,10 @@ longNumberQ *zToQ(longNumberZ *a)
 {
     longNumberQ *res = NULL;
     res = malloc(sizeof(longNumberQ));
-    res->denominator = malloc(sizeof(longNumberN));
     if(res == NULL) return NULL;
 
-    
     res->numerator = a;
-    res->denominator = parseNumberN("1"); // Something wrong here with parseNumber
+    res->denominator = parseNumberN("1\0"); // Something wrong here with parseNumber
 
     return res;
 }
