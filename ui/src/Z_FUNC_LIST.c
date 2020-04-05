@@ -5,11 +5,11 @@
 #include "../../modules/Z/utils/lib/input.h"
 #include "../../modules/Z/lib/number.h"
 
-#include "../../modules/Z/utils/lib/memory.h"
-#include "../../modules/N/utils/lib/memory.h"
-
 #include "../../modules/N/utils/lib/input.h"
 #include "../../modules/N/lib/number.h"
+
+#include "../../modules/Z/utils/lib/memory.h"
+#include "../../modules/N/utils/lib/memory.h"
 
 #include "../../modules/Z/lib/ABS_Z_N.h"
 #include "../../modules/Z/lib/POZ_Z_D.h"

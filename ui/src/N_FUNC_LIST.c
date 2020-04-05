@@ -3,8 +3,9 @@
 #include "../lib/menu.h"
 
 #include "../../modules/N/utils/lib/input.h"
-#include "../../modules/N/utils/lib/memory.h"
 #include "../../modules/N/lib/number.h"
+
+#include "../../modules/N/utils/lib/memory.h"
 
 #include "../../modules/N/lib/COM_NN_D.h"
 #include "../../modules/N/lib/NZER_N_B.h"
