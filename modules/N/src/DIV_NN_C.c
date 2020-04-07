@@ -7,7 +7,7 @@
 #include <math.h>
 #include <string.h>
 #include "../lib/DIV_NN_N.h"
-
+/*
 void div_nn_n(longNumberN *a , longNumberN *b)
 {
     int i=0;
@@ -23,3 +23,4 @@ void div_nn_n(longNumberN *a , longNumberN *b)
         i++;
     }
 }
+*/

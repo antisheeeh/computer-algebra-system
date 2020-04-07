@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "P_FUNC_LIST.C": "cpp",
+        "number.h": "c",
+        "input.h": "c"
+    }
+}

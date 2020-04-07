@@ -2,8 +2,8 @@
 
 #include "../lib/memory.h"
 
-void clearStringN(char* str) {
-    free(str);
+void clearStringN(char* string) {
+    free(string);
 }
 
 void clearStructN(longNumberN *number) {    

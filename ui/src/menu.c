@@ -152,32 +152,85 @@ void Whole_menu() {
 }
 
 void Rational_menu() {
-    puts("A - Reduction of fraction");
-	puts("B - Check for integer");
-	puts("C - Translate integer to rational");
-	puts("D - Translate rational to integer");
-	puts("E - Addition 2 numbers");
-	puts("F - Subtraction 2 numbers");
-	puts("G - Multiplication 2 numbers");
-	puts("H - Division 2 numbers");
-	puts("I - Back to start menu");
-	puts("Enter your choose");
+	int c;
+	do{
+		puts("A - Reduction of fraction");
+		puts("B - Check for integer");
+		puts("C - Translate integer to rational");
+		puts("D - Translate rational to integer");
+		puts("E - Addition 2 numbers");
+		puts("F - Subtraction 2 numbers");
+		puts("G - Multiplication 2 numbers");
+		puts("H - Division 2 numbers");
+		puts("I - Back to start menu");
+		puts("Enter your choose");
+
+		c = getchar();
+		CLS;
+	} while(c < 'A'|| c > 'I');
+
+	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
+	if (kind == NULL) return;
+	/*
+	kind[0] = menu_RED_Q_Q();
+	kind[1] = menu_INT_Q_B();
+	kind[2] = menu_TRANS_Z_Q();
+	kind[3] = menu_TRANS_Q_Z();
+	kind[4] = menu_ADD_QQ_Q();
+	kind[5] = menu_SUB_QQ_Q();
+	kind[6] = menu_MUL_QQ_Q();
+	kind[7] = menu_DIV_QQ_Q();
+	*/
+	kind[8] = show_menu;	
+	getchar();
+
+	kind[c - 'A']();
+
+	free(kind);
 }
 
 void Polynomial_menu() {	
-	puts("A - Addition 2 polinomials");
-	puts("B - Subtraction 2 polinomials");
-	puts("C - Multiply polinomial by rational number");
-	puts("D - Multiply polinomial by x^k");
-	puts("E - Leading coefficient of polynomial");
-	puts("F - Highest degree of the polynomial");
-	puts("G - The derivation of a coefficient from a polynomial");
-	puts("H - Multiplication 2 polinomials");
-	puts("I - Division 2 polinomials");
-	puts("J - Calculate the remainder of division 2 polinomials");
-	puts("K - GCF of 2 polinomials");
-	puts("L - Derivative of polinomial");
-	puts("M - Multiple roots in simple");
-	puts("Y - Back to start menu");
-	puts("Enter your choose");
+	int c;
+	do{
+		puts("A - Addition 2 polinomials");
+		puts("B - Subtraction 2 polinomials");
+		puts("C - Multiply polinomial by rational number");
+		puts("D - Multiply polinomial by x^k");
+		puts("E - Leading coefficient of polynomial");
+		puts("F - Highest degree of the polynomial");
+		puts("G - The derivation of a coefficient from a polynomial");
+		puts("H - Multiplication 2 polinomials");
+		puts("I - Division 2 polinomials");
+		puts("J - Calculate the remainder of division 2 polinomials");
+		puts("K - GCF of 2 polinomials");
+		puts("L - Derivative of polinomial");
+		puts("M - Multiple roots in simple");
+		puts("N - Back to start menu");
+		puts("Enter your choose");
+		c = getchar();
+		CLS;
+	} while(c < 'A'|| c > 'Y');
+
+	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
+	if (kind == NULL) return;
+	/*
+	kind[0] = menu_ADD_PP_P();
+	kind[1] = menu_SUB_PP_P();
+	kind[2] = menu_MUL_PQ_P();
+	kind[3] = menu_MUL_Pxk_P();
+	kind[4] = menu_LED_L_Q();
+	kind[5] = menu_DEG_P_N();
+	kind[6] = menu_FAC_P_Q();
+	kind[7] = menu_MUL_PP_P();
+	kind[8] = menu_DIV_PP_P();
+	kind[9] = menu_MOD_PP_P();
+	kind[10] = menu_GCF_PP_P();
+	kind[11] = menu_DER_P_P();
+	kind[12] = menu_NMR_P_P();
+	*/
+	kind[13] = show_menu;
+	getchar();
+	kind[c - 'A']();
+
+	free(kind);
 }
