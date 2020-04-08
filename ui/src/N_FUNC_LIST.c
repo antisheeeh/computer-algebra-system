@@ -18,6 +18,8 @@
 #include "../../modules/N/lib/SUB_NDN_N.h"
 #include "../../modules/N/lib/DIV_NN_Dk.h"
 #include "../../modules/N/lib/DIV_NN_N.h"
+#include "../../modules/N/lib/MOD_NN_N.h"
+#include "../../modules/N/lib/GCF_NN_N.h"
 
 #include "../lib/N_FUNC_LIST.h"
 
@@ -341,18 +343,64 @@ void menu_DIV_NN_N() {
     show_help();
 }
 
-
-/*
-//Calculate the remainder of division
-
 void menu_MOD_NN_N() {
+    char *str1, *str2, *res = NULL;
 
+    puts("Please enter a first number");
+    str1 = getStringN();
+    longNumberN* a = parseNumberN(str1);
+
+    puts("Please enter a second number");
+    str2 = getStringN();
+    longNumberN* b = parseNumberN(str2);
+
+    puts("");
+    puts("Result");
+
+    longNumberN* c = modN(a, b);
+    res = toStringN(c);
+    puts(res);
+    
+    clearStringN(str1);
+    clearStringN(str2);
+    clearStringN(res);
+    
+    clearStructN(a);
+    clearStructN(b);
+    clearStructN(c);
+
+    show_help();
 }
 
 //GCF of 2 numbers
 
 void menu_GCF_NN_N() {
+    char *str1, *str2, *res = NULL;
 
+    puts("Please enter a first number");
+    str1 = getStringN();
+    longNumberN* a = parseNumberN(str1);
+
+    puts("Please enter a second number");
+    str2 = getStringN();
+    longNumberN* b = parseNumberN(str2);
+
+    puts("");
+    puts("Result");
+
+    longNumberN* c = gcfN(a, b);
+    res = toStringN(c);
+    puts(res);
+    
+    clearStringN(str1);
+    clearStringN(str2);
+    clearStringN(res);
+    
+    clearStructN(a);
+    clearStructN(b);
+    clearStructN(c);
+
+    show_help();
 }
 
 //LCM of 2 numbers
@@ -360,5 +408,3 @@ void menu_GCF_NN_N() {
 void menu_LCM_NN_N() {
 
 }
-
-*/

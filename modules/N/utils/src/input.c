@@ -55,6 +55,16 @@ void swapN(longNumberN* to, longNumberN* from) {
     from = t;
 }
 
+void assign(longNumberN* to, longNumberN* from) {
+    to->len = from->len;
+    to = realloc(to, to->len * sizeof(longNumberN));
+
+    int i;
+    for(i = 0; i < to->len; ++i) {
+        to->num[i] = from->num[i];
+    }
+}
+
 longNumberN* cutN(longNumberN* a, longNumberN* b) {
     longNumberN* cut = malloc(sizeof(longNumberN));
     
