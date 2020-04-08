@@ -50,8 +50,10 @@ void menu_TRANS_Z_Q()
     puts("Enter whole number:");
     str1 = getStringZ();
     longNumberZ *a = parseNumberZ(str1);
-
+    
     res = transZtoQ(a);
+
+    printf("New rational is: %s / %s\n",toStringZ(res->numerator) , toStringN(res->denominator));
 
     clearStructQ(res);
     clearStringQ(str1);
@@ -72,8 +74,7 @@ void menu_TRANS_Q_Z()
     str2 = getStringN();
     a->denominator = parseNumberN(str2);
 
-    if((strcmp(toStringN(a->denominator),"1\0")) == 0) res = transeQtoZ(a);
-    else puts("The denominator is not 1!");
+    res = transQtoZ(a);
 
     puts("Transformed Rational:");
     puts(toStringZ(res));
@@ -183,6 +184,11 @@ void menu_ADD_QQ_Q(){
     clearStringQ(str3);
     clearStringQ(str2);
     clearStringQ(str4);
+
+    clearStructQ(a);
+    clearStructQ(b);
+    clearStructQ(c);
+
     show_help();
 }
 
@@ -215,5 +221,10 @@ void menu_SUB_QQ_Q(){
     clearStringQ(str3);
     clearStringQ(str2);
     clearStringQ(str4);
+
+    clearStructQ(a);
+    clearStructQ(b);
+    clearStructQ(c);
+
     show_help();
 }

@@ -7,11 +7,13 @@
 
 #include "../lib/TRANS_Z_Q.h"
 
-longNumberQ* transeZtoQ(longNumberZ* a) {
+longNumberQ* transZtoQ(longNumberZ* a) {
     longNumberQ* res = malloc(sizeof(longNumberQ));
 
     res->numerator = a;
-    res->denominator = parseNumberN("1");
+    res->denominator = malloc(sizeof(longNumberN));
+    res->denominator->len = 1;
+    res->denominator->num[0] = 1;
 
     return res;
 }
