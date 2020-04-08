@@ -28,7 +28,7 @@ longNumberN* subN(longNumberN* a, longNumberN* b) {
         c->num[i] += a->num[i];
 
         if(i < b->len) {
-            c->num[i] = a->num[i] - b->num[i];
+            c->num[i] -= b->num[i];
         }
 
         if(c->num[i] < 0) {

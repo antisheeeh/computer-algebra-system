@@ -256,8 +256,6 @@ void menu_DIV_NN_DK() {
     str2 = getStringN();
     longNumberN* b = parseNumberN(str2);
 
-    puts("");
-
     puts("Please enter a power of ten");
     int k;
     scanf("%d", &k);

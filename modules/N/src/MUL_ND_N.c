@@ -1,3 +1,8 @@
+/*
+    author Kirill Konoplev
+    group 9305
+*/
+
 #include <stdio.h>
 
 #include "../utils/lib/input.h"

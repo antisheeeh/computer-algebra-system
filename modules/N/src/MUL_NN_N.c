@@ -1,3 +1,8 @@
+/*
+    author Kirill Konoplev
+    group 9305
+*/
+
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 

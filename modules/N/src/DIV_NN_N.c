@@ -1,3 +1,8 @@
+/*
+    author Kirill Konoplev
+    group 9305
+*/
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,19 +13,20 @@
 
 longNumberN* divN(longNumberN* a, longNumberN* b) {
     longNumberN* res = malloc(sizeof(longNumberN));
+    res->len = a->len - b->len + 1;
 
-    res->len = a->len;
-    res->num = calloc(res->len, sizeof(int));
-
-    int i = 0, j;
-
-    for(i = res->len - 1; compare(a, b) != LESS; --i) {
-        for(j = res->len - 1; j > 0; --j) res->num[j] = res->num[j - 1];
-        res->num[0] = div_nn_dk(a, b, 0);
-        a = subN(a, multiplyBy10k(multiByDigit(b, res->num[0]), i * BLOCK_SIZE));
+    if(compare(a, multiplyBy10k(b, (res->len - 1) * BLOCK_SIZE)) == LESS) {
+        res->len--;
     }
 
-    removeLeadingZerosN(res);
+    res->num = malloc(res->len * sizeof(int));
+
+    int i;
+
+    for(i = res->len - 1; i >= 0; --i) {
+        res->num[i] = div_nn_dk(a, b, i * BLOCK_SIZE);
+        a = sub_ndn(a, multiplyBy10k(b, i * BLOCK_SIZE), res->num[i]);
+    }
 
     return res;
 }
