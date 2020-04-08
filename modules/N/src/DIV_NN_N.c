@@ -3,11 +3,7 @@
     group 9305
 */
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-#include "../utils/lib/input.h"
+#include "../utils/lib/memory.h"
 
 #include "../lib/DIV_NN_N.h"
 

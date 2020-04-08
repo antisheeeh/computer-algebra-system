@@ -1,15 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+
+#include "../lib/memory.h"
 
 #include "../lib/input.h"
-#include "../../lib/COM_NN_D.h"
-
-int power(int a, int b) {
-    int res = 1;
-    while(b--) res *= a;
-    return res;
-}
 
 void removeLeadingZerosN(longNumberN* number) {
     while(number->len > 1 && number->num[number->len - 1] == 0) number->len--;
@@ -38,23 +32,6 @@ longNumberN* parseNumberN(char* str) {
     return number;
 }
 
-longNumberN* addDigit(longNumberN* number, int digit) {
-    number->len++;
-    number->num = realloc(number->num, number->len * sizeof(int));
-    
-    int i;
-    for(i = number->len - 1; i > 0; --i) number->num[i] = number->num[i - 1];
-    number->num[0] = digit;
-
-    return number;
-}
-
-void swapN(longNumberN* to, longNumberN* from) {
-    longNumberN* t = to;
-    to = from;
-    from = t;
-}
-
 void assign(longNumberN* to, longNumberN* from) {
     to->len = from->len;
     to = realloc(to, to->len * sizeof(longNumberN));
@@ -63,39 +40,6 @@ void assign(longNumberN* to, longNumberN* from) {
     for(i = 0; i < to->len; ++i) {
         to->num[i] = from->num[i];
     }
-}
-
-longNumberN* cutN(longNumberN* a, longNumberN* b) {
-    longNumberN* cut = malloc(sizeof(longNumberN));
-    
-    cut->len = b->len;
-    cut->num = malloc(cut->len * sizeof(int));
-
-    int i, len = 0;
-
-    for(i = a->len - b->len; i < a->len; ++i) {
-        cut->num[len++] = a->num[i];
-    }
-
-    if(compare(cut, b) == LESS) {
-        addDigit(cut, a->num[a->len - b->len - 1]);
-    }
-
-    return cut;
-}
-
-longNumberN* digitToNumber(int digit) {
-    longNumberN* number = malloc(sizeof(longNumberN));
-    if(number == NULL) return NULL;
-
-    number->len = 1;
-    number->num = malloc(number->len * sizeof(int));
-
-    if(number->num == NULL) return NULL;
-
-    number->num[0] = digit;
-
-    return number;
 }
 
 char* getStringN() {

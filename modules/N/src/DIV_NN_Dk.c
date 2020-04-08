@@ -3,12 +3,6 @@
     group 9305
 */
 
-#include <stdio.h>
-#include <string.h>
-
-#include "../utils/lib/input.h"
-#include "../utils/lib/memory.h"
-
 #include "../lib/DIV_NN_Dk.h"
 
 int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
