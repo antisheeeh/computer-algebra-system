@@ -3,6 +3,7 @@
 
 #include "../../ui/lib/N_FUNC_LIST.h"
 #include "../../ui/lib/Z_FUNC_LIST.h"
+#include "../../ui/lib/Q_FUNC_LIST.h"
 
 #include "../lib/menu.h"
 
@@ -170,16 +171,16 @@ void Rational_menu() {
 
 	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
 	if (kind == NULL) return;
-	/*
-	kind[0] = menu_RED_Q_Q();
-	kind[1] = menu_INT_Q_B();
-	kind[2] = menu_TRANS_Z_Q();
-	kind[3] = menu_TRANS_Q_Z();
-	kind[4] = menu_ADD_QQ_Q();
-	kind[5] = menu_SUB_QQ_Q();
-	kind[6] = menu_MUL_QQ_Q();
-	kind[7] = menu_DIV_QQ_Q();
-	*/
+	
+	//kind[0] = menu_RED_Q_Q();
+	kind[1] = menu_INT_Q;
+	kind[2] = menu_TRANS_Z_Q;
+	kind[3] = menu_TRANS_Q_Z;
+	kind[4] = menu_ADD_QQ_Q;
+	kind[5] = menu_SUB_QQ_Q;
+	kind[6] = menu_MUL_QQ_Q;
+	kind[7] = menu_DIV_QQ_Q;
+	
 	kind[8] = show_menu;	
 	getchar();
 

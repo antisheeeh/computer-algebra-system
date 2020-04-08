@@ -16,7 +16,7 @@ longNumberQ *mulQ(longNumberQ *a, longNumberQ *b)
     if(res == NULL) return NULL;
 
     res->numerator = multyZ(a->numerator,b->numerator);
-    res->denominator = transZtoN(multyZ(transNtoZ(a->denominator),transNtoZ(b->denominator)));
+    res->denominator = transZtoN(multyZ(transNtoZ(a->denominator), transNtoZ(b->denominator)));
 
     return res;
 }

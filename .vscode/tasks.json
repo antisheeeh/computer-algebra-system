@@ -12,6 +12,8 @@
                 "${workspaceFolder}\\modules\\N\\utils\\src\\*.c",
                 "${workspaceFolder}\\modules\\Z\\src\\*.c",
                 "${workspaceFolder}\\modules\\Z\\utils\\src\\*.c",
+                "${workspaceFolder}\\modules\\Q\\src\\*.c",
+                "${workspaceFolder}\\modules\\Q\\utils\\src\\*.c",
                 "${workspaceFolder}\\ui\\src\\*.c",
                 "-o",
                 "${workspaceFolder}\\main.exe"
