@@ -19,11 +19,9 @@
 #include "../../modules/Z/lib/ADD_ZZ_Z.h"
 #include "../../modules/Z/lib/SUB_ZZ_Z.h"
 #include "../../modules/Z/lib/MUL_ZZ_Z.h"
-
-/*
 #include "../../modules/Z/lib/DIV_ZZ_Z.h"
 #include "../../modules/Z/lib/MOD_ZZ_Z.h"
-*/
+
 
 #include "../lib/Z_FUNC_LIST.h"
 
@@ -224,19 +222,61 @@ void menu_MUL_ZZ_Z() {
     show_help();
 }
 
-/*
 
 //Division 2 numbers
 
 void menu_DIV_ZZ_Z() {
-    
+    puts("Please enter a first number");
+    char* str1 = getStringZ();
+    longNumberZ* a = parseNumberZ(str1);
+
+    puts("Please enter a second number");
+    char* str2 = getStringZ();
+    longNumberZ* b = parseNumberZ(str2);
+
+    puts("");
+
+    puts("Result");
+
+    longNumberZ* c = divZ(a, b);
+    char* res = toStringZ(c);
+    puts(res);
+
+    clearStringZ(str1);
+    clearStringZ(str2);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructZ(b);
+    clearStructZ(c);
+
     show_help();
 }
 
 //Calculate the remainder of division
 
 void menu_MOD_ZZ_Z() {
-    
+    puts("Please enter a first number");
+    char* str1 = getStringZ();
+    longNumberZ* a = parseNumberZ(str1);
+
+    puts("Please enter a second number");
+    char* str2 = getStringZ();
+    longNumberZ* b = parseNumberZ(str2);
+
+    puts("");
+
+    puts("Result");
+
+    longNumberZ* c = modZ(a, b);
+    char* res = toStringZ(c);
+    puts(res);
+
+    clearStringZ(str1);
+    clearStringZ(str2);
+    clearStringZ(res);
+    clearStructZ(a);
+    clearStructZ(b);
+    clearStructZ(c);
+
     show_help();
 }
-*/

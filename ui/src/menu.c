@@ -99,9 +99,8 @@ void Natural_menu() {
 	kind[10] = menu_DIV_NN_N;
 	kind[11] = menu_MOD_NN_N;
 	kind[12] = menu_GCF_NN_N;
-	//kind[13] = menu_LCM_NN_N;
+	kind[13] = menu_LCM_NN_N;
 	kind[14] = show_menu;
-	//fflush(stdin);
 	getchar();
 
 	kind[c - 'A']();
@@ -141,8 +140,8 @@ void Whole_menu() {
 	kind[5] = menu_ADD_ZZ_Z;
 	kind[6] = menu_SUB_ZZ_Z;
 	kind[7] = menu_MUL_ZZ_Z;
-	//kind[8] = menu_DIV_ZZ_Z;
-	//kind[9] = menu_MOD_ZZ_Z;
+	kind[8] = menu_DIV_ZZ_Z;
+	kind[9] = menu_MOD_ZZ_Z;
 	kind[10] = show_menu;
 	getchar();
 

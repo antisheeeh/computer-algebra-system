@@ -20,6 +20,7 @@
 #include "../../modules/N/lib/DIV_NN_N.h"
 #include "../../modules/N/lib/MOD_NN_N.h"
 #include "../../modules/N/lib/GCF_NN_N.h"
+#include "../../modules/N/lib/LCM_NN_N.h"
 
 #include "../lib/N_FUNC_LIST.h"
 
@@ -398,7 +399,6 @@ void menu_GCF_NN_N() {
     
     clearStructN(a);
     clearStructN(b);
-    clearStructN(c);
 
     show_help();
 }
@@ -406,5 +406,29 @@ void menu_GCF_NN_N() {
 //LCM of 2 numbers
 
 void menu_LCM_NN_N() {
+    char *str1, *str2, *res = NULL;
 
+    puts("Please enter a first number");
+    str1 = getStringN();
+    longNumberN* a = parseNumberN(str1);
+
+    puts("Please enter a second number");
+    str2 = getStringN();
+    longNumberN* b = parseNumberN(str2);
+
+    puts("");
+    puts("Result");
+
+    longNumberN* c = lcmN(a, b);
+    res = toStringN(c);
+    puts(res);
+    
+    clearStringN(str1);
+    clearStringN(str2);
+    clearStringN(res);
+    
+    clearStructN(a);
+    clearStructN(b);
+
+    show_help();
 }

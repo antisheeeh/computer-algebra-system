@@ -8,7 +8,7 @@ void clearStringN(char* string) {
 
 void clearStructN(longNumberN *number) {    
     if (number != NULL){
-        free(number->num);        
+        free(number->num);
     }
 
     free(number);
