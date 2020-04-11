@@ -3,7 +3,7 @@
 #include "number.h"
 
 #include "DIV_NN_Dk.h"
-#include "MUL_Nk_N.h"
+#include "MUL_NK_N.h"
 #include "SUB_NN_N.h"
 #include "MUL_ND_N.h"
 #include "ADD_NN_N.h"

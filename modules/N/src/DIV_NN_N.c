@@ -9,11 +9,16 @@
 
 longNumberN* divN(longNumberN* a, longNumberN* b) {
     longNumberN* res = malloc(sizeof(longNumberN));
-    res->len = a->len - b->len + 1;
+    
+    res->len = a->len - b->len;
 
-    if(compare(a, multiplyBy10k(b, (res->len - 1) * BLOCK_SIZE)) == LESS) {
+    if(res->len < 1) res->len = 1; 
+
+    if(compare(a, multiplyBy10k(b, res->len * BLOCK_SIZE)) == LESS) {
         res->len--;
     }
+
+    res->len++;
 
     res->num = malloc(res->len * sizeof(int));
 
