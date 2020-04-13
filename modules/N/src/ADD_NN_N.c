@@ -10,17 +10,11 @@
 
 longNumberN* sumN(longNumberN* a, longNumberN* b) {
     longNumberN* c = malloc(sizeof(longNumberN));
-    if(c == NULL) return NULL;
 
     if(a->len > b->len) c->len = a->len + 1;
     else c->len = b->len + 1;
 
     c->num = calloc(c->len, sizeof(int));
-
-    if(c->num == NULL) {
-        clearStructN(c);
-        return NULL;
-    }
 
     int i;
 
@@ -35,7 +29,7 @@ longNumberN* sumN(longNumberN* a, longNumberN* b) {
 
         if(c->num[i] >= BASE) {
             c->num[i] -= BASE;
-            c->num[i+1]++;
+            c->num[i + 1]++;
         }
     }
 

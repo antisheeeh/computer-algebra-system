@@ -10,24 +10,15 @@
 
 #include "../lib/MUL_NK_N.h"
 
-longNumberN* multiplyBy10k(longNumberN* number, int k) {
-    char* str = toStringN(number);
-    int len = strlen(str);
-    char* temp = malloc((len + k + 1) * sizeof(char));
+longNumberN* multiBy10k(longNumberN* number, int k) {
+    longNumberN* res = malloc(sizeof(longNumberN));
 
-    if(temp == NULL) {
-        clearStringN(str);
-        return NULL;
+    res->len = number->len + k;
+    res->num = calloc(res->len, sizeof(int));
+
+    for(int i = k; i < res->len; ++i) {
+        res->num[i] = number->num[i - k];
     }
-
-    strcpy(temp, str);
-    for(int i = 0; i < k; ++i) temp[i + len] = '0';
-    temp[len + k] = '\0';
-
-    longNumberN* res = parseNumberN(temp);
-
-    clearStringN(str);
-    clearStringN(temp);
 
     return res;
 }

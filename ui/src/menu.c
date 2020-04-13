@@ -7,6 +7,18 @@
 
 #include "../lib/menu.h"
 
+#ifdef linux
+#define CLS system("clear")
+#else
+#define CLS system("cls")
+#endif
+
+void (*menu[NUMBER_OF_BLOCS])();
+void (*natural[NUMBER_OF_NFUNC])();
+void (*whole[NUMBER_OF_ZFUNC])();
+void (*rational[NUMBER_OF_QFUNC])();
+void (*polynomial[NUMBER_OF_PFUNC])();
+
 void show_help() {
     int choice;
 
@@ -27,17 +39,6 @@ void show_help() {
 
 void show_menu() {
 	int choice;	
-    void (**kind)() = malloc(NUMBER_OF_BLOCS * sizeof(void (*)()));
-    if (kind == NULL) return;
-    
-    //Array of function pointers
-    
-    kind[0] = Natural_menu;
-    kind[1] = Whole_menu;
-    kind[2] = Rational_menu;
-    kind[3] = Polynomial_menu;
-    
-    //User choice
     
     do {
     	puts("Please choose type of number");
@@ -50,11 +51,8 @@ void show_menu() {
 	if (choice == 5){
 		CLS;
 	} else {
-		kind[choice - 1]();
+		menu[choice - 1]();
 	}
-
-	free(kind);
-	kind = NULL;
 }
 
 void Natural_menu() {	
@@ -84,29 +82,14 @@ void Natural_menu() {
 		CLS;
 	} while(c < 'A' || c > 'O');
 
-	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
-	if (kind == NULL) return;
-
-	kind[0] = menu_COM_NN;
-	kind[1] = menu_NZER_N_B;
-	kind[2] = menu_ADD_1N_N;
-	kind[3] = menu_ADD_NN_N;
-	kind[4] = menu_SUB_NN_N;
-	kind[5] = menu_MUL_ND_N;
-	kind[6] = menu_MUL_NK_N;
-	kind[7] = menu_MUL_NN_N;
-	kind[8] = menu_SUB_NDN_N;
-	kind[9] = menu_DIV_NN_DK;
-	kind[10] = menu_DIV_NN_N;
-	kind[11] = menu_MOD_NN_N;
-	kind[12] = menu_GCF_NN_N;
-	kind[13] = menu_LCM_NN_N;
-	kind[14] = show_menu;
 	getchar();
 
-	kind[c - 'A']();
-
-	free(kind);
+	if(c - 'A' == 14) {
+		show_menu();
+	} else {
+		natural[c - 'A']();
+		show_help();
+	}
 }
 
 void Whole_menu() {
@@ -130,25 +113,14 @@ void Whole_menu() {
 		CLS;
 	} while(c < 'A'|| c > 'K');
 
-	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
-	if (kind == NULL) return;
-
-	kind[0] = menu_ABS_Z_N;
-	kind[1] = menu_POZ_Z_D;
-	kind[2] = menu_MUL_ZM_Z;
-	kind[3] = menu_TRANS_N_Z;
-	kind[4] = menu_TRANS_Z_N;
-	kind[5] = menu_ADD_ZZ_Z;
-	kind[6] = menu_SUB_ZZ_Z;
-	kind[7] = menu_MUL_ZZ_Z;
-	kind[8] = menu_DIV_ZZ_Z;
-	kind[9] = menu_MOD_ZZ_Z;
-	kind[10] = show_menu;
 	getchar();
 
-	kind[c - 'A']();
-
-	free(kind);
+	if(c - 'A' == 10) {
+		show_menu();
+	} else {
+		whole[c - 'A']();
+		show_help();
+	}
 }
 
 void Rational_menu() {
@@ -169,29 +141,20 @@ void Rational_menu() {
 		CLS;
 	} while(c < 'A'|| c > 'I');
 
-	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
-	if (kind == NULL) return;
-	
-	//kind[0] = menu_RED_Q_Q();
-	kind[1] = menu_INT_Q;
-	kind[2] = menu_TRANS_Z_Q;
-	kind[3] = menu_TRANS_Q_Z;
-	kind[4] = menu_ADD_QQ_Q;
-	kind[5] = menu_SUB_QQ_Q;
-	kind[6] = menu_MUL_QQ_Q;
-	kind[7] = menu_DIV_QQ_Q;
-	
-	kind[8] = show_menu;	
 	getchar();
 
-	kind[c - 'A']();
-
-	free(kind);
+	if(c - 'A' == 8) {
+		show_menu();
+	} else {
+		rational[c - 'A']();
+		show_help();
+	}
 }
 
 void Polynomial_menu() {	
 	int c;
-	do{
+
+	do {
 		puts("A - Addition 2 polinomials");
 		puts("B - Subtraction 2 polinomials");
 		puts("C - Multiply polinomial by rational number");
@@ -207,30 +170,88 @@ void Polynomial_menu() {
 		puts("M - Multiple roots in simple");
 		puts("N - Back to start menu");
 		puts("Enter your choose");
+
 		c = getchar();
 		CLS;
-	} while(c < 'A'|| c > 'Y');
+	} while(c < 'A'|| c > 'N');
 
-	void (**kind)() = malloc(NUMBER_OF_NFUNC * sizeof(void(*)()));
-	if (kind == NULL) return;
-	/*
-	kind[0] = menu_ADD_PP_P();
-	kind[1] = menu_SUB_PP_P();
-	kind[2] = menu_MUL_PQ_P();
-	kind[3] = menu_MUL_Pxk_P();
-	kind[4] = menu_LED_L_Q();
-	kind[5] = menu_DEG_P_N();
-	kind[6] = menu_FAC_P_Q();
-	kind[7] = menu_MUL_PP_P();
-	kind[8] = menu_DIV_PP_P();
-	kind[9] = menu_MOD_PP_P();
-	kind[10] = menu_GCF_PP_P();
-	kind[11] = menu_DER_P_P();
-	kind[12] = menu_NMR_P_P();
-	*/
-	kind[13] = show_menu;
 	getchar();
-	kind[c - 'A']();
 
-	free(kind);
+	if(c - 'A' == 13) {
+		show_menu();
+	} else {
+		polynomial[c - 'A']();
+		show_help();
+	}
+}
+
+void init() {
+	initMenu();
+	initNatural();
+	initRational();
+	initPolynomial();
+}
+
+void initMenu() {
+	menu[0] = Natural_menu;
+    menu[1] = Whole_menu;
+    menu[2] = Rational_menu;
+    menu[3] = Polynomial_menu;
+}
+
+void initNatural() {
+	natural[0] = menu_COM_NN;
+	natural[1] = menu_NZER_N_B;
+	natural[2] = menu_ADD_1N_N;
+	natural[3] = menu_ADD_NN_N;
+	natural[4] = menu_SUB_NN_N;
+	natural[5] = menu_MUL_ND_N;
+	natural[6] = menu_MUL_NK_N;
+	natural[7] = menu_MUL_NN_N;
+	natural[8] = menu_SUB_NDN_N;
+	natural[9] = menu_DIV_NN_DK;
+	natural[10] = menu_DIV_NN_N;
+	natural[11] = menu_MOD_NN_N;
+	natural[12] = menu_GCF_NN_N;
+	natural[13] = menu_LCM_NN_N;
+}
+
+void initWhole() {
+	whole[0] = menu_ABS_Z_N;
+	whole[1] = menu_POZ_Z_D;
+	whole[2] = menu_MUL_ZM_Z;
+	whole[3] = menu_TRANS_N_Z;
+	whole[4] = menu_TRANS_Z_N;
+	whole[5] = menu_ADD_ZZ_Z;
+	whole[6] = menu_SUB_ZZ_Z;
+	whole[7] = menu_MUL_ZZ_Z;
+	whole[8] = menu_DIV_ZZ_Z;
+	whole[9] = menu_MOD_ZZ_Z;
+}
+
+void initRational() {
+	rational[0] = menu_RED_QQ_Q;
+	rational[1] = menu_INT_Q;
+	rational[2] = menu_TRANS_Z_Q;
+	rational[3] = menu_TRANS_Q_Z;
+	rational[4] = menu_ADD_QQ_Q;
+	rational[5] = menu_SUB_QQ_Q;
+	rational[6] = menu_MUL_QQ_Q;
+	rational[7] = menu_DIV_QQ_Q;
+}
+
+void initPolynomial() {
+	/*polynomial[0] = menu_ADD_PP_P;
+	polynomial[1] = menu_SUB_PP_P;
+	polynomial[2] = menu_MUL_PQ_P;
+	polynomial[3] = menu_MUL_Pxk_P;
+	polynomial[4] = menu_LED_L_Q;
+	polynomial[5] = menu_DEG_P_N;
+	polynomial[6] = menu_FAC_P_Q;
+	polynomial[7] = menu_MUL_PP_P;
+	polynomial[8] = menu_DIV_PP_P;
+	polynomial[9] = menu_MOD_PP_P;
+	polynomial[10] = menu_GCF_PP_P;
+	polynomial[11] = menu_DER_P_P;
+	polynomial[12] = menu_NMR_P_P;*/
 }

@@ -18,6 +18,32 @@
 #include "../../modules/Q/lib/DIV_QQ_Q.h"
 #include "../../modules/Q/lib/ADD_QQ_Q.h"
 #include "../../modules/Q/lib/SUB_QQ_Q.h"
+#include "../../modules/Q/lib/RED_Q_Q.h"
+
+void menu_RED_QQ_Q()
+{
+    char *str1, *str2;
+
+    longNumberQ *a = malloc(sizeof(longNumberQ));
+
+    puts("Enter the numerator of the first rational:");
+    str1 = getStringZ();
+    puts("Enter the denominator of the first rational:");
+    str2 = getStringN();
+    a->numerator = parseNumberZ(str1);
+    a->denominator = parseNumberN(str2);
+
+    longNumberQ *c = redQ(a);
+
+    printf("New rational is: %s / %s\n",toStringZ(c->numerator) , toStringN(c->denominator));
+
+    clearStructQ(a);
+    clearStructQ(c);
+    clearStringQ(str1);
+    clearStringQ(str2);
+
+    show_help();
+}
 
 void menu_INT_Q()
 {
@@ -27,7 +53,7 @@ void menu_INT_Q()
 
     puts("Enter the numerator:");
     str1 = getStringZ();
-    a->numerator = absolute(parseNumberZ(str1));
+    a->numerator = parseNumberZ(str1);
     puts("Enter the denominator:");
     str2 = getStringN();
     a->denominator = parseNumberN(str2);

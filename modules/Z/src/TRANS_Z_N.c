@@ -1,6 +1,6 @@
-#include "../lib/TRANS_Z_N.h"
+#include "../utils/lib/memory.h"
 
-#include <stdlib.h>
+#include "../lib/TRANS_Z_N.h"
 
 longNumberN* transZtoN(longNumberZ* number) {
     longNumberN* res = malloc(sizeof(longNumberN));

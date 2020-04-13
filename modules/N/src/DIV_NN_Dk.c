@@ -3,12 +3,16 @@
     group 9305
 */
 
-#include "../lib/DIV_NN_Dk.h"
+#include "../lib/MUL_NK_N.h"
+#include "../lib/COM_NN_D.h"
+#include "../lib/MUL_ND_N.h"
+
+#include "../lib/DIV_NN_DK.h"
 
 int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
-    longNumberN* c = multiplyBy10k(b, k);
+    longNumberN* c = multiBy10k(b, k);
 
-    int res = compare(a, c);
+    int res = compN(a, c);
 
     if(res == LESS) return 0;
     if(res == EQUAL) return 1;
@@ -18,7 +22,7 @@ int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
     while(down < up - 1) {
         mid = (down + up) / 2;
 
-        res = compare(a, multiByDigit(c, mid));
+        res = compN(a, multiByDigit(c, mid));
 
         if(res == EQUAL) break;
 
@@ -29,7 +33,7 @@ int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
         }
     }
 
-    if(compare(a, multiByDigit(c, mid)) == LESS) mid--;
+    if(compN(a, multiByDigit(c, mid)) == LESS) mid--;
 
     return mid;
 }

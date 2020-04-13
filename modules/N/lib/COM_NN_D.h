@@ -6,4 +6,4 @@
 #define LESS 1
 #define EQUAL 0
 
-int compare(longNumberN* a, longNumberN* b);
+int compN(longNumberN* a, longNumberN* b);

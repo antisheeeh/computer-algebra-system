@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 #include "../lib/memory.h"
 
 void clearStringZ(char* str) {

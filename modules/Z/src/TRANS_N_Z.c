@@ -10,7 +10,7 @@ longNumberZ* transNtoZ(longNumberN* number) {
     res->len = number->len;
     res->num = malloc(res->len * sizeof(int));
 
-    if(isZero(number) == YES) {
+    if(isZero(number)) {
         res->sign = NEUTRAL;
     } else {
         res->sign = PLUS;

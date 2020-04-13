@@ -2,8 +2,9 @@
 #include <stdio.h>
 
 #include "../lib/memory.h"
-
 #include "../lib/input.h"
+
+#define BLOCK 128
 
 void removeLeadingZerosN(longNumberN* number) {
     while(number->len > 1 && number->num[number->len - 1] == 0) number->len--;
@@ -12,7 +13,6 @@ void removeLeadingZerosN(longNumberN* number) {
 
 longNumberN* parseNumberN(char* str) {
     longNumberN* number = malloc(sizeof(longNumberN));
-    if(number == NULL) return NULL;
 
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1];
@@ -32,27 +32,15 @@ longNumberN* parseNumberN(char* str) {
     return number;
 }
 
-void assign(longNumberN* to, longNumberN* from) {
-    to->len = from->len;
-    to = realloc(to, to->len * sizeof(longNumberN));
-
-    int i;
-    for(i = 0; i < to->len; ++i) {
-        to->num[i] = from->num[i];
-    }
-}
-
 char* getStringN() {
     int symb, len = 0;
     char* str = NULL;
 
     str = malloc(BLOCK * sizeof(char));
-    if(str == NULL) return NULL;
 
     for(len = 0; (symb = getchar()) != '\n'; ++len) {
         if(len > 0 && len % BLOCK == 0) {
             str = realloc(str, (len + BLOCK) * sizeof(char));
-            if(str == NULL) return NULL;
         }
 
         str[len] = symb;
@@ -66,7 +54,6 @@ char* getStringN() {
 
 char* toStringN(longNumberN* number) {
     char* str = malloc((number->len * BLOCK_SIZE + 1) * sizeof(char));
-    if(str == NULL) return NULL;
 
     int i, len = 0;
 

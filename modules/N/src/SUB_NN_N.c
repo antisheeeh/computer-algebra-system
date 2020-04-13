@@ -6,25 +6,17 @@
 #include "../utils/lib/input.h"
 #include "../utils/lib/memory.h"
 
+#include "../lib/COM_NN_D.h"
+
 #include "../lib/SUB_NN_N.h"
 
 longNumberN* subN(longNumberN* a, longNumberN* b) {
-    if(compare(a, b) == LESS) return NULL;
-
     longNumberN* c = malloc(sizeof(longNumberN));
-    if(c == NULL) return NULL;
 
     c->len = a->len;
     c->num = calloc(c->len, sizeof(int));
 
-    if(c->num == NULL) {
-        clearStructN(c);
-        return NULL;
-    }
-
-    int i;
-
-    for(i = 0; i < c->len; ++i) {
+    for(int i = 0; i < c->len; ++i) {
         c->num[i] += a->num[i];
 
         if(i < b->len) {

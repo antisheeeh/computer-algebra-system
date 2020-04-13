@@ -207,7 +207,7 @@ void menu_MUL_ZZ_Z() {
 
     puts("Result");
 
-    longNumberZ* c = multyZ(a, b);
+    longNumberZ* c = multiZ(a, b);
     char* res = toStringZ(c);
     puts(res);
 

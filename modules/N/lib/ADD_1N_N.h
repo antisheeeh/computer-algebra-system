@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-longNumberN* inc(longNumberN* number);
+longNumberN* incN(longNumberN* number);

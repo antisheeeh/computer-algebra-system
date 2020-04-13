@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-longNumberN* multiplyBy10k(longNumberN* number, int k);
+longNumberN* multiBy10k(longNumberN* number, int k);

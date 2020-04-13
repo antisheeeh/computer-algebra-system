@@ -3,8 +3,6 @@
     group 9305
 */
 
-#include <stdlib.h>
-
 #include "../lib/ABS_Z_N.h"
 
 longNumberZ* absolute(longNumberZ* number) {

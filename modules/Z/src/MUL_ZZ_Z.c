@@ -1,8 +1,11 @@
-#include <stdio.h>
+#include "../../N/lib/MUL_NN_N.h"
+#include "../lib/MUL_ZM_Z.h"
+#include "../lib/TRANS_N_Z.h"
+#include "../lib/TRANS_Z_N.h"
 
 #include "../lib/MUL_ZZ_Z.h"
 
-longNumberZ* multyZ(longNumberZ* a, longNumberZ* b) {
+longNumberZ* multiZ(longNumberZ* a, longNumberZ* b) {
     longNumberN* aN = transZtoN(a);
     longNumberN* bN = transZtoN(b);
 

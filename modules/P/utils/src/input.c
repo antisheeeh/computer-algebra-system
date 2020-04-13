@@ -3,3 +3,7 @@
 #include <string.h>
 
 #include "../lib/input.h"
+
+longNumberP *parseNumberP(char *str) {
+    longNumberP *number = malloc(sizeof(longNumberP));
+}

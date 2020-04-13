@@ -3,20 +3,20 @@
     Group: 9305
 */
 
-#include <stdlib.h>
-#include "../lib/MUL_QQ_Q.h"
+#include "../utils/lib/memory.h"
+
 #include "../../../modules/Z/lib/MUL_ZZ_Z.h"
-#include "../../../modules/Z/lib/TRANS_N_Z.h" // Нужно юзать только умножение целых придется подключить
+#include "../../../modules/Z/lib/TRANS_N_Z.h"
 #include "../../../modules/Z/lib/TRANS_Z_N.h"
+#include "../lib/RED_Q_Q.h"
 
-longNumberQ *mulQ(longNumberQ *a, longNumberQ *b)
-{
-    longNumberQ *res = malloc(sizeof(longNumberQ));
+#include "../lib/MUL_QQ_Q.h"
 
-    if(res == NULL) return NULL;
+longNumberQ* mulQ(longNumberQ* a, longNumberQ* b) {
+    longNumberQ* res = malloc(sizeof(longNumberQ));
 
-    res->numerator = multyZ(a->numerator,b->numerator);
-    res->denominator = transZtoN(multyZ(transNtoZ(a->denominator), transNtoZ(b->denominator)));
+    res->numerator = multiZ(a->numerator, b->numerator);
+    res->denominator = transZtoN(multiZ(transNtoZ(a->denominator), transNtoZ(b->denominator)));
 
-    return res;
+    return redQ(res);
 }

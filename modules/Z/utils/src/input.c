@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../../lib/TRANS_Z_N.h"
+#include "../../../N/lib/NZER_N_B.h"
+
 #include "../lib/input.h"
 
 void removeTrailingZerosZ(longNumberZ* number) {
@@ -44,7 +47,7 @@ longNumberZ* parseNumberZ(char* str) {
 
     removeTrailingZerosZ(number);
 
-    if(isZero(transZtoN(number)) == YES) {
+    if(isZero(transZtoN(number))) {
         number->sign = NEUTRAL;
     }
     

@@ -10,15 +10,9 @@
 
 longNumberN* multiByDigit(longNumberN* number, int digit) {
     longNumberN* c = malloc(sizeof(longNumberN));
-    if(c == NULL) return NULL;
 
     c->len = number->len + 1;
     c->num = calloc(c->len, sizeof(int));
-
-    if(c->num == NULL) {
-        clearStructN(c);
-        return NULL;
-    }
 
     long long temp;
     int i;

@@ -16,7 +16,7 @@
 #include "../../modules/N/lib/MUL_NK_N.h"
 #include "../../modules/N/lib/MUL_NN_N.h"
 #include "../../modules/N/lib/SUB_NDN_N.h"
-#include "../../modules/N/lib/DIV_NN_Dk.h"
+#include "../../modules/N/lib/DIV_NN_DK.h"
 #include "../../modules/N/lib/DIV_NN_N.h"
 #include "../../modules/N/lib/MOD_NN_N.h"
 #include "../../modules/N/lib/GCF_NN_N.h"
@@ -37,7 +37,7 @@ void menu_COM_NN() {
     str2 = getStringN();
     longNumberN* b = parseNumberN(str2);
     
-    int res = compare(a, b);
+    int res = compN(a, b);
 
     puts("");
     
@@ -49,8 +49,6 @@ void menu_COM_NN() {
     clearStringN(str2);
     clearStructN(a);
     clearStructN(b);
-
-    show_help();
 }
 
 //Check number for zero
@@ -64,13 +62,11 @@ void menu_NZER_N_B() {
 
     puts("");
 
-    if(res == YES) puts("The number is zero");
-    else if(res == NO) puts("The number is not zero");
+    if(res) puts("The number is zero");
+    else puts("The number is not zero");
 
     clearStringN(str);
     clearStructN(a);
-
-    show_help();
 }
 
 //Addition 1 to number
@@ -84,7 +80,7 @@ void menu_ADD_1N_N() {
 
     puts("Result");
 
-    longNumberN* c = inc(a);
+    longNumberN* c = incN(a);
     char* res = toStringN(c);
     puts(res);
 
@@ -92,8 +88,7 @@ void menu_ADD_1N_N() {
     clearStringN(res);
     clearStructN(a);
     clearStructN(c);
-    
-    show_help();
+
 }
 
 
@@ -123,8 +118,6 @@ void menu_ADD_NN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 
@@ -154,8 +147,6 @@ void menu_SUB_NN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 //Multiplying number by digit
@@ -184,8 +175,6 @@ void menu_MUL_ND_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 //Multiplying number by 10^k
@@ -204,7 +193,7 @@ void menu_MUL_NK_N() {
     puts("");
 
     puts("Result");
-    longNumberN* c = multiplyBy10k(num, k);
+    longNumberN* c = multiBy10k(num, k);
     char* res = toStringN(c);
     puts(res);
 
@@ -213,8 +202,6 @@ void menu_MUL_NK_N() {
 
     clearStructN(num);
     clearStructN(c);
-
-    show_help();
 }
 
 
@@ -244,8 +231,6 @@ void menu_MUL_NN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 void menu_DIV_NN_DK() {
@@ -272,8 +257,6 @@ void menu_DIV_NN_DK() {
     clearStringN(str2);
     clearStructN(a);
     clearStructN(b);
-
-    show_help();
 }
 
 void menu_SUB_NDN_N() {
@@ -307,8 +290,6 @@ void menu_SUB_NDN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 //Subtraction from number other number, multiplied by a di
@@ -340,8 +321,6 @@ void menu_DIV_NN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 void menu_MOD_NN_N() {
@@ -369,8 +348,6 @@ void menu_MOD_NN_N() {
     clearStructN(a);
     clearStructN(b);
     clearStructN(c);
-
-    show_help();
 }
 
 //GCF of 2 numbers
@@ -399,8 +376,6 @@ void menu_GCF_NN_N() {
     
     clearStructN(a);
     clearStructN(b);
-
-    show_help();
 }
 
 //LCM of 2 numbers
@@ -429,6 +404,4 @@ void menu_LCM_NN_N() {
     
     clearStructN(a);
     clearStructN(b);
-
-    show_help();
 }

@@ -5,6 +5,11 @@
 
 #include "../utils/lib/memory.h"
 
+#include "../lib/DIV_NN_DK.h"
+#include "../lib/MUL_NK_N.h"
+#include "../lib/SUB_NDN_N.h"
+#include "../lib/COM_NN_D.h"
+
 #include "../lib/DIV_NN_N.h"
 
 longNumberN* divN(longNumberN* a, longNumberN* b) {
@@ -14,7 +19,7 @@ longNumberN* divN(longNumberN* a, longNumberN* b) {
 
     if(res->len < 1) res->len = 1; 
 
-    if(compare(a, multiplyBy10k(b, res->len * BLOCK_SIZE)) == LESS) {
+    if(compN(a, multiBy10k(b, res->len)) == LESS) {
         res->len--;
     }
 
@@ -22,11 +27,9 @@ longNumberN* divN(longNumberN* a, longNumberN* b) {
 
     res->num = malloc(res->len * sizeof(int));
 
-    int i;
-
-    for(i = res->len - 1; i >= 0; --i) {
-        res->num[i] = div_nn_dk(a, b, i * BLOCK_SIZE);
-        a = sub_ndn(a, multiplyBy10k(b, i * BLOCK_SIZE), res->num[i]);
+    for(int i = res->len - 1; i >= 0; --i) {
+        res->num[i] = div_nn_dk(a, b, i);
+        a = sub_ndn(a, multiBy10k(b, i), res->num[i]);
     }
 
     return res;

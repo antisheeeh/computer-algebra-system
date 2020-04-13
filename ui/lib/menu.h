@@ -1,14 +1,17 @@
 #pragma once
 
 #define NUMBER_OF_BLOCS 4
-#define NUMBER_OF_NFUNC 15
+#define NUMBER_OF_NFUNC 14
+#define NUMBER_OF_ZFUNC 10
+#define NUMBER_OF_QFUNC 8
+#define NUMBER_OF_PFUNC 13
 
-#ifdef linux
-#define CLS system("clear")
-#else
-#define CLS system("cls")
-#endif
-
+void initMenu();
+void initNatural();
+void initWhole();
+void initRational();
+void initPolynomial();
+void init();
 void show_help();
 void show_menu();
 void Natural_menu();
