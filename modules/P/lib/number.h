@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../N/lib/number.h"
+#include "../../Z/lib/number.h"
 #include "../../Q/lib/number.h"
 
 #define MAXLENGTH 100
@@ -9,5 +10,6 @@
 
 typedef struct {    
     int degree;
-    longNumberQ *coefficient;
+    int count;
+    longNumberQ **coefficient;
 } longNumberP;
