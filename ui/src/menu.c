@@ -19,139 +19,149 @@ void (*whole[NUMBER_OF_ZFUNC])();
 void (*rational[NUMBER_OF_QFUNC])();
 void (*polynomial[NUMBER_OF_PFUNC])();
 
-void show_help() {
-    int choice;
+void showHelp() {
+    int c;
 
 	puts("\nPress any key to continue...");
 	getchar();
 	CLS;
 
 	do {
-	    puts("Do you want back to start menu?\n1 - Yes\n2 - No");	
-	    scanf("%d", &choice);
-	    CLS;
-	} while (choice < 1 || choice > 2);
+	    puts("Do you want back to start menu?");
+		puts("1 - Yes");
+		puts("2 - No");
 
-	if (choice == 1) {
-        show_menu();
+		c = getchar();
+	    CLS;
+	} while (c < '1' || c > '2');
+
+	if (c == '1') {
+        showMenu();
     }
 }
 
-void show_menu() {
-	int choice;	
+void showMenu() {
+	int c;	
     
     do {
     	puts("Please choose type of number");
-		puts("1 - Natural\n2 - Whole number\n3 - Rational\n4 - Polynomial\nPress '5' to exit from program");
+		puts("1 - Natural");
+		puts("2 - Whole number");
+		puts("3 - Rational");
+		puts("4 - Polynomial");
 
-    	scanf("%d", &choice);
-    	CLS;
-    } while (choice < 1 || choice > 5);
+		puts("Press 'Q' to exit from program");
 
-	if (choice == 5){
+    	c = getchar();
+
 		CLS;
-	} else {
-		menu[choice - 1]();
-	}
+
+		if(c == 'Q') {
+			return;
+		}
+
+    } while (c < '1' || c > '4');
+
+	menu[c - '1']();
 }
 
-void Natural_menu() {	
+void naturalMenu() {	
 	int c;
 
     do {
     	puts("The natural number menu:");
     	puts("A - Compare 2 numbers");
-		puts("B - Check number for zero");
-		puts("C - Addition 1 to number");
-		puts("D - Addition 2 numbers");
-		puts("E - Subtraction 2 numbers");
-		puts("F - Multiplying number by digit");
-		puts("G - Multiplying number by 10^k");
-		puts("H - Multiplication 2 numbers");
-		puts("I - Subtraction from number other number, multiplied by a digit");
-		puts("J - Calculate the first digit of the division, multiplied by 10^k");
-		puts("K - Division of 2 numbers");
-		puts("L - Calculate the remainder of division");
-		puts("M - GCF of 2 numbers");
-		puts("N - LCM of 2 numbers");
-		puts("O - Back to start menu");
+		puts("B - Addition 1 to number");
+		puts("C - Addition 2 numbers");
+		puts("D - Subtraction 2 numbers");
+		puts("E - Multiplication 2 numbers");
+		puts("F - Division of 2 numbers");
+		puts("G - Calculate the remainder of division");
+		puts("H - GCF of 2 numbers");
+		puts("I - LCM of 2 numbers");
+
+		puts("Q - Back to start menu");
 
 		puts("Enter your choose");
 		
 		c = getchar();
+
 		CLS;
-	} while(c < 'A' || c > 'O');
+
+		if(c == 'Q') {
+			showMenu();
+			return;
+		}
+	} while(c < 'A' || c > 'I');
 
 	getchar();
 
-	if(c - 'A' == 14) {
-		show_menu();
-	} else {
-		natural[c - 'A']();
-		show_help();
-	}
+	natural[c - 'A']();
+	showHelp();
 }
 
-void Whole_menu() {
+void integerMenu() {
 	int c;
 
     do {
-    	puts("A - Absolute number");
-		puts("B - Sign of number");
-		puts("C - Change sign of number");
-		puts("D - Translate natural to integer");
-		puts("E - Translate integer to natural");
-		puts("F - Addition 2 numbers");
-		puts("G - Subtraction 2 numbers");
-		puts("H - Multiplication 2 numbers");
-		puts("I - Division 2 numbers");
-		puts("J - Calculate the remainder of division");
-		puts("K - Back to start menu");
+		puts("A - Addition 2 numbers");
+		puts("B - Subtraction 2 numbers");
+		puts("C - Multiplication 2 numbers");
+		puts("D - Division 2 numbers");
+		puts("E - Calculate the remainder of division");
+
+		puts("Q - Back to start menu");
+
 		puts("Enter your choose: ");		
 
 		c = getchar();
+
 		CLS;
-	} while(c < 'A'|| c > 'K');
+
+		if(c == 'Q') {
+			showMenu();
+			return;
+		}
+	} while(c < 'A'|| c > 'E');
 
 	getchar();
 
-	if(c - 'A' == 10) {
-		show_menu();
-	} else {
-		whole[c - 'A']();
-		show_help();
-	}
+	whole[c - 'A']();
+	showHelp();
 }
 
-void Rational_menu() {
+void rationalMenu() {
 	int c;
-	do{
+
+	do {
 		puts("A - Reduction of fraction");
 		puts("B - Check for integer");
-		puts("C - Translate integer to rational");
-		puts("D - Translate rational to integer");
-		puts("E - Addition 2 numbers");
-		puts("F - Subtraction 2 numbers");
-		puts("G - Multiplication 2 numbers");
-		puts("H - Division 2 numbers");
-		puts("I - Back to start menu");
+		puts("C - Addition 2 numbers");
+		puts("D - Subtraction 2 numbers");
+		puts("E - Multiplication 2 numbers");
+		puts("F - Division 2 numbers");
+
+		puts("Q - Back to start menu");
+
 		puts("Enter your choose");
 
 		c = getchar();
+
 		CLS;
-	} while(c < 'A'|| c > 'I');
+
+		if(c == 'Q') {
+			showMenu();
+			return;
+		}
+	} while(c < 'A'|| c > 'F');
 
 	getchar();
 
-	if(c - 'A' == 8) {
-		show_menu();
-	} else {
-		rational[c - 'A']();
-		show_help();
-	}
+	rational[c - 'A']();
+	showHelp();
 }
 
-void Polynomial_menu() {	
+void polynomialMenu() {	
 	int c;
 
 	do {
@@ -178,66 +188,55 @@ void Polynomial_menu() {
 	getchar();
 
 	if(c - 'A' == 13) {
-		show_menu();
+		showMenu();
 	} else {
 		polynomial[c - 'A']();
-		show_help();
+		showHelp();
 	}
 }
 
 void init() {
 	initMenu();
 	initNatural();
+	initWhole();
 	initRational();
 	initPolynomial();
 }
 
 void initMenu() {
-	menu[0] = Natural_menu;
-    menu[1] = Whole_menu;
-    menu[2] = Rational_menu;
-    menu[3] = Polynomial_menu;
+	menu[0] = naturalMenu;
+    menu[1] = integerMenu;
+    menu[2] = rationalMenu;
+    menu[3] = polynomialMenu;
 }
 
 void initNatural() {
 	natural[0] = menu_COM_NN;
-	natural[1] = menu_NZER_N_B;
-	natural[2] = menu_ADD_1N_N;
-	natural[3] = menu_ADD_NN_N;
-	natural[4] = menu_SUB_NN_N;
-	natural[5] = menu_MUL_ND_N;
-	natural[6] = menu_MUL_NK_N;
-	natural[7] = menu_MUL_NN_N;
-	natural[8] = menu_SUB_NDN_N;
-	natural[9] = menu_DIV_NN_DK;
-	natural[10] = menu_DIV_NN_N;
-	natural[11] = menu_MOD_NN_N;
-	natural[12] = menu_GCF_NN_N;
-	natural[13] = menu_LCM_NN_N;
+	natural[1] = menu_ADD_1N_N;
+	natural[2] = menu_ADD_NN_N;
+	natural[3] = menu_SUB_NN_N;
+	natural[4] = menu_MUL_NN_N;
+	natural[5] = menu_DIV_NN_N;
+	natural[6] = menu_MOD_NN_N;
+	natural[7] = menu_GCF_NN_N;
+	natural[8] = menu_LCM_NN_N;
 }
 
 void initWhole() {
-	whole[0] = menu_ABS_Z_N;
-	whole[1] = menu_POZ_Z_D;
-	whole[2] = menu_MUL_ZM_Z;
-	whole[3] = menu_TRANS_N_Z;
-	whole[4] = menu_TRANS_Z_N;
-	whole[5] = menu_ADD_ZZ_Z;
-	whole[6] = menu_SUB_ZZ_Z;
-	whole[7] = menu_MUL_ZZ_Z;
-	whole[8] = menu_DIV_ZZ_Z;
-	whole[9] = menu_MOD_ZZ_Z;
+	whole[0] = menu_ADD_ZZ_Z;
+	whole[1] = menu_SUB_ZZ_Z;
+	whole[2] = menu_MUL_ZZ_Z;
+	whole[3] = menu_DIV_ZZ_Z;
+	whole[4] = menu_MOD_ZZ_Z;
 }
 
 void initRational() {
 	rational[0] = menu_RED_QQ_Q;
 	rational[1] = menu_INT_Q;
-	rational[2] = menu_TRANS_Z_Q;
-	rational[3] = menu_TRANS_Q_Z;
-	rational[4] = menu_ADD_QQ_Q;
-	rational[5] = menu_SUB_QQ_Q;
-	rational[6] = menu_MUL_QQ_Q;
-	rational[7] = menu_DIV_QQ_Q;
+	rational[2] = menu_ADD_QQ_Q;
+	rational[3] = menu_SUB_QQ_Q;
+	rational[4] = menu_MUL_QQ_Q;
+	rational[5] = menu_DIV_QQ_Q;
 }
 
 void initPolynomial() {

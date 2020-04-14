@@ -1,3 +1,5 @@
-#include <stdlib.h>
+#include "../lib/input.h"
 
-#include "../lib/memory.h"
+longNumberQ* parseNumberQ(char* str) {
+    
+}
