@@ -10,12 +10,12 @@ longNumberP *subP(longNumberP* a , longNumberP * b)
     if(a->degree > b->degree) res->degree = a->degree;
     else res->degree = b->degree;
 
-    res->coefficient = malloc(res->degree * sizeof(longNumberQ*));
+    res->coefficient = malloc((res->degree+1) * sizeof(longNumberQ*));
 
-    for(i = 0; i < res->degree; i++){
-        if(i >= a->degree){
+    for(i = 0; i <= res->degree; i++){
+        if(i > a->degree){
             res->coefficient[i] = b->coefficient[i];
-        } else if(i >= b->degree) {
+        } else if(i > b->degree) {
             res->coefficient[i] = a->coefficient[i];
         } else {
             res->coefficient[i] = subQ(a->coefficient[i] , b->coefficient[i]);
