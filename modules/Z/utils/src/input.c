@@ -7,10 +7,9 @@
 
 #include "../lib/input.h"
 
-void removeTrailingZerosZ(longNumberZ* number) {
-    while(number->num[number->len - 1] == 0) number->len--;
-    if(number->len == 0) number->len = 1;
-    number->num = realloc(number->num, sizeof(int) * number->len);
+void removeLeadingZerosZ(longNumberZ* number) {
+    while(number->len > 1 && number->num[number->len - 1] == 0) number->len--;
+    number->num = realloc(number->num, number->len * sizeof(int));
 }
 
 longNumberZ* parseNumberZ(char* str) {
@@ -45,7 +44,7 @@ longNumberZ* parseNumberZ(char* str) {
         }
     }
 
-    removeTrailingZerosZ(number);
+    removeLeadingZerosZ(number);
 
     if(isZero(transZtoN(number))) {
         number->sign = NEUTRAL;

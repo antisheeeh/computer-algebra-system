@@ -2,5 +2,5 @@
 
 #include "../../lib/number.h"
 
-char* getStringP(int degree);
-longNumberP* parseNumberP(char* str);
+longNumberP* getNumberP();
+void printNumberP(longNumberP *number);
