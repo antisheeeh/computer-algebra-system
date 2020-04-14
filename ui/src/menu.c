@@ -4,6 +4,7 @@
 #include "../../ui/lib/N_FUNC_LIST.h"
 #include "../../ui/lib/Z_FUNC_LIST.h"
 #include "../../ui/lib/Q_FUNC_LIST.h"
+#include "../../ui/lib/P_FUNC_LIST.h"
 
 #include "../lib/menu.h"
 
@@ -182,21 +183,21 @@ void polynomialMenu() {
 		puts("K - GCF of 2 polinomials");
 		puts("L - Derivative of polinomial");
 		puts("M - Multiple roots in simple");
-		puts("N - Back to start menu");
+		puts("Q - Back to start menu");
 		puts("Enter your choose");
 
 		c = getchar();
 		CLS;
-	} while(c < 'A'|| c > 'N');
+		if(c == 'Q'){
+			showMenu();
+			return;
+		};
+	} while(c < 'A'|| c > 'M');
 
 	getchar();
-
-	if(c - 'A' == 13) {
-		showMenu();
-	} else {
-		polynomial[c - 'A']();
-		showHelp();
-	}
+	polynomial[c - 'A']();
+	getchar();
+	showHelp();
 }
 
 void init() {
@@ -244,7 +245,7 @@ void initRational() {
 }
 
 void initPolynomial() {
-	/*polynomial[0] = menu_ADD_PP_P;
+	polynomial[0] = menu_ADD_PP_P;
 	polynomial[1] = menu_SUB_PP_P;
 	polynomial[2] = menu_MUL_PQ_P;
 	polynomial[3] = menu_MUL_Pxk_P;
@@ -252,7 +253,7 @@ void initPolynomial() {
 	polynomial[5] = menu_DEG_P_N;
 	polynomial[6] = menu_FAC_P_Q;
 	polynomial[7] = menu_MUL_PP_P;
-	polynomial[8] = menu_DIV_PP_P;
+	/*polynomial[8] = menu_DIV_PP_P;
 	polynomial[9] = menu_MOD_PP_P;
 	polynomial[10] = menu_GCF_PP_P;
 	polynomial[11] = menu_DER_P_P;
