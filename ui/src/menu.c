@@ -35,6 +35,8 @@ void showHelp() {
 	    CLS;
 	} while (c < '1' || c > '2');
 
+	getchar();
+
 	if (c == '1') {
         showMenu();
     }
@@ -61,6 +63,8 @@ void showMenu() {
 		}
 
     } while (c < '1' || c > '4');
+
+	getchar();
 
 	menu[c - '1']();
 }
