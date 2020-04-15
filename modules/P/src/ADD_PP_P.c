@@ -5,7 +5,7 @@
 longNumberP *sumP(longNumberP* a , longNumberP * b)
 {
     longNumberP *res = malloc(sizeof(longNumberP));
-    int i; //7x^2 + 5x +4 + 8x^2 + 9x + 1
+    int i;
 
     if(a->degree > b->degree) res->degree = a->degree;
     else res->degree = b->degree;

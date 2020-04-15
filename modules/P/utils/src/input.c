@@ -50,10 +50,10 @@ void printNumberP(longNumberP *number) {
 
     for(int i = number->degree; i >= 0; --i) {
         num = number->coefficient[i];
-        //if(!isZero(transZtoN(num->numerator))) {
+        if(!isZero(transZtoN(num->numerator))) {
             if((num->numerator->sign == PLUS) && (i != number->degree)) printf("+  ");
             if(isInt(num)) printf("%s x^%d  " , toStringZ(transQtoZ(num)) , i);
             else printf("%s / %s x^%d  ", toStringZ(num->numerator), toStringN(num->denominator), i);
-        //}
+        }
     }
  }

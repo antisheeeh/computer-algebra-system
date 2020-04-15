@@ -15,33 +15,29 @@
 longNumberP *mulP(longNumberP *a , longNumberP *b)
 {
     longNumberP *res = malloc(sizeof(longNumberP));
-    longNumberQ *tmp;
 
     res->degree = a->degree + b->degree;
-    res->coefficient = malloc((res->degree + 1)*sizeof(longNumberQ*));
+    res->coefficient = malloc(res->degree*sizeof(longNumberQ*));
 
     for(int i = 0; i <= res->degree; i++){
+        res->coefficient = malloc(sizeof(longNumberQ*));
         res->coefficient[i] = malloc(sizeof(longNumberQ));
         res->coefficient[i]->numerator = malloc(sizeof(longNumberZ));
-        res->coefficient[i]->numerator->num = malloc(sizeof(int));
+        /*res->coefficient[i]->numerator->num = malloc(sizeof(int));
         res->coefficient[i]->numerator->num[0] = 0;
-        res->coefficient[i]->numerator->len = 1;
+        res->coefficient[i]->numerator->len = 1;*/
         res->coefficient[i]->denominator = malloc(sizeof(longNumberN));
-        res->coefficient[i]->denominator->num = malloc(sizeof(int));
+        /*res->coefficient[i]->denominator->num = malloc(sizeof(int));
         res->coefficient[i]->denominator->num[0] = 1;
-        res->coefficient[i]->denominator->len = 1;
+        res->coefficient[i]->denominator->len = 1;*/
     }
-
-    printNumberP(res);
 
     for(int i = 0; i <= a->degree; i++){
         for(int j = 0; j <= b->degree; j++){ //(x^2 + x + 1) * (x^3 + 1)
-            
-            
             //printf("Test: %s/%s * %s/%s\n" , toStringZ(a->coefficient[i]->numerator), toStringN(a->coefficient[i]->denominator) , toStringZ(b->coefficient[j]->numerator) , toStringN(b->coefficient[j]->denominator));
             //printf("Res: %s/%s" , toStringZ(mulQ(a->coefficient[i],b->coefficient[j])->numerator) , toStringN(mulQ(a->coefficient[i],b->coefficient[j])->denominator));
             //tmp = addQ(res->coefficient[i+j],mulQ(a->coefficient[i],b->coefficient[j]));
-            //res->coefficient[i+j] = addQ(res->coefficient[i+j],mulQ(a->coefficient[i],b->coefficient[j]));
+            res->coefficient[i+j] = addQ(res->coefficient[i+j],mulQ(a->coefficient[i],b->coefficient[j]));
         }
     } 
 

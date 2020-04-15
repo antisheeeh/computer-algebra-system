@@ -13,6 +13,7 @@ longNumberQ* transZtoQ(longNumberZ* number) {
     res->numerator = number;
     res->denominator = malloc(sizeof(longNumberN));
     res->denominator->len = 1;
+    res->denominator->num = malloc(sizeof(int));
     res->denominator->num[0] = 1;
 
     return res;

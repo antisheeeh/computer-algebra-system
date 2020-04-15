@@ -17,6 +17,7 @@
 #include "../../modules/P/lib/MUL_PXK_P.h"
 #include "../../modules/P/lib/FAC_P_Q.h"
 #include "../../modules/P/lib/MUL_PP_P.h"
+#include "../../modules/P/lib/DER_P_P.h"
 
 
 //Addition 2 polinomials
@@ -117,11 +118,13 @@ void menu_GCF_PP_P(){
 }
 */
 //Derivative of polinomial
-/*
-void menu_DER_P_P(){
 
+void menu_DER_P_P(){
+    longNumberP *a = getNumberP(); 
+
+    printNumberP(derP(a));
 }
-*/
+
 //Multiple roots in simple
 /*
 void menu_NMR_P_P(){
