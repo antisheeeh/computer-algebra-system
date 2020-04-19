@@ -7,53 +7,132 @@
 #include "../../../N/lib/NZER_N_B.h"
 #include "../../../Z/utils/lib/input.h"
 #include "../../../N/utils/lib/input.h"
+#include "../../../Q/utils/lib/input.h"
 #include "../../../Q/lib/INT_Q_B.h"
 #include "../../../Q/lib/TRANS_Q_Z.h"
 
-longNumberP* getNumberP() {
+longNumberP* parseNumberP(char* str) {
     longNumberP* number = malloc(sizeof(longNumberP));
 
-    puts("Please enter polynomial degree");
-    scanf("%d", &number->degree);
+    char** monomials = getMonomials(str);
+    int count = getCount(monomials);
 
-    number->coefficient = malloc((number->degree + 1)*sizeof(longNumberQ*));
+    number->degree = getMaxPower(monomials);
+    number->coefficient = malloc((number->degree + 1) * sizeof(longNumberQ*));
 
-    for(int i = 0; i <= number->degree; ++i) {
-        number->coefficient[i] = malloc(sizeof(longNumberQ));
-        number->coefficient[i]->numerator = malloc(sizeof(longNumberZ));
-        number->coefficient[i]->numerator->num = malloc(sizeof(int));
-        number->coefficient[i]->numerator->num[0] = 0;
-        number->coefficient[i]->denominator = malloc(sizeof(longNumberN));
-        number->coefficient[i]->denominator->num = malloc(sizeof(int));
-        number->coefficient[i]->denominator->num[0] = 1;
+    int i;
+
+    for(i = number->degree; i >= 0; --i) {
+        if(getPower(monomials[count - 1]) == i) {
+            number->coefficient[i] = parseNumberQ(getCoef(monomials[count - 1]));
+            count--;
+        } else {
+            number->coefficient[i] = parseNumberQ("0/1");
+        }
     }
-
-    int power;
-
-    do {
-        puts("Enter power of x");
-        scanf("%d", &power);
-        if(power == -1) break;
-        getchar();
-
-        puts("Enter a numerator");
-        number->coefficient[power]->numerator = parseNumberZ(getStringZ());
-        puts("Enter a denominator");
-        number->coefficient[power]->denominator = parseNumberN(getStringN());
-    } while(power != -1);
 
     return number;
 }
 
-void printNumberP(longNumberP *number) {
-    longNumberQ* num;
+char* toStringP(longNumberP *number) {
+    char* str = malloc(2048 * sizeof(char));
+    char buf[1024];
 
-    for(int i = number->degree; i >= 0; --i) {
-        num = number->coefficient[i];
-        if(!isZero(transZtoN(num->numerator))) {
-            if((num->numerator->sign == PLUS) && (i != number->degree)) printf("+  ");
-            if(isInt(num)) printf("%s x^%d  " , toStringZ(transQtoZ(num)) , i);
-            else printf("%s / %s x^%d  ", toStringZ(num->numerator), toStringN(num->denominator), i);
+    int i;
+
+    for(i = number->degree; i >= 0; --i) {
+        if(!isZero(transZtoN(number->coefficient[i]->numerator))) {
+            if(number->coefficient[i]->numerator->sign == PLUS) {
+                strcat(str, "+");
+            }
+
+            strcat(str, toStringQ(number->coefficient[i]));
+
+            if(i == 1) {
+                strcat(str, "x");
+            } else if(i == 0) {
+                sprintf(buf, "%d", i);
+                strcat(str, buf);
+            } else {
+                strcat(str, "x^");
+                sprintf(buf, "%d", i);
+                strcat(str, buf);
+            }
         }
     }
- }
+
+    str = realloc(str, (strlen(str) + 1) * sizeof(char));
+    
+    return str;
+}
+
+char** getMonomials(char* str) {
+    char** words;
+    char* word;
+    int power = 1, count = 0;
+
+    words = malloc(sizeof(char*));
+
+    for(word = strtok(str, "+"); word; word = strtok(NULL, "+")) {
+        if(count == power) {
+            words = realloc(words, (power *= 2) * sizeof(char*));
+        }
+
+        words[count++] = word;
+    }
+
+    words = realloc(words, count * sizeof(char*));
+    words[count] = NULL;
+
+    return words;
+}
+
+int getCount(char** monomials) {
+    int count = 0;
+    while(monomials[count]) count++;
+    return count;
+}
+
+char* getCoef(char* str) {
+    char* s = copy(str);
+    char* res = strtok(s, "x");
+    if(res) return res;
+    else return s;
+}
+
+int getPower(char* str) {
+    char* s = copy(str);
+    char* res = strtok(s, "^");
+
+    if(!res) {
+        res = strtok(s, "x");
+        if(res) res = "1";
+        else res = "0";
+    } else {
+        res = strtok(NULL, "^");
+    }
+
+    return atoi(res);
+}
+
+int getMaxPower(char** str) {
+    int i, mx, p;
+
+    if(str[0]) mx = getPower(str[0]);
+
+    for(i = 0; str[i]; ++i) {
+        p = getPower(str[i]);
+        if(p > mx) mx = p;
+    }
+
+    return mx;
+}
+
+void removeSpaces(char* s) {
+    const char* d = s;
+    do {
+        while (*d == ' ') {
+            ++d;
+        }
+    } while (*s++ = *d++);
+}

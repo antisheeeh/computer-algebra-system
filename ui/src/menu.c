@@ -246,16 +246,16 @@ void initRational() {
 
 void initPolynomial() {
 	polynomial[0] = menu_ADD_PP_P;
-	polynomial[1] = menu_SUB_PP_P;
-	polynomial[2] = menu_MUL_PQ_P;
-	polynomial[3] = menu_MUL_Pxk_P;
-	polynomial[4] = menu_LED_L_Q;
-	polynomial[5] = menu_DEG_P_N;
-	polynomial[6] = menu_FAC_P_Q;
-	polynomial[7] = menu_MUL_PP_P;
-	/*polynomial[8] = menu_DIV_PP_P;
-	polynomial[9] = menu_MOD_PP_P;
-	polynomial[10] = menu_GCF_PP_P;*/
-	polynomial[11] = menu_DER_P_P;
+	//polynomial[1] = menu_SUB_PP_P;
+	//polynomial[2] = menu_MUL_PQ_P;
+	//polynomial[3] = menu_MUL_Pxk_P;
+	//polynomial[4] = menu_LED_L_Q;
+	//polynomial[5] = menu_DEG_P_N;
+	//polynomial[6] = menu_FAC_P_Q;
+	//polynomial[7] = menu_MUL_PP_P;
+	//polynomial[8] = menu_DIV_PP_P;
+	//polynomial[9] = menu_MOD_PP_P;
+	//polynomial[10] = menu_GCF_PP_P;
+	//polynomial[11] = menu_DER_P_P;
 	//polynomial[12] = menu_NMR_P_P;
 }

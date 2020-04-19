@@ -7,7 +7,6 @@ void clearStringP(char *string)
 }
 
 void clearStructP(longNumberP *number){
-    if(number->degree != NULL) free(number->degree);
     if(number->coefficient != NULL) free(number->coefficient);
     if(number != NULL) free(number);
 }

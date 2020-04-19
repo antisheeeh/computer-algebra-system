@@ -6,3 +6,4 @@ void removeLeadingZerosN(longNumberN* number);
 char* getStringN();
 longNumberN* parseNumberN(char* str);
 char* toStringN(longNumberN* num);
+char* copy(char* str);

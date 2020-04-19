@@ -67,3 +67,9 @@ char* toStringN(longNumberN* number) {
 
     return str;
 }
+
+char* copy(char* str) {
+    char* res = malloc((strlen(str) + 1) * sizeof(char));
+    strcpy(res, str);
+    return res;
+}

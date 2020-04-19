@@ -7,6 +7,7 @@
 #include "../../modules/Z/lib/number.h"
 
 #include "../../modules/Q/utils/lib/memory.h"
+#include "../../modules/Q/utils/lib/input.h"
 
 #include "../../modules/N/utils/lib/input.h"
 #include "../../modules/N/lib/number.h"
@@ -21,25 +22,15 @@
 #include "../../modules/Q/lib/RED_Q_Q.h"
 
 void menu_RED_QQ_Q() {
-    longNumberQ *a = malloc(sizeof(longNumberQ));
+    puts("Please enter a number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the first rational:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first rational:");
-    a->denominator = parseNumberN(getStringN());
-
-    longNumberQ *c = redQ(a);
-
-    printf("New rational is: %s / %s\n", toStringZ(c->numerator) , toStringN(c->denominator));
+    puts(toStringQ(redQ(a)));
 }
 
 void menu_INT_Q() {
-    longNumberQ *a = malloc(sizeof(longNumberQ));
-
-    puts("Enter the numerator:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator:");
-    a->denominator = parseNumberN(getStringN());
+    puts("Please enter a number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
     if(isInt(a)) {
         puts("Yes");
@@ -49,77 +40,54 @@ void menu_INT_Q() {
 }
 
 void menu_MUL_QQ_Q() {
-    longNumberQ *a = malloc(sizeof(longNumberQ));
-    longNumberQ *b = malloc(sizeof(longNumberQ));
+    puts("Please enter a first number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the first Rational:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first Rational:");
-    a->denominator = parseNumberN(getStringN());
+    puts("Please enter a second number");
+    longNumberQ* b = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the second Rational:");
-    b->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the second Rational:");
-    b->denominator = parseNumberN(getStringN());
+    puts("");
 
-    longNumberQ* res = mulQ(a , b);
-
-    printf("New rational is: %s / %s\n", toStringZ(res->numerator), toStringN(res->denominator));
+    puts("Result");
+    puts(toStringQ(mulQ(a, b)));
 }
 
 void menu_DIV_QQ_Q() {
-    longNumberQ *a = malloc(sizeof(longNumberQ));
-    longNumberQ *b = malloc(sizeof(longNumberQ));
+    puts("Please enter a first number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the first Rational:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first Rational:");
-    a->denominator = parseNumberN(getStringN());
+    puts("Please enter a second number");
+    longNumberQ* b = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the second Rational:");
-    b->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the second Rational:");
-    b->denominator = parseNumberN(getStringN());
+    puts("");
 
-    longNumberQ* res = divQ(a , b);
-
-    printf("New rational is: %s / %s\n", toStringZ(res->numerator), toStringN(res->denominator));
+    puts("Result");
+    puts(toStringQ(divQ(a, b)));
 }
 
 void menu_ADD_QQ_Q(){
-    longNumberQ *a = malloc(sizeof(longNumberQ));
-    longNumberQ *b = malloc(sizeof(longNumberQ));
+    puts("Please enter a first number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the first rational:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first rational:");
-    a->denominator = parseNumberN(getStringN());
+    puts("Please enter a second number");
+    longNumberQ* b = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the second rational:");
-    b->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the second rational:");
-    b->denominator = parseNumberN(getStringN());
-   
-    longNumberQ *c = addQ(a , b);
+    puts("");
 
-    printf("New rational is: %s / %s\n", toStringZ(c->numerator), toStringN(c->denominator));
+    puts("Result");
+    puts(toStringQ(addQ(a, b)));
 }
 
 
 void menu_SUB_QQ_Q() {
-    longNumberQ *a = malloc(sizeof(longNumberQ));
-    longNumberQ *b = malloc(sizeof(longNumberQ));
+    puts("Please enter a first number");
+    longNumberQ* a = parseNumberQ(getStringN());
 
-    puts("Enter the numerator of the first rational:");
-    a->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first rational:");
-    a->denominator = parseNumberN(getStringN());
-    puts("Enter the numerator of the second rational:");
-    b->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the second rational:");
-    b->denominator = parseNumberN(getStringN());
+    puts("Please enter a second number");
+    longNumberQ* b = parseNumberQ(getStringN());
 
-    longNumberQ *c = subQ(a , b);
+    puts("");
 
-    printf("New rational is: %s / %s\n", toStringZ(c->numerator), toStringN(c->denominator));
+    puts("Result");
+    puts(toStringQ(subQ(a, b)));
 }

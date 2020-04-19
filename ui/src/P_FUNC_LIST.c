@@ -4,6 +4,7 @@
 
 #include "../../modules/P/utils/lib/input.h"
 #include "../../modules/N/utils/lib/input.h"
+#include "../../modules/Q/utils/lib/input.h"
 #include "../../modules/Z/utils/lib/input.h"
 #include "../../modules/P/lib/number.h"
 
@@ -23,64 +24,81 @@
 //Addition 2 polinomials
 
 void menu_ADD_PP_P(){
-    longNumberP *a = getNumberP(); 
-    longNumberP *b = getNumberP();
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
 
-    printNumberP(sumP(a,b));
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(sumP(a, b)));
 }
 
 //Subtraction 2 polinomials
 
 void menu_SUB_PP_P(){
-    longNumberP *a = getNumberP(); 
-    longNumberP *b = getNumberP();
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
 
-    printNumberP(subP(a , b));
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(subP(a, b)));
 }
 //Multiply polinomial by rational number
 
 void menu_MUL_PQ_P(){
-    longNumberP *a = getNumberP();
-    longNumberQ *rat = malloc(sizeof(longNumberQ));
+    puts("Please enter a polynomial");
+    longNumberP *a = parseNumberP(getStringN());
 
-    getchar();
-    puts("Enter the numerator of the first Rational:");
-    rat->numerator = parseNumberZ(getStringZ());
-    puts("Enter the denominator of the first Rational:");
-    rat->denominator = parseNumberN(getStringN());
+    puts("Please enter a rational");
+    longNumberQ *rat = parseNumberQ(getStringN());
 
-    printNumberP(multyByRational(a,rat));
+    puts("Result");
+    puts(toStringP(multyByRational(a, rat)));
 }
 
 //Multiply polinomial by x^k
 
 void menu_MUL_Pxk_P(){
+    puts("Please enter a polynomial");
+    longNumberP *a = parseNumberP(getStringN());
+
     int pow;
-    longNumberP *a = getNumberP();
     scanf("%d" , &pow);
-    printNumberP(multyByXk(a , pow));
+    getchar();
+
+    puts("Result");
+    puts(toStringP(multyByXk(a, pow)));
 }
 
 //Leading coefficient of polynomial
 
 void menu_LED_L_Q(){
-    longNumberP *a = getNumberP();
+    puts("Please enter a polynomial");
+    longNumberP *a = parseNumberP(getStringN());
     
-    puts("Highest coefficient: ");
-    printf("%s / %s\n" , toStringZ(led(a)->numerator) , toStringN(led(a)->denominator));
+    puts("Result");
+    puts(toStringQ(led(a)));
 }
 
 //Highest degree of the polynomial
 
 void menu_DEG_P_N(){
-    longNumberP *a = getNumberP(); 
-    printf("Degree is: %d\n",deg(a));
+    puts("Please enter a polynomial");
+    longNumberP *a = parseNumberP(getStringN());
+    
+    puts("Result");
+    printf("%d\n", deg(a));
 }
 
 //The derivation of a coefficient from a polynomial
 
 void menu_FAC_P_Q(){
-    longNumberP *a = getNumberP();
+    puts("Please enter a polynomial");
+    longNumberP *a = parseNumberP(getStringN());
+
     longNumberN *gcf;
     longNumberN *lcm;
 
@@ -93,10 +111,14 @@ void menu_FAC_P_Q(){
 //Multiplication 2 polinomials
 
 void menu_MUL_PP_P(){
-    longNumberP *a = getNumberP(); 
-    longNumberP *b = getNumberP();
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
 
-    printNumberP(mulP(a , b));
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(mulP(a, b)));
 }
 
 //Division 2 polinomials
@@ -118,7 +140,7 @@ void menu_GCF_PP_P(){
 }
 */
 //Derivative of polinomial
-
+/*
 void menu_DER_P_P(){
     longNumberP *a = getNumberP(); 
 
