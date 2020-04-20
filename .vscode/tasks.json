@@ -1,35 +1,49 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "shell",
-			"label": "C/C++: gcc.exe build active file",
-			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
-			"args": [
-				"-g",
-				"${workspaceFolder}\\main.c",
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: gcc.exe build active file",
+            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${workspaceFolder}\\main.c",
                 "${workspaceFolder}\\modules\\N\\src\\*.c",
                 "${workspaceFolder}\\modules\\N\\utils\\src\\*.c",
                 "${workspaceFolder}\\modules\\Z\\src\\*.c",
                 "${workspaceFolder}\\modules\\Z\\utils\\src\\*.c",
                 "${workspaceFolder}\\modules\\Q\\src\\*.c",
-				"${workspaceFolder}\\modules\\Q\\utils\\src\\*.c",
-				"${workspaceFolder}\\modules\\P\\src\\*.c",
+                "${workspaceFolder}\\modules\\Q\\utils\\src\\*.c",
+                "${workspaceFolder}\\modules\\P\\src\\*.c",
                 "${workspaceFolder}\\modules\\P\\utils\\src\\*.c",
                 "${workspaceFolder}\\ui\\src\\*.c",
-				"-o",
-				"${workspaceFolder}\\main.exe"
-			],
-			"options": {
-				"cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		}
-	]
+                "-o",
+                "${workspaceFolder}\\main.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+            }
+        }
+    ]
 }

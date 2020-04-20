@@ -27,14 +27,11 @@ longNumberP* parseNumberP(char* str) {
 
     for(i = number->degree; i >= 0; --i) {
         if(j < count && getPower(monomials[j]) == i) {
-            puts(monomials[j]);
-            printf("%d\n", getPower(monomials[j]));
             number->coefficient[i] = parseNumberQ(getCoef(monomials[j]));
             j++;
         } else {
             number->coefficient[i] = parseNumberQ("0");
         }
-        puts(toStringQ(number->coefficient[i]));
     }
 
     return number;
@@ -79,7 +76,7 @@ char* toStringP(longNumberP *number) {
 char** getMonomials(char* str) {
     char** words;
     char* word;
-    int power = 1, count = 0;
+    int power = 1, count = 0, t = 0;
 
     words = malloc(sizeof(char*));
 
@@ -105,15 +102,9 @@ int getCount(char** monomials) {
 
 char* getCoef(char* str) {
     char* s = copy(str);
-    char* res;
 
-    if(str[0] == 'x') {
-        res = "1";
-    } else {
-        res = strtok(s, "x");
-    }
-
-    return res;
+    if(str[0] == 'x') return "1";
+    return strtok(s, "x");
 }
 
 int getPower(char* str) {
@@ -121,16 +112,15 @@ int getPower(char* str) {
     char* res = strtok(s, "^");
 
     if(strlen(res) == strlen(str)) {
-        char* t = copy(str);
-        res = strtok(t, "x");
+        strtok(s, "x");
 
-        if(strlen(t) == strlen(str)) {
-            res = "0";
+        if(s == NULL) {
+            return 0;
         } else {
-            res = "1";
+            return 1;
         }
     } else {
-        res = strtok(NULL, "^");
+        return atoi(strtok(NULL, "^"));
     }
 
     return atoi(res);
