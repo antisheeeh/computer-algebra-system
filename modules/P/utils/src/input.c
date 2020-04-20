@@ -4,6 +4,7 @@
 
 #include "../lib/input.h"
 #include "../../../Z/lib/TRANS_Z_N.h"
+#include "../../../Z/lib/POZ_Z_D.h"
 #include "../../../N/lib/NZER_N_B.h"
 #include "../../../Z/utils/lib/input.h"
 #include "../../../N/utils/lib/input.h"
@@ -14,21 +15,26 @@
 longNumberP* parseNumberP(char* str) {
     longNumberP* number = malloc(sizeof(longNumberP));
 
+    removeSpaces(str);
+    
     char** monomials = getMonomials(str);
     int count = getCount(monomials);
 
     number->degree = getMaxPower(monomials);
     number->coefficient = malloc((number->degree + 1) * sizeof(longNumberQ*));
 
-    int i;
+    int i, j = 0;
 
     for(i = number->degree; i >= 0; --i) {
-        if(getPower(monomials[count - 1]) == i) {
-            number->coefficient[i] = parseNumberQ(getCoef(monomials[count - 1]));
-            count--;
+        if(j < count && getPower(monomials[j]) == i) {
+            puts(monomials[j]);
+            printf("%d\n", getPower(monomials[j]));
+            number->coefficient[i] = parseNumberQ(getCoef(monomials[j]));
+            j++;
         } else {
-            number->coefficient[i] = parseNumberQ("0/1");
+            number->coefficient[i] = parseNumberQ("0");
         }
+        puts(toStringQ(number->coefficient[i]));
     }
 
     return number;
@@ -38,22 +44,28 @@ char* toStringP(longNumberP *number) {
     char* str = malloc(2048 * sizeof(char));
     char buf[1024];
 
+    strcpy(str, "");
+
     int i;
 
     for(i = number->degree; i >= 0; --i) {
         if(!isZero(transZtoN(number->coefficient[i]->numerator))) {
-            if(number->coefficient[i]->numerator->sign == PLUS) {
-                strcat(str, "+");
+            if(getSign(number->coefficient[i]->numerator) == PLUS) {
+                if(i != number->degree) {
+                    strcat(str, " + ");
+                }
             }
 
-            strcat(str, toStringQ(number->coefficient[i]));
+            char* numerator = toStringZ(number->coefficient[i]->numerator);
+            char* denominator = toStringN(number->coefficient[i]->denominator);
+
+            if(i == 0 || (strcmp(numerator, "1") == 0 ^ strcmp(denominator, "1") == 0)) {
+                strcat(str, toStringQ(number->coefficient[i]));
+            }
 
             if(i == 1) {
                 strcat(str, "x");
-            } else if(i == 0) {
-                sprintf(buf, "%d", i);
-                strcat(str, buf);
-            } else {
+            } else if(i != 0) {
                 strcat(str, "x^");
                 sprintf(buf, "%d", i);
                 strcat(str, buf);
@@ -61,8 +73,6 @@ char* toStringP(longNumberP *number) {
         }
     }
 
-    str = realloc(str, (strlen(str) + 1) * sizeof(char));
-    
     return str;
 }
 
@@ -73,7 +83,7 @@ char** getMonomials(char* str) {
 
     words = malloc(sizeof(char*));
 
-    for(word = strtok(str, "+"); word; word = strtok(NULL, "+")) {
+    for(word = strtok(str, "+-"); word; word = strtok(NULL, "+-")) {
         if(count == power) {
             words = realloc(words, (power *= 2) * sizeof(char*));
         }
@@ -95,19 +105,30 @@ int getCount(char** monomials) {
 
 char* getCoef(char* str) {
     char* s = copy(str);
-    char* res = strtok(s, "x");
-    if(res) return res;
-    else return s;
+    char* res;
+
+    if(str[0] == 'x') {
+        res = "1";
+    } else {
+        res = strtok(s, "x");
+    }
+
+    return res;
 }
 
 int getPower(char* str) {
     char* s = copy(str);
     char* res = strtok(s, "^");
 
-    if(!res) {
-        res = strtok(s, "x");
-        if(res) res = "1";
-        else res = "0";
+    if(strlen(res) == strlen(str)) {
+        char* t = copy(str);
+        res = strtok(t, "x");
+
+        if(strlen(t) == strlen(str)) {
+            res = "0";
+        } else {
+            res = "1";
+        }
     } else {
         res = strtok(NULL, "^");
     }
@@ -118,9 +139,9 @@ int getPower(char* str) {
 int getMaxPower(char** str) {
     int i, mx, p;
 
-    if(str[0]) mx = getPower(str[0]);
+    if(str[0] != NULL) mx = getPower(str[0]);
 
-    for(i = 0; str[i]; ++i) {
+    for(i = 0; str[i] != NULL; ++i) {
         p = getPower(str[i]);
         if(p > mx) mx = p;
     }

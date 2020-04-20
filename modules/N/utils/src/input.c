@@ -11,8 +11,10 @@ void removeLeadingZerosN(longNumberN* number) {
     number->num = realloc(number->num, number->len * sizeof(int));
 }
 
-longNumberN* parseNumberN(char* str) {
+longNumberN* parseNumberN(char* s) {
     longNumberN* number = malloc(sizeof(longNumberN));
+
+    char* str = copy(s);
 
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1];

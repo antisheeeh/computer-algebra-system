@@ -187,16 +187,19 @@ void polynomialMenu() {
 		puts("Enter your choose");
 
 		c = getchar();
+
 		CLS;
+
 		if(c == 'Q'){
 			showMenu();
 			return;
 		};
+
 	} while(c < 'A'|| c > 'M');
 
 	getchar();
+
 	polynomial[c - 'A']();
-	getchar();
 	showHelp();
 }
 

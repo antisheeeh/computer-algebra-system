@@ -20,16 +20,18 @@
 #include "../../modules/P/lib/MUL_PP_P.h"
 #include "../../modules/P/lib/DER_P_P.h"
 
+#include "../../modules/N/utils/lib/input.h"
+
 
 //Addition 2 polinomials
 
-void menu_ADD_PP_P(){
+void menu_ADD_PP_P() {
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-
+    
     puts("Result");
     puts(toStringP(sumP(a, b)));
 }

@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "input.h": "c",
-        "mul_pp_p.h": "c"
+        "mul_pp_p.h": "c",
+        "nzer_n_b.h": "c",
+        "poz_z_d.h": "c",
+        "mul_pq_p.h": "c"
     }
 }
