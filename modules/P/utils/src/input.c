@@ -76,16 +76,21 @@ char* toStringP(longNumberP *number) {
 char** getMonomials(char* str) {
     char** words;
     char* word;
-    int power = 1, count = 0, t = 0;
+    int power = 1, count = 0, t = 0, len = 0, i;
 
     words = malloc(sizeof(char*));
 
-    for(word = strtok(str, "+-"); word; word = strtok(NULL, "+-")) {
+    for(i = 0; i <= strlen(str); ++i) {
         if(count == power) {
             words = realloc(words, (power *= 2) * sizeof(char*));
         }
 
-        words[count++] = word;
+        if(i != 0 && (str[i] == '+' || str[i] == '-' || str[i] == '\0')) {
+            words[count] = malloc((i - len + 1) * sizeof(char));
+            strncpy(words[count], str + len, i - len);
+            len += i;
+            count++;
+        }
     }
 
     words = realloc(words, count * sizeof(char*));
@@ -112,9 +117,11 @@ int getPower(char* str) {
     char* res = strtok(s, "^");
 
     if(strlen(res) == strlen(str)) {
-        strtok(s, "x");
+        if(strcmp(res, "x") == 0) return 1;
 
-        if(s == NULL) {
+        res = strtok(s, "x");
+
+        if(strlen(res) == strlen(s)) {
             return 0;
         } else {
             return 1;
