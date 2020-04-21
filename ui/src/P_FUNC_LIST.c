@@ -20,6 +20,9 @@
 #include "../../modules/P/lib/MUL_PP_P.h"
 #include "../../modules/P/lib/DER_P_P.h"
 #include "../../modules/P/lib/DIV_PP_P.h"
+#include "../../modules/P/lib/MOD_PP_P.h"
+#include "../../modules/P/lib/GCF_PP_P.h"
+#include "../../modules/P/lib/DER_P_P.h"
 
 #include "../../modules/N/utils/lib/input.h"
 
@@ -139,23 +142,39 @@ void menu_DIV_PP_P(){
 }
 
 //Calculate the remainder of division 2 polinomials
-/*
+
 void menu_MOD_PP_P(){
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
 
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(modP(a, b)));
 }
-*/
+
 //GCF of 2 polinomials
-/*
+
 void menu_GCF_PP_P(){
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
 
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(gcfP(a, b)));
 }
-*/
-//Derivative of polinomial
-/*
-void menu_DER_P_P(){
-    longNumberP *a = getNumberP(); 
 
-    printNumberP(derP(a));
+//Derivative of polinomial
+
+void menu_DER_P_P(){
+    puts("Please enter a polynomial");
+    longNumberP* a = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(derP(a)));
 }
 
 //Multiple roots in simple

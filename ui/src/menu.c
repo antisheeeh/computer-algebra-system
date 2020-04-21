@@ -257,8 +257,8 @@ void initPolynomial() {
 	polynomial[6] = menu_FAC_P_Q;
 	polynomial[7] = menu_MUL_PP_P;
 	polynomial[8] = menu_DIV_PP_P;
-	//polynomial[9] = menu_MOD_PP_P;
-	//polynomial[10] = menu_GCF_PP_P;
-	//polynomial[11] = menu_DER_P_P;
+	polynomial[9] = menu_MOD_PP_P;
+	polynomial[10] = menu_GCF_PP_P;
+	polynomial[11] = menu_DER_P_P;
 	//polynomial[12] = menu_NMR_P_P;
 }

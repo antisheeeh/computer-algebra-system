@@ -9,15 +9,15 @@
 longNumberP *derP(longNumberP *a)
 {
     longNumberP *res = malloc(sizeof(longNumberP));
-    char str[12];
+    char str[BLOCK_SIZE];
 
     res->degree = a->degree - 1;
     
-    res->coefficient = malloc(res->degree * sizeof(longNumberQ*)); 
+    res->coefficient = malloc((res->degree + 1) * sizeof(longNumberQ*)); 
 
-    for(int i = 0; i < a->degree; i++){
-        sprintf(str,"%d",i+1);
-        res->coefficient[i] = mulQ(a->coefficient[i+1],transZtoQ(parseNumberZ(str)));
+    for(int i = 0; i <= res->degree; i++){
+        sprintf(str, "%d", i + 1);
+        res->coefficient[i] = mulQ(a->coefficient[i + 1], transZtoQ(parseNumberZ(str)));
     }
 
     return res;
