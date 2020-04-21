@@ -15,7 +15,7 @@ longNumberP* divP(longNumberP* a, longNumberP* b) {
     longNumberP* r = malloc(sizeof(longNumberP));
 
     r->degree = a->degree - b->degree;
-    if(r->degree < 0) return parseNumberP("0"); 
+    if(r->degree < 0) return parseNumberP(toStringQ(parseNumberQ("0"))); 
 
     r->coefficient = malloc((r->degree + 1) * sizeof(longNumberQ));
 

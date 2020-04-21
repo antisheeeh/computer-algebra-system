@@ -46,6 +46,8 @@ char* toStringP(longNumberP *number) {
 
     int i;
 
+    if(number->degree == 0 && number->coefficient[0]->numerator->num[0] == 0) return "0";
+
     for(i = number->degree; i >= 0; --i) {
         if(!isZero(transZtoN(number->coefficient[i]->numerator))) {
             if(getSign(number->coefficient[i]->numerator) == PLUS) {
