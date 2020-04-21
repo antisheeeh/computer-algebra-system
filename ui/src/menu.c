@@ -249,7 +249,7 @@ void initRational() {
 
 void initPolynomial() {
 	polynomial[0] = menu_ADD_PP_P;
-	//polynomial[1] = menu_SUB_PP_P;
+	polynomial[1] = menu_SUB_PP_P;
 	//polynomial[2] = menu_MUL_PQ_P;
 	//polynomial[3] = menu_MUL_Pxk_P;
 	//polynomial[4] = menu_LED_L_Q;

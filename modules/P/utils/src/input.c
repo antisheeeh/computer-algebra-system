@@ -95,7 +95,7 @@ char** getMonomials(char* str) {
         }
     }
 
-    words = realloc(words, count * sizeof(char*));
+    words = realloc(words, (count + 1) * sizeof(char*));
     words[count] = NULL;
 
     return words;
@@ -110,12 +110,19 @@ int getCount(char** monomials) {
 char* getCoef(char* str) {
     char* s = copy(str);
 
-    if(str[0] == 'x') return "1";
-    return strtok(s, "x");
+    if(str[0] == 'x') return "+1";
+
+    char* res = strtok(s, "x");
+
+    if(strcmp(res, "+") == 0) return "+1";
+    if(strcmp(res, "-") == 0) return "-1";
+
+    return res;
 }
 
 int getPower(char* str) {
     char* s = copy(str);
+
     char* res = strtok(s, "^");
 
     if(strlen(res) == strlen(str)) {
