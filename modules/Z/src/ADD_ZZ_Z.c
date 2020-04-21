@@ -16,8 +16,8 @@ longNumberZ* sumZ(longNumberZ* a, longNumberZ* b) {
     longNumberN* aN = transZtoN(a);
     longNumberN* bN = transZtoN(b);
 
-    if(a->sign == NEUTRAL) return transNtoZ(bN);
-    if(b->sign == NEUTRAL) return transNtoZ(aN);
+    if(a->sign == NEUTRAL) return b;
+    if(b->sign == NEUTRAL) return a;
 
     if(a->sign == PLUS && b->sign == PLUS) return transNtoZ(sumN(aN, bN));
     if(a->sign == MINUS && b->sign == MINUS) return changeSign(transNtoZ(sumN(aN, bN)));

@@ -68,6 +68,7 @@ void menu_MUL_Pxk_P(){
     longNumberP *a = parseNumberP(getStringN());
 
     int pow;
+    puts("Please enter k");
     scanf("%d" , &pow);
     getchar();
 
