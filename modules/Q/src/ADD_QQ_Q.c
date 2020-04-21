@@ -17,9 +17,7 @@
 longNumberQ* addQ(longNumberQ* a , longNumberQ* b){
     longNumberQ *res = malloc(sizeof(longNumberQ));
     
-    //Знаменатель результата = НОК(a,b)
     res->denominator = lcmN(a->denominator , b->denominator);
-    //Числитель результата равен сумме домноженного на знаменатель b числа а, и так же домноженного на знаменатель а числа b
     res->numerator = sumZ(multiZ(a->numerator, transNtoZ(divN(res->denominator, a->denominator))), 
     multiZ(b->numerator, transNtoZ(divN(res->denominator, b->denominator))));
     
