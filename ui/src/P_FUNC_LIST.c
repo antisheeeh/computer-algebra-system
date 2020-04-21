@@ -134,10 +134,8 @@ void menu_DIV_PP_P(){
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
 
-    if(divP(a,b) != NULL){
-        puts("Result");
-        puts(toStringP(divP(a, b)));
-    } else puts("The second polinom is bigger than the first one!");
+    puts("Result");
+    puts(toStringP(divP(a, b)));
 }
 
 //Calculate the remainder of division 2 polinomials
