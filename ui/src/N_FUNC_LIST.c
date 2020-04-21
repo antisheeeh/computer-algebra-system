@@ -71,9 +71,10 @@ void menu_SUB_NN_N() {
     longNumberN* b = parseNumberN(getStringN());
 
     puts("");
-
-    puts("Result");
-    puts(toStringN(subN(a, b)));
+    if(subN(a,b) != NULL){
+        puts("Result");
+        puts(toStringN(subN(a, b)));
+    } else puts("Error! The second number is bigger than the first one!");
 }
 
 //Multiplication 2 numbers
@@ -101,9 +102,11 @@ void menu_DIV_NN_N() {
     longNumberN* b = parseNumberN(getStringN());
 
     puts("");
-    puts("Result");
-
-    puts(toStringN(divN(a, b)));
+    
+    if(divN(a, b) != NULL){
+        puts("Result");
+        puts(toStringN(divN(a, b)));
+    } else puts("Error! The second number is zero!");
 }
 
 void menu_MOD_NN_N() {
@@ -114,9 +117,11 @@ void menu_MOD_NN_N() {
     longNumberN* b = parseNumberN(getStringN());
 
     puts("");
-    puts("Result");
-
-    puts(toStringN(modN(a, b)));
+    
+    if(modN(a, b) != NULL){
+        puts("Result");
+        puts(toStringN(modN(a, b)));
+    } else puts("Error! The second number is zero!");
 }
 
 //GCF of 2 numbers

@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "../../N/lib/DIV_NN_N.h"
 #include "../../N/lib/ADD_1N_N.h"
 #include "../../N/lib/MOD_NN_N.h"
@@ -5,6 +7,7 @@
 #include "../lib/TRANS_Z_N.h"
 #include "../lib/TRANS_N_Z.h"
 #include "../lib/MUL_ZM_Z.h"
+#include "../lib/POZ_Z_D.h"
 
 #include "../lib/DIV_ZZ_Z.h"
 
@@ -13,6 +16,8 @@ longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
     longNumberN* bN = transZtoN(b);
     longNumberN* div = divN(aN, bN);
     longNumberN* mod = modN(aN, bN);
+
+    if(getSign(b) == NEUTRAL) return NULL;
 
     if(a->sign == NEUTRAL) return transNtoZ(div);
 

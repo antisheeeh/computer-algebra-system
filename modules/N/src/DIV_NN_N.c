@@ -9,12 +9,15 @@
 #include "../lib/MUL_NK_N.h"
 #include "../lib/SUB_NDN_N.h"
 #include "../lib/COM_NN_D.h"
+#include "../lib/NZER_N_B.h"
 
 #include "../lib/DIV_NN_N.h"
 
 longNumberN* divN(longNumberN* a, longNumberN* b) {
     longNumberN* res = malloc(sizeof(longNumberN));
     
+    if(isZero(b) == 1) return NULL;
+
     res->len = a->len - b->len;
 
     if(res->len < 1) res->len = 1; 

@@ -73,8 +73,10 @@ void menu_DIV_ZZ_Z() {
 
     puts("");
 
-    puts("Result");
-    puts(toStringZ(divZ(a, b)));
+    if(divZ(a,b) != NULL){
+        puts("Result");
+        puts(toStringZ(divZ(a, b)));
+    } else puts("Error! The second number is zero!");
 }
 
 //Calculate the remainder of division
@@ -87,7 +89,8 @@ void menu_MOD_ZZ_Z() {
     longNumberZ* b = parseNumberZ(getStringZ());
 
     puts("");
-
-    puts("Result");
-    puts(toStringZ(modZ(a, b)));
+    if(modZ(a, b) != NULL){
+        puts("Result");
+        puts(toStringZ(modZ(a, b)));
+    } else puts("Error! The second number is zero!");
 }
