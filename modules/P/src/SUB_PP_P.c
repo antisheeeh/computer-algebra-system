@@ -1,6 +1,8 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "../lib/ADD_PP_P.h"
 #include "../../../modules/Q/lib/SUB_QQ_Q.h"
+#include "../utils/lib/input.h"
 
 longNumberP *subP(longNumberP* a , longNumberP * b)
 {
@@ -21,6 +23,8 @@ longNumberP *subP(longNumberP* a , longNumberP * b)
             res->coefficient[i] = subQ(a->coefficient[i] , b->coefficient[i]);
         }
     }
+
+    removeLeadingZerosP(res);
 
     return res;
 }

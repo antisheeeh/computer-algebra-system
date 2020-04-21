@@ -11,6 +11,7 @@
 #include "../../../Q/utils/lib/input.h"
 #include "../../../Q/lib/INT_Q_B.h"
 #include "../../../Q/lib/TRANS_Q_Z.h"
+#include "../../../N/lib/NZER_N_B.h"
 
 longNumberP* parseNumberP(char* str) {
     longNumberP* number = malloc(sizeof(longNumberP));
@@ -162,4 +163,10 @@ void removeSpaces(char* s) {
             ++d;
         }
     } while (*s++ = *d++);
+}
+
+void removeLeadingZerosP(longNumberP *number)
+{
+    while(number->degree > 0 && isZero(transZtoN(number->coefficient[number->degree]->numerator))) number->degree--;
+    number->coefficient = realloc(number->coefficient, (number->degree + 1) * sizeof(longNumberQ*));
 }

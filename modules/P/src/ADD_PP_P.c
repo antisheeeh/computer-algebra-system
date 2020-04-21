@@ -1,8 +1,9 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "../../../modules/Q/lib/ADD_QQ_Q.h"
 #include "../lib/ADD_PP_P.h"
 #include "../../../modules/Q/utils/lib/input.h"
-#include <stdio.h>
+#include "../utils/lib/input.h"
 
 longNumberP* sumP(longNumberP* a , longNumberP* b) {
     longNumberP* res = malloc(sizeof(longNumberP));
@@ -21,6 +22,8 @@ longNumberP* sumP(longNumberP* a , longNumberP* b) {
             res->coefficient[i] = addQ(a->coefficient[i] , b->coefficient[i]);
         }
     }
+
+    removeLeadingZerosP(res);
 
     return res;
 }

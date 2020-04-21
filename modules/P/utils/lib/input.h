@@ -10,3 +10,4 @@ char* getCoef(char* str);
 int getPower(char* str);
 int getMaxPower(char** str);
 void removeSpaces(char* s);
+void removeLeadingZerosP(longNumberP *number);

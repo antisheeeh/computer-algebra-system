@@ -19,6 +19,7 @@
 #include "../../modules/P/lib/FAC_P_Q.h"
 #include "../../modules/P/lib/MUL_PP_P.h"
 #include "../../modules/P/lib/DER_P_P.h"
+#include "../../modules/P/lib/DIV_PP_P.h"
 
 #include "../../modules/N/utils/lib/input.h"
 
@@ -125,11 +126,20 @@ void menu_MUL_PP_P(){
 }
 
 //Division 2 polinomials
-/*
-void menu_DIV_PP_P(){
 
+void menu_DIV_PP_P(){
+    puts("Please enter a first polynomial");
+    longNumberP* a = parseNumberP(getStringN());
+
+    puts("Please enter a second polynomial");
+    longNumberP* b = parseNumberP(getStringN());
+
+    if(divP(a,b) != NULL){
+        puts("Result");
+        puts(toStringP(divP(a, b)));
+    } else puts("The second polinom is bigger than the first one!");
 }
-*/
+
 //Calculate the remainder of division 2 polinomials
 /*
 void menu_MOD_PP_P(){
