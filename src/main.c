@@ -1,4 +1,4 @@
-#include "ui/lib/menu.h"
+#include "../ui/lib/menu.h"
 
 int main() {
     init();
