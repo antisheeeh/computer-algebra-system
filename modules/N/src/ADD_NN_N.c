@@ -17,7 +17,7 @@ longNumberN* sumN(longNumberN* a, longNumberN* b) {
     c->num = calloc(c->len, sizeof(int));
 
     int i;
-
+    // Сложение чисел порязрядно. Если величина в рязряде результирующего числа перевалит за величину BLOCK, тогда мы добавляем единицу в следующий разряд результирующего числа
     for(i = 0; i < c->len - 1; ++i) {
         if(i >= a->len){
             c->num[i] += b->num[i];

@@ -26,6 +26,7 @@ longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
         else return changeSign(transNtoZ(div));
     }
 
+    //Если делимое имеет отрицательный знак, тогда результат будет на единицу больше, т.к в обратном случае выйдет, что у нас отрицательный остаток, чего быть не может.
     if(a->sign == MINUS) {
         if(b->sign == MINUS) return transNtoZ(incN(div));
         if(b->sign == PLUS) return changeSign(transNtoZ(incN(div)));

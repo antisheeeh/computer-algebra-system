@@ -14,7 +14,7 @@
 
 longNumberQ* divQ(longNumberQ* a , longNumberQ* b) {   
     longNumberQ* res = malloc(sizeof(longNumberQ));
-
+    
     res->numerator = multiZ(a->numerator , transNtoZ(b->denominator));
     res->denominator = transZtoN(multiZ(transNtoZ(a->denominator), b->numerator));
 

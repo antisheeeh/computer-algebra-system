@@ -17,7 +17,7 @@ longNumberN* divN(longNumberN* a, longNumberN* b) {
     longNumberN* res = malloc(sizeof(longNumberN));
     
     if(isZero(b) == 1) return NULL;
-
+    
     res->len = a->len - b->len;
 
     if(res->len < 1) res->len = 1; 
@@ -31,6 +31,8 @@ longNumberN* divN(longNumberN* a, longNumberN* b) {
     res->num = malloc(res->len * sizeof(int));
 
     for(int i = res->len - 1; i >= 0; --i) {
+        //Определяется первое число от деления a на b, которое записывается в соответсвующий разряд результата, после чего из a вычитается b, умноженное на это число
+        //Данное действие повторяется количеству разрядов в результирующем числе.
         res->num[i] = div_nn_dk(a, b, i);
         a = sub_ndn(a, multiBy10k(b, i), res->num[i]);
     }

@@ -20,10 +20,12 @@ longNumberN* subN(longNumberN* a, longNumberN* b) {
     for(int i = 0; i < c->len; ++i) {
         c->num[i] += a->num[i];
 
+        //Вычитаем из числа a число b 
         if(i < b->len) {
             c->num[i] -= b->num[i];
         }
 
+        //В случае отрицательного значения в разряде результирующего числа, заимствуется величина BASE из следующего разряда
         if(c->num[i] < 0) {
             c->num[i] += BASE;
             c->num[i + 1]--;

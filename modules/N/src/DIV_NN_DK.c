@@ -19,6 +19,8 @@ int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
 
     int down = 0, up = BASE, mid;
 
+    //С помощью дихотомии (половинного деления) определяется число на которое нужно домножить делитель, чтобы получить первое число делимого
+
     while(down < up - 1) {
         mid = (down + up) / 2;
 

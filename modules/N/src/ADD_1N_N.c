@@ -11,6 +11,8 @@
 longNumberN* incN(longNumberN* number) {
     longNumberN* res = malloc(sizeof(longNumberN));
 
+    //Заранее добавляем единицу к длине результата в том случае, если результат увеличится на один разряд после сложения 
+
     res->len = number->len + 1;
     res->num = calloc(res->len, sizeof(int));
 
@@ -18,7 +20,7 @@ longNumberN* incN(longNumberN* number) {
 
     for(int i = 0; i < res->len - 1; ++i) {
         res->num[i] += number->num[i];
-
+        // Добавляется единица в следующий разряд, в случае если величина в разряде перевалит за величину BASE
         if(res->num[i] >= BASE) {
             res->num[i] -= BASE;
             res->num[i + 1]++;
