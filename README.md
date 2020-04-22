@@ -6,7 +6,7 @@ Just download and run the executable file with the label `main.exe` in the relea
 
 ## Project structure
 1. `modules` directory contains `4` subdirectories:
-    - 1. N - non-negative integers
+    -1. N - non-negative integers
     2. Z - integers
     3. Q - rationals
     4. P - polynomials
