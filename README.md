@@ -35,16 +35,17 @@ In each module there is `utils` directory with `input` sub-directory which conta
    * degree of polynomial called `degree`
 
 ### Functions for non-negative integers
+1. **sumN** - summation of two numbers
+2. **compN** - comparison of two numbers
+3. **divN** - division of two numbers
+4. **gcfN** - finding greatest common divisor of two numbers
+5. **lcmN** - finding least common multiple of two numbers
+6. **modN** - finding remainder of division of two numbers
+7. **multiByDigit** - multiplication of number and digit
+8. **multiN** - multiplication of two numbers
+9.  **subN** - subtraction of two numbers
+### Secondary functions
 1. **incN** - increasing a number by `1`
-2. **sumN** - summation of two numbers
-3. **compN** - comparison of two numbers
-4. **divN** - division of two numbers
-5. **gcfN** - finding greatest common divisor of two numbers
-6. **lcmN** - finding least common multiple of two numbers
-7. **modN** - finding remainder of division of two numbers
-8. **multiByDigit** - multiplication of number and digit
-9. **multiN** - multiplication of two numbers
-10. **subN** - subtraction of two numbers
 
 ### Functions for integers
 1. **sumZ** - summation of two numbers
@@ -52,21 +53,35 @@ In each module there is `utils` directory with `input` sub-directory which conta
 3. **modZ** - finding remainder of division of two numbers
 4. **multiZ** - multiplication of two numbers
 5. **subZ** - subtraction of two numbers
+### Secondary functions
+1. **abosule** - return absolute value of number
+2. **changeSign** - change sign of number
+3. **getSign** - return sign of number
+4. **transNtoZ** - Converting a natural number to an integer
+5. **transZtoN** - Converting a integer to a natural number
 
 ### Functions for rationals
 1. **addQ** - summation of two numbers
 2. **divQ** - division of two numbers
-3. **isInt** - checking for integer number
-4. **mulQ** - multiplication of two numbers
-5. **redQ** - fraction reduction
-6. **subQ** - subtraction of two numbers
+3. **mulQ** - multiplication of two numbers
+4. **redQ** - fraction reduction
+5. **subQ** - subtraction of two numbers
+### Secondary functions
+1. **isInt** - checking for integer number
+2. **transQtoZ** - Converting a rational number to an integer
+3. **transZtoQ** - Converting a integer to a rational number
 
 ### Functions for polynomials
 1. **sumP** - summation of two polynomials
-2. **derP** - finding first derivative of polynomial
-3. **divP** - division of two polynomials
-4. **gcfP** - finding greatest common divisor of two polynomials
-5. **modP** - finding remainder of division of two polynomials
-6. **mulP** - multiplication of two polynomials
-7. **multyByRational** - multiplication of polynomial and rational
-8. **subP** - subtraction of two polynomials
+2. **divP** - division of two polynomials
+3. **derP** - finding first derivative of polynomial
+4. **multyByRational** - multiplication of polynomial and rational
+5. **subP** - subtraction of two polynomials
+6. **modP** - finding remainder of division of two polynomials 
+7. **mulP** - multiplication of two polynomials
+8. **gcfP** - finding greatest common divisor of two polynomials
+9. **multyByXk** - multiplication of a polynomial by x ^ k
+### Secondary functions
+1. **facP** - removal from the polynomial lcm of denominator and gcf from numenator
+2. **led** - finding the highest polynomial coefficient
+3. **deg** - finding number degree
