@@ -14,6 +14,8 @@ Just download and run the executable file with the label `main.exe` in the relea
 3. `src` directory contains source file with main function called `main.c`
 4. `release` directory contains the executable file with the label `main.exe`
 
+In each module there is `utils` directory with `input` sub-directory which contains input/output functions of corresponding number
+
 ## Implementation details
 1. Structure for non-negative integer called `longNumberN` consists of the following fields:
    * integer array called `num`
