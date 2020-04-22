@@ -7,9 +7,9 @@ Just download and run the executable file with the label `main.exe` in the relea
 ## Project structure
 1. `modules` directory contains `4` subdirectories:
     * N - non-negative integers
-      Z - integers
-      Q - rationals
-      P - polynomials
+    * Z - integers
+    * Q - rationals
+    * P - polynomials
 2. `ui` directory implements the program interface
 3. `src` directory contains source file with main function called `main.c`
 4. `release` directory contains the executable file with the label `main.exe`
