@@ -2,17 +2,17 @@
     author Kirill Konoplev
     group 9305
 */
-#include "stdio.h"
+
+#include <stdlib.h>
 #include "../utils/lib/input.h"
-#include "../utils/lib/memory.h"
 
 #include "../lib/COM_NN_D.h"
 #include "../lib/SUB_NN_N.h"
 
 longNumberN* subN(longNumberN* a, longNumberN* b) {
+    if(compN(a, b) == LESS) return NULL;
+    
     longNumberN* c = malloc(sizeof(longNumberN));
-
-    if(compN(a,b) == LESS) return NULL;
 
     c->len = a->len;
     c->num = calloc(c->len, sizeof(int));

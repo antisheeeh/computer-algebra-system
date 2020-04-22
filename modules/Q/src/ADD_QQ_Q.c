@@ -3,7 +3,7 @@
     Group: 9305
 */
 
-#include "../utils/lib/memory.h"
+#include <stdlib.h>
 
 #include "../../../modules/N/lib/DIV_NN_N.h"
 #include "../../../modules/Z/lib/MUL_ZZ_Z.h"
@@ -15,6 +15,9 @@
 #include "../lib/ADD_QQ_Q.h"
 
 longNumberQ* addQ(longNumberQ* a , longNumberQ* b){
+    a = redQ(a);
+    b = redQ(b);
+
     longNumberQ *res = malloc(sizeof(longNumberQ));
     
     //Знаменатель = НОК(a,b)

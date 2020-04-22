@@ -6,15 +6,13 @@
 #include <stdlib.h>
 
 #include "../lib/TRANS_Z_Q.h"
+#include "../../N/utils/lib/input.h"
 
 longNumberQ* transZtoQ(longNumberZ* number) {
     longNumberQ* res = malloc(sizeof(longNumberQ));
 
     res->numerator = number;
-    res->denominator = malloc(sizeof(longNumberN));
-    res->denominator->len = 1;
-    res->denominator->num = malloc(sizeof(int));
-    res->denominator->num[0] = 1;
+    res->denominator = parseNumberN("1");
 
     return res;
 }

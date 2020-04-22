@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stddef.h>
 
 #include "../../N/lib/DIV_NN_N.h"
 #include "../../N/lib/ADD_1N_N.h"
@@ -12,12 +12,12 @@
 #include "../lib/DIV_ZZ_Z.h"
 
 longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
+    if(b->sign == NEUTRAL) return NULL;
+
     longNumberN* aN = transZtoN(a);
     longNumberN* bN = transZtoN(b);
     longNumberN* div = divN(aN, bN);
     longNumberN* mod = modN(aN, bN);
-
-    if(getSign(b) == NEUTRAL) return NULL;
 
     if(a->sign == NEUTRAL) return transNtoZ(div);
 
@@ -27,6 +27,7 @@ longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
     }
 
     //Если делимое имеет отрицательный знак, тогда результат будет на единицу больше, т.к в обратном случае выйдет, что у нас отрицательный остаток, чего быть не может.
+    
     if(a->sign == MINUS) {
         if(b->sign == MINUS) return transNtoZ(incN(div));
         if(b->sign == PLUS) return changeSign(transNtoZ(incN(div)));

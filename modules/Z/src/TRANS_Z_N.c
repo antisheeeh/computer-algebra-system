@@ -1,4 +1,4 @@
-#include "../utils/lib/memory.h"
+#include <stdlib.h>
 
 #include "../lib/TRANS_Z_N.h"
 

@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "../lib/memory.h"
 #include "../lib/input.h"
 
 #define BLOCK 128

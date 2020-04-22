@@ -11,7 +11,7 @@
 
 int div_nn_dk(longNumberN* a, longNumberN* b, int k) {
     longNumberN* c = multiBy10k(b, k);
-
+    
     int res = compN(a, c);
 
     if(res == LESS) return 0;

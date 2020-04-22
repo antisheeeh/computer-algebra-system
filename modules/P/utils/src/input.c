@@ -13,9 +13,10 @@
 #include "../../../Q/lib/TRANS_Q_Z.h"
 #include "../../../N/lib/NZER_N_B.h"
 
-longNumberP* parseNumberP(char* str) {
+longNumberP* parseNumberP(char* s) {
     longNumberP* number = malloc(sizeof(longNumberP));
 
+    char* str = copy(s);
     removeSpaces(str);
     
     char** monomials = getMonomials(str);
@@ -34,6 +35,8 @@ longNumberP* parseNumberP(char* str) {
             number->coefficient[i] = parseNumberQ("0");
         }
     }
+
+    removeLeadingZerosP(number);
 
     return number;
 }

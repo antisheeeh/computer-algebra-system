@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "../lib/menu.h"
 
 #include "../../modules/Z/utils/lib/input.h"
 #include "../../modules/Z/lib/number.h"
 
-#include "../../modules/Q/utils/lib/memory.h"
 #include "../../modules/Q/utils/lib/input.h"
 
 #include "../../modules/N/utils/lib/input.h"
@@ -25,6 +25,8 @@ void menu_RED_QQ_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
 
+    puts("");
+
     puts(toStringQ(redQ(a)));
 }
 
@@ -32,10 +34,12 @@ void menu_INT_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
 
+    puts("");
+
     if(isInt(a)) {
-        puts("Yes");
+        puts("The number is an integer");
     } else {
-        puts("No");
+        puts("The number is not an integer");
     }
 }
 

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "../lib/menu.h"
 
@@ -7,8 +8,6 @@
 #include "../../modules/Q/utils/lib/input.h"
 #include "../../modules/Z/utils/lib/input.h"
 #include "../../modules/P/lib/number.h"
-
-#include "../../modules/P/utils/lib/memory.h"
 
 #include "../../modules/P/lib/ADD_PP_P.h"
 #include "../../modules/P/lib/DEG_P_N.h"

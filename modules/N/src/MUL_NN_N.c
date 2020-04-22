@@ -4,7 +4,6 @@
 */
 
 #include "../utils/lib/input.h"
-#include "../utils/lib/memory.h"
 
 #include "../lib/MUL_ND_N.h"
 #include "../lib/MUL_NK_N.h"
@@ -15,26 +14,12 @@
 longNumberN* multiN(longNumberN* a, longNumberN* b) {
     if(a->len == 1) return multiByDigit(b, a->num[0]);
     if(b->len == 1) return multiByDigit(a, b->num[0]);
-        
-    longNumberN* c = malloc(sizeof(longNumberN));
 
-    c->len = a->len + b->len + 1;
-    c->num = calloc(c->len, sizeof(int));
+    longNumberN* res = parseNumberN("0");
 
-    int i, j;
-    long long temp;
-
-    //Поразрядно перемножаются два числа
-
-    for(i = 0; i < a->len; ++i) {
-        for(j = 0; j < b->len; ++j) {
-            temp = c->num[i + j] + a->num[i] * 1ll * b->num[j];
-            c->num[i + j] = temp % BASE;
-            c->num[i + j + 1] += temp / BASE;
-        }
+    for(int i = 0; i < b->len; ++i) {
+        res = sumN(res, multiBy10k(multiByDigit(a, b->num[i]), i));
     }
 
-    removeLeadingZerosN(c);
-
-    return c;
+    return res;
 }

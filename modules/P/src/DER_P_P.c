@@ -12,7 +12,6 @@ longNumberP *derP(longNumberP *a)
     char str[BLOCK_SIZE];
 
     res->degree = a->degree - 1;
-    
     res->coefficient = malloc((res->degree + 1) * sizeof(longNumberQ*)); 
 
     for(int i = 0; i <= res->degree; i++){

@@ -3,22 +3,20 @@
     group 9305
 */
 
+#include <stdlib.h>
 #include "../utils/lib/input.h"
-#include "../utils/lib/memory.h"
 
 #include "../lib/ADD_NN_N.h"
 
 longNumberN* sumN(longNumberN* a, longNumberN* b) {
     longNumberN* c = malloc(sizeof(longNumberN));
 
-    if(a->len > b->len) c->len = a->len + 1;
-    else c->len = b->len + 1;
+    //добавление незначащего нуля к результату для случая переполнения
 
+    c->len = a->len > b->len ? a->len + 1 : b->len + 1;
     c->num = calloc(c->len, sizeof(int));
 
-    int i;
-    // Сложение чисел порязрядно. Если величина в рязряде результирующего числа перевалит за величину BLOCK, тогда мы добавляем единицу в следующий разряд результирующего числа
-    for(i = 0; i < c->len - 1; ++i) {
+    for(int i = 0; i < c->len - 1; ++i) {
         if(i >= a->len){
             c->num[i] += b->num[i];
         } else if(i >= b->len) {
@@ -26,6 +24,8 @@ longNumberN* sumN(longNumberN* a, longNumberN* b) {
         } else {
             c->num[i] += a->num[i] + b->num[i];
         }
+
+        //перенос единицы в следующий разряд результата
 
         if(c->num[i] >= BASE) {
             c->num[i] -= BASE;

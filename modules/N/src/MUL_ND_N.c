@@ -3,8 +3,8 @@
     group 9305
 */
 
+#include <stdlib.h>
 #include "../utils/lib/input.h"
-#include "../utils/lib/memory.h"
 
 #include "../lib/MUL_ND_N.h"
 
@@ -14,10 +14,11 @@ longNumberN* multiByDigit(longNumberN* number, int digit) {
     c->len = number->len + 1;
     c->num = calloc(c->len, sizeof(int));
 
-    long long temp;
-    int i;
+    //переменная для случая переполнения произведения двух цифр
 
-    for(i = 0; i < c->len - 1; ++i) {
+    long long temp;
+
+    for(int i = 0; i < c->len - 1; ++i) {
         // В переменную записывается произведение двух чисел
         temp = c->num[i] + number->num[i] * 1ll * digit;
         //В данный разряд записывается остаток от деления произведения двух чисел на максимальную величину разряда

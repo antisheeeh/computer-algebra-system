@@ -3,8 +3,6 @@
     group 9305
 */
 
-#include <stdio.h>
-
 #include "../lib/MUL_ZM_Z.h"
 
 longNumberZ* changeSign(longNumberZ* number) {

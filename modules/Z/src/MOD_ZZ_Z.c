@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stddef.h>
 
 #include "../lib/DIV_ZZ_Z.h"
 #include "../lib/MUL_ZZ_Z.h"
@@ -8,6 +8,6 @@
 #include "../lib/MOD_ZZ_Z.h"
 
 longNumberZ* modZ(longNumberZ* a, longNumberZ* b) {
-    if(getSign(b) == NEUTRAL) return NULL;
+    if(b->sign == NEUTRAL) return NULL;
     return subZ(a, multiZ(b, divZ(a, b)));
 }

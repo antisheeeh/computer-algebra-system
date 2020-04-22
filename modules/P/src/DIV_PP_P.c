@@ -12,22 +12,15 @@
 #include "../utils/lib/input.h"
 
 longNumberP* divP(longNumberP* a, longNumberP* b) {
-    longNumberP* r = malloc(sizeof(longNumberP));
+    if(a->degree - b->degree < 0) return parseNumberP("0"); 
 
-    r->degree = a->degree - b->degree;
-    if(r->degree < 0) return parseNumberP(toStringQ(parseNumberQ("0"))); 
+    longNumberP* res = parseNumberP("0");
 
-    r->coefficient = malloc((r->degree + 1) * sizeof(longNumberQ));
-
-    for(int i = r->degree; i >= 0; --i) {
-        r->coefficient[i] = parseNumberQ("0");
-    }
-
-    for(int i = r->degree; deg(a) >= deg(b); --i) {
-        longNumberP* p = multyByXk(parseNumberP(toStringQ(divQ(led(a), led(b)))), deg(a) - deg(b));
-        r = sumP(r, p);
+    while(a->degree >= b->degree) {
+        longNumberP* p = multyByXk(parseNumberP(toStringQ(divQ(led(a), led(b)))), a->degree - b->degree);
+        res = sumP(res, p);
         a = subP(a, mulP(p, b)); 
     }
 
-    return r;
+    return res;
 }

@@ -2,7 +2,7 @@
 
 #include "../../lib/number.h"
 
-longNumberP* parseNumberP(char* str);
+longNumberP* parseNumberP(char* s);
 char* toStringP(longNumberP *number);
 char** getMonomials(char* str);
 int getCount(char** monomials);

@@ -3,7 +3,7 @@
     Group: 9305
 */
 
-#include "../utils/lib/memory.h"
+#include <stdlib.h>
 
 #include "../../../modules/Z/lib/MUL_ZZ_Z.h"
 #include "../../../modules/Z/lib/TRANS_N_Z.h"
@@ -13,6 +13,9 @@
 #include "../lib/MUL_QQ_Q.h"
 
 longNumberQ* mulQ(longNumberQ* a, longNumberQ* b) {
+    a = redQ(a);
+    b = redQ(b);
+    
     longNumberQ* res = malloc(sizeof(longNumberQ));
 
     res->numerator = multiZ(a->numerator, b->numerator);

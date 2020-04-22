@@ -1,6 +1,10 @@
 {
     "files.associations": {
+        "*.h": "c",
         "input.h": "c",
-        "trans_n_z.h": "c"
+        "trans_n_z.h": "c",
+        "cmath": "c",
+        "*.tcc": "c",
+        "cstdlib": "c"
     }
 }

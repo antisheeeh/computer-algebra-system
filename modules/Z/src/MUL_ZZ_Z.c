@@ -6,11 +6,11 @@
 #include "../lib/MUL_ZZ_Z.h"
 
 longNumberZ* multiZ(longNumberZ* a, longNumberZ* b) {
+    if(a->sign == NEUTRAL) return a;
+    if(b->sign == NEUTRAL) return b;
+    
     longNumberN* aN = transZtoN(a);
     longNumberN* bN = transZtoN(b);
-
-    if(a->sign == NEUTRAL) return transNtoZ(aN);
-    if(b->sign == NEUTRAL) return transNtoZ(bN);
 
     if(a->sign != b->sign) {
         return changeSign(transNtoZ(multiN(aN, bN)));
