@@ -26,11 +26,11 @@ Just download and run the executable file with the label `main.exe` in the relea
      * Minus
      * Neutral for zero
 3. Structure for rational called `longNumberQ` consists of the following fields:
-   * integer
-   * non-negative integer
+   * integer called `numerator`
+   * non-negative integer called `denominator`
 4. Structure for polynomial called `longNumberP` consists of the following fields:
-   * rational array which represents polynomial coefficients
-   * degree of polynomial
+   * rational array which represents polynomial coefficients called `coefficient`
+   * degree of polynomial called `degree`
 
 ### Functions for non-negative integers
 1. incN - increasing a number by `1`
