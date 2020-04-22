@@ -7,6 +7,8 @@
 longNumberP* sumP(longNumberP* a , longNumberP* b) {
     longNumberP* res = malloc(sizeof(longNumberP));
 
+    //Choose the greatest degree among two numbers//
+    
     res->degree = a->degree > b->degree ? a->degree : b->degree;
     res->coefficient = malloc((res->degree + 1) * sizeof(longNumberQ*));
 

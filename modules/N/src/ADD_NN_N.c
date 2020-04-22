@@ -11,7 +11,7 @@
 longNumberN* sumN(longNumberN* a, longNumberN* b) {
     longNumberN* c = malloc(sizeof(longNumberN));
 
-    //добавление незначащего нуля к результату для случая переполнения
+    //Adding a negligible zero to the result when overflow occurs//
 
     c->len = a->len > b->len ? a->len + 1 : b->len + 1;
     c->num = calloc(c->len, sizeof(int));
@@ -25,7 +25,7 @@ longNumberN* sumN(longNumberN* a, longNumberN* b) {
             c->num[i] += a->num[i] + b->num[i];
         }
 
-        //перенос единицы в следующий разряд результата
+        //Transfer "1" to the next digit of the number//
 
         if(c->num[i] >= BASE) {
             c->num[i] -= BASE;

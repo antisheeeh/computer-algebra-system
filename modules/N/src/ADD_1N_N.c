@@ -11,17 +11,18 @@
 longNumberN* incN(longNumberN* number) {
     longNumberN* res = malloc(sizeof(longNumberN));
 
-    //добавление незначащего нуля к результату в случае переполнения
+    //Adding a negligible zero to the result when overflow occurs//
 
     res->len = number->len + 1;
     res->num = calloc(res->len, sizeof(int));
 
     res->num[0]++;
 
+    
     for(int i = 0; i < res->len - 1; ++i) {
         res->num[i] += number->num[i];
 
-        //перенос единицы в следующий разряд результата
+        //Transfer "1" to the next digit of the number//
         
         if(res->num[i] >= BASE) {
             res->num[i] -= BASE;

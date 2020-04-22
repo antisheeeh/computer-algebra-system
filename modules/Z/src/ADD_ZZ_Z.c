@@ -22,7 +22,7 @@ longNumberZ* sumZ(longNumberZ* a, longNumberZ* b) {
     if(a->sign == PLUS && b->sign == PLUS) return transNtoZ(sumN(aN, bN));
     if(a->sign == MINUS && b->sign == MINUS) return changeSign(transNtoZ(sumN(aN, bN)));
 
-    //Если знаки двух чисел различаются, тогда мы вычитаем из большего меньшее
+    //If the signs of the two numbers different, then the smaller number is subtracted from the larger number//
     
     if(a->sign == PLUS && b->sign == MINUS) {
         if(compN(aN, bN) == GREATER) return transNtoZ(subN(aN, bN));

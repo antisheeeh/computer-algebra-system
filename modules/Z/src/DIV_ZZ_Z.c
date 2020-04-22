@@ -26,7 +26,7 @@ longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
         else return changeSign(transNtoZ(div));
     }
 
-    //Если делимое имеет отрицательный знак, тогда результат будет на единицу больше, т.к в обратном случае выйдет, что у нас отрицательный остаток, чего быть не может.
+    //If the dividend has a negative sign, then the result will increase by one//
     
     if(a->sign == MINUS) {
         if(b->sign == MINUS) return transNtoZ(incN(div));

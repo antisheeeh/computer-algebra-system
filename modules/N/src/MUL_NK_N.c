@@ -16,7 +16,7 @@ longNumberN* multiBy10k(longNumberN* number, int k) {
     res->len = number->len + k;
     res->num = calloc(res->len, sizeof(int));
 
-    //Добавляем нули в конце числа
+    //Adding zeros to the end of a number//
     
     for(int i = k; i < res->len; ++i) {
         res->num[i] = number->num[i - k];
