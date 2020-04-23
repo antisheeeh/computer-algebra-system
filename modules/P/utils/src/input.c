@@ -42,7 +42,7 @@ longNumberP* parseNumberP(char* s) {
 }
 
 char* toStringP(longNumberP *number) {
-    char* str = malloc(2048 * sizeof(char));
+    char* str = malloc(15000 * sizeof(char));
     char buf[1024];
 
     strcpy(str, "");
@@ -62,11 +62,11 @@ char* toStringP(longNumberP *number) {
             char* numerator = toStringZ(number->coefficient[i]->numerator);
             char* denominator = toStringN(number->coefficient[i]->denominator);
 
-            if(i != 0 && strcmp(numerator, "1") == 0 && strcmp(denominator, "1") == 0) {
+            //if(i != 0 && strcmp(numerator, "1") == 0 && strcmp(denominator, "1") == 0) {
                 
-            } else {
+            //} else {
                 strcat(str, toStringQ(number->coefficient[i]));
-            }
+            //}
 
             if(i == 1) {
                 strcat(str, "x");

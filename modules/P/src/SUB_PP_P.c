@@ -9,7 +9,7 @@
 
 longNumberP* subP(longNumberP* a , longNumberP* b) {
     longNumberP *res = sumP(a, multyByRational(b, parseNumberQ("-1")));
-    
+
     removeLeadingZerosP(res);
 
     return res;

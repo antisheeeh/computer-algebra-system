@@ -5,6 +5,8 @@
 
 #include "../lib/MUL_ZZ_Z.h"
 
+#include <stdio.h>
+
 longNumberZ* multiZ(longNumberZ* a, longNumberZ* b) {
     if(a->sign == NEUTRAL) return a;
     if(b->sign == NEUTRAL) return b;

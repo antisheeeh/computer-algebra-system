@@ -252,7 +252,7 @@ void initPolynomial() {
 	polynomial[1] = menu_SUB_PP_P;
 	polynomial[2] = menu_MUL_PQ_P;
 	polynomial[3] = menu_MUL_Pxk_P;
-	//polynomial[4] = menu_LED_L_Q;
+	polynomial[4] = menu_LED_L_Q;
 	//polynomial[5] = menu_DEG_P_N;
 	polynomial[6] = menu_FAC_P_Q;
 	polynomial[7] = menu_MUL_PP_P;
