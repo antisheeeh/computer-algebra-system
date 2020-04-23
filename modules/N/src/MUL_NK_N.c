@@ -3,10 +3,7 @@
     Group: 9305
 */
 
-#include <string.h>
-
 #include <stdlib.h>
-#include "../utils/lib/input.h"
 
 #include "../lib/MUL_NK_N.h"
 

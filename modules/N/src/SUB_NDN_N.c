@@ -4,7 +4,6 @@
 */
 
 #include <stddef.h>
-#include "../utils/lib/input.h"
 
 #include "../lib/SUB_NN_N.h"
 #include "../lib/MUL_ND_N.h"

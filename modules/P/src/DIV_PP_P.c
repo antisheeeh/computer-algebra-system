@@ -13,9 +13,8 @@
 
 longNumberP* divP(longNumberP* a, longNumberP* b) {
     if(a->degree < b->degree) return parseNumberP("0"); 
-    if(a->degree == 0 && b->degree == 0) return parseNumberP(toStringQ(divQ(led(a), led(b))));
-    if(b->degree == 0 && b->coefficient[0]->numerator->num[0] == 1) return a;
-
+    if(a->degree == b->degree) return parseNumberP(toStringQ(divQ(led(a), led(b))));
+    
     longNumberP* res = parseNumberP("0");
 
     while(a->degree != 0 && a->degree >= b->degree) {

@@ -6,12 +6,13 @@
 #define NUMBER_OF_QFUNC 6
 #define NUMBER_OF_PFUNC 13
 
+void init();
 void initMenu();
 void initNatural();
 void initWhole();
 void initRational();
 void initPolynomial();
-void init();
+
 void showHelp();
 void showMenu();
 void naturalMenu();
