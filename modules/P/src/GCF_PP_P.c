@@ -1,4 +1,6 @@
 #include "../lib/GCF_PP_P.h"
+#include "../lib/DIV_PP_P.h"
+#include "../lib/FAC_P_Q.h"
 #include "../utils/lib/input.h"
 #include <stdio.h>
 
@@ -13,5 +15,5 @@ longNumberP* gcfP(longNumberP* a, longNumberP* b) {
         a = temp;
     }
     
-    return a;
+    return divP(a, facP(a));
 }

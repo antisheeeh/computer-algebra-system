@@ -28,7 +28,7 @@ char* toStringQ(longNumberQ* number) {
     char* numerator = toStringZ(number->numerator);
     char* denominator = toStringN(number->denominator);
     char* res;
-
+    
     if(strcmp(denominator, "1") == 0) {
         res = malloc((strlen(numerator) + 1) * sizeof(char));
         strcpy(res, numerator);

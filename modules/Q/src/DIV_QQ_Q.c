@@ -10,6 +10,7 @@
 #include "../../../modules/Z/lib/TRANS_N_Z.h"
 #include "../../../modules/Z/lib/TRANS_Z_N.h"
 #include "../../../modules/Z/lib/MUL_ZM_Z.h"
+#include "../../../modules/Q/utils/lib/input.h"
 #include "../lib/RED_Q_Q.h"
 
 #include "../lib/DIV_QQ_Q.h"

@@ -12,15 +12,15 @@
 #include "../utils/lib/input.h"
 
 longNumberP* divP(longNumberP* a, longNumberP* b) {
-    if(a->degree < b->degree) return parseNumberP("0"); 
+    if(a->degree < b->degree) return parseNumberP("0");
     if(a->degree == b->degree) return parseNumberP(toStringQ(divQ(led(a), led(b))));
     
     longNumberP* res = parseNumberP("0");
 
-    while(a->degree != 0 && a->degree >= b->degree) {
+    while((a->degree != 0 || a->coefficient[0]->numerator->sign != NEUTRAL) && a->degree >= b->degree) {
         longNumberP* p = multyByXk(parseNumberP(toStringQ(divQ(led(a), led(b)))), a->degree - b->degree);
         res = sumP(res, p);
-        a = subP(a, mulP(p, b)); 
+        a = subP(a, mulP(p, b));
     }
 
     return res;

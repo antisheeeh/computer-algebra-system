@@ -22,6 +22,7 @@
 #include "../../modules/P/lib/MOD_PP_P.h"
 #include "../../modules/P/lib/GCF_PP_P.h"
 #include "../../modules/P/lib/DER_P_P.h"
+#include "../../modules/P/lib/NMR_P_P.h"
 
 #include "../../modules/N/utils/lib/input.h"
 
@@ -105,13 +106,8 @@ void menu_FAC_P_Q(){
     puts("Please enter a polynomial");
     longNumberP *a = parseNumberP(getStringN());
 
-    longNumberN *gcf;
-    longNumberN *lcm;
-
-    facP(a,&gcf,&lcm);
-
-    puts(toStringN(gcf));
-    puts(toStringN(lcm));
+    puts("Result");
+    puts(toStringP(facP(a)));
 }
 
 //Multiplication 2 polinomials
@@ -177,8 +173,11 @@ void menu_DER_P_P(){
 }
 
 //Multiple roots in simple
-/*
-void menu_NMR_P_P(){
 
+void menu_NMR_P_P(){
+    puts("Please enter a polynomial");
+    longNumberP* a = parseNumberP(getStringN());
+
+    puts("Result");
+    puts(toStringP(multipleRootsToSimple(a)));
 }
-*/
