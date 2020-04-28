@@ -11,10 +11,7 @@
 #include "../../Q/utils/lib/input.h"
 #include "../utils/lib/input.h"
 
-longNumberP* divP(longNumberP* a, longNumberP* b) {
-    if(a->degree < b->degree) return parseNumberP("0");
-    if(a->degree == b->degree) return parseNumberP(toStringQ(divQ(led(a), led(b))));
-    
+longNumberP* divP(longNumberP* a, longNumberP* b) {    
     longNumberP* res = parseNumberP("0");
 
     while((a->degree != 0 || a->coefficient[0]->numerator->sign != NEUTRAL) && a->degree >= b->degree) {

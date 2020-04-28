@@ -20,9 +20,11 @@
 void menu_COM_NN() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
     
     int res = compN(a, b);
 
@@ -38,6 +40,7 @@ void menu_COM_NN() {
 void menu_ADD_1N_N() {
     puts("Please enter a number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("");
 
@@ -51,9 +54,11 @@ void menu_ADD_1N_N() {
 void menu_ADD_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
 
@@ -66,9 +71,11 @@ void menu_ADD_NN_N() {
 void menu_SUB_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
     if(subN(a,b) != NULL){
@@ -82,9 +89,11 @@ void menu_SUB_NN_N() {
 void menu_MUL_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
 
@@ -97,9 +106,11 @@ void menu_MUL_NN_N() {
 void menu_DIV_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
     
@@ -112,9 +123,11 @@ void menu_DIV_NN_N() {
 void menu_MOD_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
     
@@ -129,9 +142,11 @@ void menu_MOD_NN_N() {
 void menu_GCF_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
     puts("Result");
@@ -144,9 +159,11 @@ void menu_GCF_NN_N() {
 void menu_LCM_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
+    if(!b) return;
 
     puts("");
     puts("Result");

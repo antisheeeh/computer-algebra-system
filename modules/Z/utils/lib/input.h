@@ -6,6 +6,9 @@
 
 void removeTrailingZerosZ(longNumberZ* number);
 char* getStringZ();
-longNumberZ* parseNumberZ(char* str);
+longNumberZ* parseNumberZ(char* s);
 void printNumberZ(longNumberZ* num);
 char *toStringZ(longNumberZ *num);
+char* copyZ(char* str);
+void removeSpacesZ(char* s);
+int isValidZ(char* str);

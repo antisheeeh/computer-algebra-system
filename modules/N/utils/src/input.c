@@ -12,9 +12,16 @@ void removeLeadingZerosN(longNumberN* number) {
 }
 
 longNumberN* parseNumberN(char* s) {
-    longNumberN* number = malloc(sizeof(longNumberN));
-
     char* str = copy(s);
+
+    removeSpacesN(str);
+
+    if(!isValidN(str)) {
+        puts("\nInvalid input");
+        return NULL;
+    }
+
+    longNumberN* number = malloc(sizeof(longNumberN));
 
     int i, len = strlen(str);
     char buf[BLOCK_SIZE + 1];
@@ -74,4 +81,26 @@ char* copy(char* str) {
     char* res = malloc((strlen(str) + 1) * sizeof(char));
     strcpy(res, str);
     return res;
+}
+
+void removeSpacesN(char* s) {
+    const char* d = s;
+
+    do {
+        while (*d == ' ') {
+            ++d;
+        }
+    } while (*s++ = *d++);
+}
+
+int isValidN(char* str) {
+    if(!str) return 0;
+
+    if(*str == '\0') return 0;
+
+    char* t = copy(str);
+    if(*t == '+' && *(t + 1) != '\0') t++;
+    while('0' <= *t && *t <= '9') t++;
+
+    return *t == '\0';
 }

@@ -1,20 +1,30 @@
 #include <stdio.h>
-#include "stdlib.h"
+#include <stdlib.h>
 #include <string.h>
-#include "../lib/input.h"
+
 #include "../../../../modules/N/lib/number.h"
 #include "../../../../modules/N/utils/lib/input.h"
 #include "../../../../modules/Z/utils/lib/input.h"
 #include "../../../../modules/Z/lib/TRANS_N_Z.h"
 
-longNumberQ* parseNumberQ(char* str) {
+#include "../lib/input.h"
+
+longNumberQ* parseNumberQ(char* s) {
+    char* str = copyZ(s);
+
+    removeSpacesQ(str);
+    
+    if(!isValidQ(str)) {
+        puts("\nInvalid input");
+        return NULL;
+    }
+
     longNumberQ* number = malloc(sizeof(longNumberQ));
+ 
+    char* res = strtok(str, "/");
 
-    char* s = copy(str);
-    char* res = strtok(s, "/");
-
-    if(strlen(res) == strlen(str)) {
-        number->numerator = parseNumberZ(s);
+    if(strlen(res) == strlen(s)) {
+        number->numerator = parseNumberZ(res);
         number->denominator = parseNumberN("1");
     } else {
         number->numerator = parseNumberZ(res);
@@ -40,4 +50,36 @@ char* toStringQ(longNumberQ* number) {
     }
 
     return res;
+}
+
+char* copyQ(char* str) {
+    char* res = malloc((strlen(str) + 1) * sizeof(char));
+    strcpy(res, str);
+    return res;
+}
+
+void removeSpacesQ(char* s) {
+    const char* d = s;
+
+    do {
+        while (*d == ' ') {
+            ++d;
+        }
+    } while (*s++ = *d++);
+}
+
+int isValidQ(char* str) {
+    if(!str) return 0;
+
+    if(*str == '\0') return 0;
+
+    char* t = copyQ(str);
+
+    char* numerator = strtok(t, "/");
+    if(!isValidZ(numerator)) return 0;
+
+    char* denominator = strtok(NULL, "/");
+    if(denominator && !isValidN(denominator)) return 0;
+
+    return 1;
 }

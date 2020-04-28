@@ -14,10 +14,16 @@
 #include "../../../N/lib/NZER_N_B.h"
 
 longNumberP* parseNumberP(char* s) {
-    longNumberP* number = malloc(sizeof(longNumberP));
+    char* str = copyP(s);
 
-    char* str = copy(s);
-    removeSpaces(str);
+    removeSpacesP(str);
+
+    if(!isValidP(str)) {
+        puts("\nInvalid input");
+        return NULL;
+    }
+
+    longNumberP* number = malloc(sizeof(longNumberP));
     
     char** monomials = getMonomials(str);
     int count = getCount(monomials);
@@ -28,7 +34,7 @@ longNumberP* parseNumberP(char* s) {
     int i, j = 0;
 
     for(i = number->degree; i >= 0; --i) {
-        if(j < count && getPower(monomials[j]) == i) {
+        if(j < count && atoi(getPower(monomials[j])) == i) {
             number->coefficient[i] = parseNumberQ(getCoef(monomials[j]));
             j++;
         } else {
@@ -126,42 +132,42 @@ char* getCoef(char* str) {
     return res;
 }
 
-int getPower(char* str) {
+char* getPower(char* str) {
     char* s = copy(str);
 
     char* res = strtok(s, "^");
 
     if(strlen(res) == strlen(str)) {
-        if(strcmp(str, "x") == 0) return 1;
+        if(strcmp(str, "x") == 0) return "1";
 
         char* t = copy(str);
 
         res = strtok(t, "x");
 
         if(strlen(res) == strlen(str)) {
-            return 0;
+            return "0";
         } else {
-            return 1;
+            return "1";
         }
     } else {
-        return atoi(strtok(NULL, "^"));
+        return strtok(NULL, "^");
     }
 }
 
 int getMaxPower(char** str) {
     int i, mx, p;
 
-    if(str[0] != NULL) mx = getPower(str[0]);
+    if(str[0] != NULL) mx = atoi(getPower(str[0]));
 
     for(i = 0; str[i] != NULL; ++i) {
-        p = getPower(str[i]);
+        p = atoi(getPower(str[i]));
         if(p > mx) mx = p;
     }
 
     return mx;
 }
 
-void removeSpaces(char* s) {
+void removeSpacesP(char* s) {
     const char* d = s;
     do {
         while (*d == ' ') {
@@ -170,8 +176,34 @@ void removeSpaces(char* s) {
     } while (*s++ = *d++);
 }
 
-void removeLeadingZerosP(longNumberP *number)
-{
+char* copyP(char* str) {
+    char* res = malloc((strlen(str) + 1) * sizeof(char));
+    strcpy(res, str);
+    return res;
+}
+
+void removeLeadingZerosP(longNumberP *number) {
     while(number->degree > 0 && isZero(transZtoN(number->coefficient[number->degree]->numerator))) number->degree--;
     number->coefficient = realloc(number->coefficient, (number->degree + 1) * sizeof(longNumberQ*));
+}
+
+int isValidP(char* str) {
+    if(!str) return 0;
+
+    if(*str == '\0') return 0;
+
+    char* t = copy(str);
+
+    char** monomials = getMonomials(t);
+    int count = getCount(monomials);
+
+    for(int i = 0; i < count; ++i) {
+        char* coef = getCoef(monomials[i]);
+        if(!isValidQ(coef)) return 0;
+
+        char* power = getPower(monomials[i]);
+        if(!power || strlen(power) > 9) return 0;
+    }
+
+    return 1;
 }

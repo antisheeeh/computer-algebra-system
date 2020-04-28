@@ -24,6 +24,7 @@
 void menu_RED_QQ_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("");
 
@@ -33,6 +34,7 @@ void menu_RED_QQ_Q() {
 void menu_INT_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("");
 
@@ -46,9 +48,11 @@ void menu_INT_Q() {
 void menu_MUL_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
+    if(!b) return;
 
     puts("");
 
@@ -59,9 +63,11 @@ void menu_MUL_QQ_Q() {
 void menu_DIV_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
+    if(!b) return;
 
     puts("");
 
@@ -72,9 +78,11 @@ void menu_DIV_QQ_Q() {
 void menu_ADD_QQ_Q(){
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
+    if(!b) return;
 
     puts("");
 
@@ -86,9 +94,11 @@ void menu_ADD_QQ_Q(){
 void menu_SUB_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
+    if(!a) return;
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
+    if(!b) return;
 
     puts("");
 

@@ -4,6 +4,7 @@
 
 #include "../../lib/TRANS_Z_N.h"
 #include "../../../N/lib/NZER_N_B.h"
+#include "../../../N/utils/lib/input.h"
 
 #include "../lib/input.h"
 
@@ -12,7 +13,16 @@ void removeLeadingZerosZ(longNumberZ* number) {
     number->num = realloc(number->num, number->len * sizeof(int));
 }
 
-longNumberZ* parseNumberZ(char* str) {
+longNumberZ* parseNumberZ(char* s) {
+    char* str = copyZ(s);
+    
+    removeSpacesZ(str);
+
+    if(!isValidZ(str)) {
+        puts("\nInvalid input");
+        return NULL;
+    }
+
     longNumberZ* number = malloc(sizeof(longNumberZ));
 
     if(number == NULL) return NULL;
@@ -103,4 +113,31 @@ char* toStringZ(longNumberZ* number) {
     if(len != number->len * BLOCK_SIZE + 1) str = realloc(str, sizeof(char) * (len + 1));
 
     return str;
+}
+
+char* copyZ(char* str) {
+    char* res = malloc((strlen(str) + 1) * sizeof(char));
+    strcpy(res, str);
+    return res;
+}
+
+void removeSpacesZ(char* s) {
+    const char* d = s;
+
+    do {
+        while (*d == ' ') {
+            ++d;
+        }
+    } while (*s++ = *d++);
+}
+
+int isValidZ(char* str) {
+    if(!str) return 0;
+
+    if(*str == '\0') return 0;
+
+    char* t = copyZ(str);
+    if(*t == '-' && '0' <= *(t + 1) && *(t + 1) <= '9') t++;
+
+    return isValidN(t);
 }
