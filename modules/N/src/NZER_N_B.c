@@ -5,6 +5,6 @@
 
 #include "../lib/NZER_N_B.h"
 
-int isZero(longNumberN* a) {
+int isZeroN(longNumberN* a) {
     return a->num[a->len - 1] == 0;
 }

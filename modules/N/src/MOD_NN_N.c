@@ -8,6 +8,6 @@
 #include "../lib/MOD_NN_N.h"
 
 longNumberN* modN(longNumberN* a, longNumberN* b) {
-    if(isZero(b)) return NULL;
+    if(isZeroN(b)) return NULL;
     return subN(a, multiN(b, divN(a, b)));
 }

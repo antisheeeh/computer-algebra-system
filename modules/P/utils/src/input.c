@@ -55,7 +55,7 @@ char* toStringP(longNumberP *number) {
     if(number->degree == 0 && number->coefficient[0]->numerator->num[0] == 0) return "0";
 
     for(i = number->degree; i >= 0; --i) {
-        if(!isZero(transZtoN(number->coefficient[i]->numerator))) {
+        if(!isZeroN(transZtoN(number->coefficient[i]->numerator))) {
             if(getSign(number->coefficient[i]->numerator) == PLUS) {
                 if(i != number->degree) {
                     strcat(str, " + ");
@@ -182,7 +182,7 @@ char* copyP(char* str) {
 }
 
 void removeLeadingZerosP(longNumberP *number) {
-    while(number->degree > 0 && isZero(transZtoN(number->coefficient[number->degree]->numerator))) number->degree--;
+    while(number->degree > 0 && isZeroN(transZtoN(number->coefficient[number->degree]->numerator))) number->degree--;
     number->coefficient = realloc(number->coefficient, (number->degree + 1) * sizeof(longNumberQ*));
 }
 

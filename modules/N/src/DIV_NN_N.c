@@ -16,7 +16,7 @@
 #include "../lib/DIV_NN_N.h"
 
 longNumberN* divN(longNumberN* a, longNumberN* b) {
-    if(isZero(b)) return NULL;
+    if(isZeroN(b)) return NULL;
 
     if(compN(a, b) == LESS) return parseNumberN("0");
     if(compN(a, b) == EQUAL) return parseNumberN("1");

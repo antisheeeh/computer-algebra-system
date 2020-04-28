@@ -2,4 +2,4 @@
 
 #include "number.h"
 
-int isZero(longNumberN* a);
+int isZeroN(longNumberN* a);

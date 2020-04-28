@@ -53,7 +53,7 @@ longNumberZ* parseNumberZ(char* s) {
 
     removeLeadingZerosZ(number);
 
-    if(isZero(transZtoN(number))) {
+    if(isZeroN(transZtoN(number))) {
         number->sign = NEUTRAL;
     }
     

@@ -17,7 +17,6 @@ longNumberN* incN(longNumberN* number) {
     res->num = calloc(res->len, sizeof(int));
 
     res->num[0]++;
-
     
     for(int i = 0; i < res->len - 1; ++i) {
         res->num[i] += number->num[i];

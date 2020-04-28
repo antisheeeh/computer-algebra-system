@@ -18,7 +18,7 @@ longNumberP* facP(longNumberP* number) {
     longNumberN* lcm = number->coefficient[number->degree]->denominator;
 
     for(int i = number->degree - 1; i >= 0; --i) {
-        if(!isZero(transZtoN(number->coefficient[i]->numerator))) {
+        if(!isZeroN(transZtoN(number->coefficient[i]->numerator))) {
             gcf = gcfN(gcf, transZtoN(number->coefficient[i]->numerator));
         }
 

@@ -21,7 +21,7 @@ longNumberZ* divZ(longNumberZ* a, longNumberZ* b) {
 
     if(a->sign == NEUTRAL) return transNtoZ(div);
 
-    if(isZero(mod)) {
+    if(isZeroN(mod)) {
         if(a->sign == b->sign) return transNtoZ(div);
         else return changeSign(transNtoZ(div));
     }

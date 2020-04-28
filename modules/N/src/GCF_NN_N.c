@@ -6,7 +6,7 @@
 longNumberN* gcfN(longNumberN* a, longNumberN* b) {
     longNumberN* temp;
 
-    while(!isZero(b)) {
+    while(!isZeroN(b)) {
         temp = b;
         b = modN(a, b);
         a = temp;

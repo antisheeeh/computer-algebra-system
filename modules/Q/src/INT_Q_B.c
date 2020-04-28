@@ -11,5 +11,5 @@
 #include "../lib/INT_Q_B.h"
 
 int isInt(longNumberQ* number){
-    return isZero(transZtoN(modZ(number->numerator, transNtoZ(number->denominator))));
+    return isZeroN(transZtoN(modZ(number->numerator, transNtoZ(number->denominator))));
 }
