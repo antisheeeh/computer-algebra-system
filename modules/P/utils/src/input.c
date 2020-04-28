@@ -56,19 +56,29 @@ char* toStringP(longNumberP *number) {
 
     for(i = number->degree; i >= 0; --i) {
         if(!isZeroN(transZtoN(number->coefficient[i]->numerator))) {
-            if(getSign(number->coefficient[i]->numerator) == PLUS) {
+            if(number->coefficient[i]->numerator->sign == PLUS) {
                 if(i != number->degree) {
                     strcat(str, " + ");
                 }
+            } else  {
+                if(i != number->degree) {
+                    strcat(str, " - ");
+                } else {
+                    strcat(str, "-");
+                }
+                
             }
 
             char* numerator = toStringZ(number->coefficient[i]->numerator);
             char* denominator = toStringN(number->coefficient[i]->denominator);
 
-            if(i != 0 && strcmp(numerator, "1") == 0 && strcmp(denominator, "1") == 0) {
-                
+            longNumberQ* t = parseNumberQ(toStringQ(number->coefficient[i]));
+            t->numerator->sign = PLUS;
+
+            if(i != 0 && (!strcmp(numerator, "1") && !strcmp(denominator, "1")) || (!strcmp(numerator, "-1") && !strcmp(denominator, "1"))) {
+
             } else {
-                strcat(str, toStringQ(number->coefficient[i]));
+                strcat(str, toStringQ(t));
             }
 
             if(i == 1) {
