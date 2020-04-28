@@ -18,6 +18,8 @@
 //Compare 2 numbers
 
 void menu_COM_NN() {
+    puts("Compare 2 numbers\n");
+    
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -44,6 +46,8 @@ void menu_COM_NN() {
 //Addition 2 numbers
 
 void menu_ADD_NN_N() {
+    puts("Addition 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -67,6 +71,8 @@ void menu_ADD_NN_N() {
 //Subtraction 2 numbers
 
 void menu_SUB_NN_N() {
+    puts("Subtraction 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -97,6 +103,8 @@ void menu_SUB_NN_N() {
 //Multiplication 2 numbers
 
 void menu_MUL_NN_N() {
+    puts("Multiplication 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -120,6 +128,8 @@ void menu_MUL_NN_N() {
 //Division of 2 numbers
 
 void menu_DIV_NN_N() {
+    puts("Division 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -148,6 +158,8 @@ void menu_DIV_NN_N() {
 }
 
 void menu_MOD_NN_N() {
+    puts("Remainder of division 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -177,6 +189,8 @@ void menu_MOD_NN_N() {
 //GCF of 2 numbers
 
 void menu_GCF_NN_N() {
+    puts("GCF 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {
@@ -200,6 +214,8 @@ void menu_GCF_NN_N() {
 //LCM of 2 numbers
 
 void menu_LCM_NN_N() {
+    puts("LCM 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
     if(!a) {

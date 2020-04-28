@@ -30,6 +30,8 @@
 //Addition 2 polinomials
 
 void menu_ADD_PP_P() {
+    puts("Addition 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -51,6 +53,8 @@ void menu_ADD_PP_P() {
 //Subtraction 2 polinomials
 
 void menu_SUB_PP_P(){
+    puts("Subtraction 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -72,6 +76,8 @@ void menu_SUB_PP_P(){
 //Multiplication 2 polinomials
 
 void menu_MUL_PP_P(){
+    puts("Multiplication 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -93,6 +99,8 @@ void menu_MUL_PP_P(){
 //Division 2 polinomials
 
 void menu_DIV_PP_P(){
+    puts("Division 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -121,6 +129,8 @@ void menu_DIV_PP_P(){
 //Calculate the remainder of division 2 polinomials
 
 void menu_MOD_PP_P(){
+    puts("Remainder of division 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -149,6 +159,8 @@ void menu_MOD_PP_P(){
 //GCF of 2 polinomials
 
 void menu_GCF_PP_P(){
+    puts("GCF 2 polynomials\n");
+
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -170,6 +182,8 @@ void menu_GCF_PP_P(){
 //Derivative of polinomial
 
 void menu_DER_P_P(){
+    puts("Derivative of polynomial\n");
+
     puts("Please enter a polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {
@@ -184,6 +198,8 @@ void menu_DER_P_P(){
 //Multiple roots in simple
 
 void menu_NMR_P_P(){
+    puts("Multiple roots to simple\n");
+
     puts("Please enter a polynomial");
     longNumberP* a = parseNumberP(getStringN());
     if(!a) {

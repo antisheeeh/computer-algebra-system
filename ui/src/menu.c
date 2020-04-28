@@ -100,6 +100,7 @@ void naturalMenu() {
 
 	getchar();
 
+	puts("Natural");
 	natural[c - 'A']();
 	showHelp();
 }
@@ -130,6 +131,7 @@ void integerMenu() {
 
 	getchar();
 
+	puts("Integer");
 	whole[c - 'A']();
 	showHelp();
 }
@@ -161,6 +163,7 @@ void rationalMenu() {
 
 	getchar();
 
+	puts("Rational");
 	rational[c - 'A']();
 	showHelp();
 }
@@ -195,6 +198,7 @@ void polynomialMenu() {
 
 	getchar();
 
+	puts("Polynomial");
 	polynomial[c - 'A']();
 	showHelp();
 }

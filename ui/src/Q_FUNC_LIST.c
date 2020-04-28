@@ -22,6 +22,8 @@
 #include "../../modules/Q/lib/RED_Q_Q.h"
 
 void menu_RED_QQ_Q() {
+    puts("Reduction of fraction\n");
+
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {
@@ -36,6 +38,8 @@ void menu_RED_QQ_Q() {
 }
 
 void menu_INT_Q() {
+    puts("Check for integer\n");
+
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {
@@ -53,6 +57,8 @@ void menu_INT_Q() {
 }
 
 void menu_MUL_QQ_Q() {
+    puts("Multiplication 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {
@@ -74,6 +80,8 @@ void menu_MUL_QQ_Q() {
 }
 
 void menu_DIV_QQ_Q() {
+    puts("Division 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {
@@ -102,6 +110,8 @@ void menu_DIV_QQ_Q() {
 }
 
 void menu_ADD_QQ_Q(){
+    puts("Addition 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {
@@ -124,6 +134,8 @@ void menu_ADD_QQ_Q(){
 
 
 void menu_SUB_QQ_Q() {
+    puts("Subtraction 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
     if(!a) {

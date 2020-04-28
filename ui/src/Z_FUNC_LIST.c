@@ -17,6 +17,8 @@
 //Addition 2 numbers
 
 void menu_ADD_ZZ_Z() {
+    puts("Addition 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
     if(!a) {
@@ -41,6 +43,8 @@ void menu_ADD_ZZ_Z() {
 //Subtraction 2 numbers
 
 void menu_SUB_ZZ_Z() {
+    puts("Subtraction 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
     if(!a) {
@@ -65,6 +69,8 @@ void menu_SUB_ZZ_Z() {
 //Multiplication 2 numbers
 
 void menu_MUL_ZZ_Z() {
+    puts("Multiplication 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
     if(!a) {
@@ -89,6 +95,8 @@ void menu_MUL_ZZ_Z() {
 //Division 2 numbers
 
 void menu_DIV_ZZ_Z() {
+    puts("Division 2 numbers\n");
+
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
     if(!a)  {
@@ -119,6 +127,8 @@ void menu_DIV_ZZ_Z() {
 //Calculate the remainder of division
 
 void menu_MOD_ZZ_Z() {
+    puts("Remainder of division\n");
+
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
     if(!a) {
