@@ -145,7 +145,7 @@ void menu_MOD_ZZ_Z() {
 
     puts("");
 
-    longNumberZ* res = divZ(a, b);
+    longNumberZ* res = modZ(a, b);
 
     if(!res) {
         puts("Error! The second number is zero!");
