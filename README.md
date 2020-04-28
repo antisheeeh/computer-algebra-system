@@ -4,6 +4,12 @@ Colloquium on algorithms with long numbers
 ## Command line interface in Windows
 Just download and run the executable file with the label `main.exe` in the release directory if you want to run and test the program.
 
+## Input/Output examples
+- ![Natural](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/natural_example.PNG)
+- ![Integer](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/integer_example.PNG)
+- ![Rational](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/rational_example.PNG)
+- ![Polynomial](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/polynomial_example.PNG)
+
 ## Project structure
 1. `modules` directory contains `4` subdirectories:
     * N - non-negative integers
