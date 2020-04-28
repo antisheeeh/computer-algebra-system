@@ -19,11 +19,17 @@
 void menu_ADD_ZZ_Z() {
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberZ* b = parseNumberZ(getStringZ());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -37,11 +43,17 @@ void menu_ADD_ZZ_Z() {
 void menu_SUB_ZZ_Z() {
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberZ* b = parseNumberZ(getStringZ());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -55,11 +67,17 @@ void menu_SUB_ZZ_Z() {
 void menu_MUL_ZZ_Z() {
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberZ* b = parseNumberZ(getStringZ());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -73,17 +91,23 @@ void menu_MUL_ZZ_Z() {
 void menu_DIV_ZZ_Z() {
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
-    if(!a) return;
+    if(!a)  {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberZ* b = parseNumberZ(getStringZ());
-    if(!b) return;
+    if(!b)  {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
     longNumberZ* res = divZ(a, b);
 
-    if(res == NULL) {
+    if(!res) {
         puts("Error! The second number is zero!");
         return;
     }
@@ -97,17 +121,23 @@ void menu_DIV_ZZ_Z() {
 void menu_MOD_ZZ_Z() {
     puts("Please enter a first number");
     longNumberZ* a = parseNumberZ(getStringZ());
-    if(!a) return;
-
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
+    
     puts("Please enter a second number");
     longNumberZ* b = parseNumberZ(getStringZ());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
     longNumberZ* res = divZ(a, b);
 
-    if(res == NULL) {
+    if(!res) {
         puts("Error! The second number is zero!");
         return;
     }

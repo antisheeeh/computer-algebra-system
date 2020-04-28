@@ -14,10 +14,7 @@ longNumberQ* parseNumberQ(char* s) {
 
     removeSpacesQ(str);
     
-    if(!isValidQ(str)) {
-        puts("\nInvalid input");
-        return NULL;
-    }
+    if(!isValidQ(str)) return NULL;
 
     longNumberQ* number = malloc(sizeof(longNumberQ));
  
@@ -79,7 +76,7 @@ int isValidQ(char* str) {
     if(!isValidZ(numerator)) return 0;
 
     char* denominator = strtok(NULL, "/");
-    if(denominator && !isValidN(denominator)) return 0;
+    if(denominator && (!strcmp(denominator, "0") || !isValidN(denominator))) return 0;
 
     return 1;
 }

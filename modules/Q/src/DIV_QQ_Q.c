@@ -16,6 +16,8 @@
 #include "../lib/DIV_QQ_Q.h"
 
 longNumberQ* divQ(longNumberQ* a , longNumberQ* b) {
+    if(b->numerator->sign == NEUTRAL) return NULL;
+
     a = redQ(a);
     b = redQ(b);
 

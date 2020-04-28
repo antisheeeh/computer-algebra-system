@@ -24,17 +24,24 @@
 void menu_RED_QQ_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
+    puts("Result");
     puts(toStringQ(redQ(a)));
 }
 
 void menu_INT_Q() {
     puts("Please enter a number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -48,11 +55,17 @@ void menu_INT_Q() {
 void menu_MUL_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -63,26 +76,45 @@ void menu_MUL_QQ_Q() {
 void menu_DIV_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
+    longNumberQ* res = divQ(a, b);
+
+    if(!res) {
+        puts("Error! The second number is zero");
+        return;
+    }
+
     puts("Result");
-    puts(toStringQ(divQ(a, b)));
+    puts(toStringQ(res));
 }
 
 void menu_ADD_QQ_Q(){
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -94,11 +126,17 @@ void menu_ADD_QQ_Q(){
 void menu_SUB_QQ_Q() {
     puts("Please enter a first number");
     longNumberQ* a = parseNumberQ(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberQ* b = parseNumberQ(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 

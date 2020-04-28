@@ -20,11 +20,17 @@
 void menu_COM_NN() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
     
     int res = compN(a, b);
 
@@ -35,30 +41,22 @@ void menu_COM_NN() {
     else if(res == EQUAL) puts("The first number is equal to the second");
 }
 
-//Addition 1 to number
-
-void menu_ADD_1N_N() {
-    puts("Please enter a number");
-    longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
-
-    puts("");
-
-    puts("Result");
-
-    puts(toStringN(incN(a)));
-}
-
 //Addition 2 numbers
 
 void menu_ADD_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -71,17 +69,29 @@ void menu_ADD_NN_N() {
 void menu_SUB_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
-    if(subN(a,b) != NULL){
-        puts("Result");
-        puts(toStringN(subN(a, b)));
-    } else puts("Error! The second number is bigger than the first one!");
+
+    longNumberN* res = subN(a, b);
+
+    if(!res){
+        puts("Error! The second number is bigger than the first one!");
+        return;
+    }
+
+    puts("Result");
+    puts(toStringN(res));
 }
 
 //Multiplication 2 numbers
@@ -89,11 +99,17 @@ void menu_SUB_NN_N() {
 void menu_MUL_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
 
@@ -106,35 +122,56 @@ void menu_MUL_NN_N() {
 void menu_DIV_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
-    
-    if(divN(a, b) != NULL){
-        puts("Result");
-        puts(toStringN(divN(a, b)));
-    } else puts("Error! The second number is zero!");
+
+    longNumberN* res = divN(a, b);
+
+    if(!res) {
+        puts("Error! The second number is zero!");
+        return;
+    }
+
+    puts("Result");
+    puts(toStringN(res));
 }
 
 void menu_MOD_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
-
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
-    
-    if(modN(a, b) != NULL){
-        puts("Result");
-        puts(toStringN(modN(a, b)));
-    } else puts("Error! The second number is zero!");
+
+    longNumberN* res = modN(a, b);
+
+    if(!res) {
+        puts("Error! The second number is zero!");
+        return;
+    }
+
+    puts("Result");
+    puts(toStringN(res));
 }
 
 //GCF of 2 numbers
@@ -142,11 +179,17 @@ void menu_MOD_NN_N() {
 void menu_GCF_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
     puts("Result");
@@ -159,11 +202,17 @@ void menu_GCF_NN_N() {
 void menu_LCM_NN_N() {
     puts("Please enter a first number");
     longNumberN* a = parseNumberN(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second number");
     longNumberN* b = parseNumberN(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("");
     puts("Result");

@@ -18,10 +18,7 @@ longNumberZ* parseNumberZ(char* s) {
     
     removeSpacesZ(str);
 
-    if(!isValidZ(str)) {
-        puts("\nInvalid input");
-        return NULL;
-    }
+    if(!isValidZ(str)) return NULL;
 
     longNumberZ* number = malloc(sizeof(longNumberZ));
 

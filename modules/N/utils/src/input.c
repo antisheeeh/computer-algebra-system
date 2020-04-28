@@ -16,10 +16,7 @@ longNumberN* parseNumberN(char* s) {
 
     removeSpacesN(str);
 
-    if(!isValidN(str)) {
-        puts("\nInvalid input");
-        return NULL;
-    }
+    if(!isValidN(str)) return NULL;
 
     longNumberN* number = malloc(sizeof(longNumberN));
 

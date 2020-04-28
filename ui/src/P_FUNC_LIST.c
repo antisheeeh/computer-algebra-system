@@ -32,11 +32,17 @@
 void menu_ADD_PP_P() {
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
     
     puts("Result");
     puts(toStringP(sumP(a, b)));
@@ -47,77 +53,20 @@ void menu_ADD_PP_P() {
 void menu_SUB_PP_P(){
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Result");
     puts(toStringP(subP(a, b)));
-}
-//Multiply polinomial by rational number
-
-void menu_MUL_PQ_P(){
-    puts("Please enter a polynomial");
-    longNumberP *a = parseNumberP(getStringN());
-    if(!a) return;
-
-    puts("Please enter a rational");
-    longNumberQ *rat = parseNumberQ(getStringN());
-    if(!rat) return;
-
-    puts("Result");
-    puts(toStringP(multyByRational(a, rat)));
-}
-
-//Multiply polinomial by x^k
-
-void menu_MUL_Pxk_P(){
-    puts("Please enter a polynomial");
-    longNumberP *a = parseNumberP(getStringN());
-    if(!a) return;
-
-    int pow;
-    puts("Please enter k");
-    scanf("%d" , &pow);
-    getchar();
-
-    puts("Result");
-    puts(toStringP(multyByXk(a, pow)));
-}
-
-//Leading coefficient of polynomial
-
-void menu_LED_L_Q(){
-    puts("Please enter a polynomial");
-    longNumberP *a = parseNumberP(getStringN());
-    if(!a) return;
-    
-    puts("Result");
-    puts(toStringQ(led(a)));
-}
-
-//Highest degree of the polynomial
-
-void menu_DEG_P_N(){
-    puts("Please enter a polynomial");
-    longNumberP *a = parseNumberP(getStringN());
-    if(!a) return;
-    
-    puts("Result");
-    printf("%d\n", deg(a));
-}
-
-//The derivation of a coefficient from a polynomial
-
-void menu_FAC_P_Q(){
-    puts("Please enter a polynomial");
-    longNumberP *a = parseNumberP(getStringN());
-    if(!a) return;
-
-    puts("Result");
-    puts(toStringP(facP(a)));
 }
 
 //Multiplication 2 polinomials
@@ -125,11 +74,17 @@ void menu_FAC_P_Q(){
 void menu_MUL_PP_P(){
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Result");
     puts(toStringP(mulP(a, b)));
@@ -140,14 +95,27 @@ void menu_MUL_PP_P(){
 void menu_DIV_PP_P(){
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
+
+    longNumberP* res = divP(a, b);
+
+    if(!res) {
+        puts("Error! The second polynom is zero");
+        return;
+    }
 
     puts("Result");
-    puts(toStringP(divP(a, b)));
+    puts(toStringP(res));
 }
 
 //Calculate the remainder of division 2 polinomials
@@ -155,14 +123,27 @@ void menu_DIV_PP_P(){
 void menu_MOD_PP_P(){
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
+
+    longNumberP* res = modP(a, b);
+
+    if(!res) {
+        puts("Error! The second polynom is zero");
+        return;
+    }
 
     puts("Result");
-    puts(toStringP(modP(a, b)));
+    puts(toStringP(res));
 }
 
 //GCF of 2 polinomials
@@ -170,11 +151,17 @@ void menu_MOD_PP_P(){
 void menu_GCF_PP_P(){
     puts("Please enter a first polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Please enter a second polynomial");
     longNumberP* b = parseNumberP(getStringN());
-    if(!b) return;
+    if(!b) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Result");
     puts(toStringP(gcfP(a, b)));
@@ -185,7 +172,10 @@ void menu_GCF_PP_P(){
 void menu_DER_P_P(){
     puts("Please enter a polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Result");
     puts(toStringP(derP(a)));
@@ -196,7 +186,10 @@ void menu_DER_P_P(){
 void menu_NMR_P_P(){
     puts("Please enter a polynomial");
     longNumberP* a = parseNumberP(getStringN());
-    if(!a) return;
+    if(!a) {
+        puts("\nInvalid input");
+        return;
+    }
 
     puts("Result");
     puts(toStringP(multipleRootsToSimple(a)));

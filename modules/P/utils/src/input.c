@@ -18,10 +18,7 @@ longNumberP* parseNumberP(char* s) {
 
     removeSpacesP(str);
 
-    if(!isValidP(str)) {
-        puts("\nInvalid input");
-        return NULL;
-    }
+    if(!isValidP(str)) return NULL;
 
     longNumberP* number = malloc(sizeof(longNumberP));
     
@@ -101,7 +98,7 @@ char** getMonomials(char* str) {
 
         if(i != 0 && (str[i] == '+' || str[i] == '-' || str[i] == '\0')) {
             words[count] = malloc((i - len + 1) * sizeof(char));
-            strncpy(words[count], str + len, i - len);
+            strncpy(words[count], str + len, i - len + 1);
             len = i;
             count++;
         }
@@ -122,12 +119,14 @@ int getCount(char** monomials) {
 char* getCoef(char* str) {
     char* s = copy(str);
 
-    if(str[0] == 'x') return "+1";
+    if(strlen(s) == 1 && (s[0] == '+' || s[0] == '-')) return s;
+
+    if(s[0] == 'x') return "1";
 
     char* res = strtok(s, "x");
 
-    if(strcmp(res, "+") == 0) return "+1";
-    if(strcmp(res, "-") == 0) return "-1";
+    if(strcmp(res, "+") == 0 || strcmp(res, "+1") == 0 || strcmp(res, "1") == 0) return "1";
+    if(strcmp(res, "-") == 0 || strcmp(res, "-1") == 0) return "-1";
 
     return res;
 }
