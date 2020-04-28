@@ -75,7 +75,7 @@ char* toStringP(longNumberP *number) {
             longNumberQ* t = parseNumberQ(toStringQ(number->coefficient[i]));
             t->numerator->sign = PLUS;
 
-            if(i != 0 && (!strcmp(numerator, "1") && !strcmp(denominator, "1")) || (!strcmp(numerator, "-1") && !strcmp(denominator, "1"))) {
+            if(i != 0 && ((!strcmp(numerator, "1") && !strcmp(denominator, "1")) || (!strcmp(numerator, "-1") && !strcmp(denominator, "1")))) {
 
             } else {
                 strcat(str, toStringQ(t));
