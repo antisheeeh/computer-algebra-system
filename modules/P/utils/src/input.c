@@ -45,7 +45,7 @@ longNumberP* parseNumberP(char* s) {
 }
 
 char* toStringP(longNumberP *number) {
-    char* str = malloc(15000 * sizeof(char));
+    char* str = malloc(50000 * sizeof(char));
     char buf[1024];
 
     strcpy(str, "");

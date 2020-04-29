@@ -10,6 +10,5 @@
 
 typedef struct {    
     int degree;
-    int count;
     longNumberQ **coefficient;
 } longNumberP;
