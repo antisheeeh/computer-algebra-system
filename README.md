@@ -4,6 +4,11 @@ Colloquium on algorithms with long numbers
 ## Command line interface in Windows
 Just download and run the executable file with the label `main.exe` in the release directory if you want to run and test the program.
 
+Note on polynomials:
+Input is carried out in the following form: 
+1) The polynomial is written from a large degree to a smaller one, i.e. x ^ 2 + x ^ 3 + 4x - Wrong !!!!! Correct - x ^ 3 + x ^ 2 + 4x
+2) The coefficients before x are introduced in the form of the fraction or in common form: 1 / 2x ^ 2 + 3x + 4/5
+
 ## Input/Output examples
 - ![Natural](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/natural_example.PNG)
 - ![Integer](https://github.com/antisheeeh/computer-algebra-system/blob/master/screenshots/integer_example.PNG)
